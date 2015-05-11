@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/2007/REC-voicexml21-20070619/vxml.dtd">
+
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml" xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+    <meta name="maintainer" content="burrelal@gmail.com" />
+
+    <var name="request_type" expr="false" />
+    <var name="business" expr="false" />
+    <var name="location" expr="false" />
+
+    <form id="hello">
+        <grammar src="hello_grammar.xml#Greeting" type="application/grammar-xml" maxage="1" />
+
+        <initial name="Greeting">
+            <!-- Hi there! Do you want hours, an address, or a phone number? -->
+            Hi
+
+            <nomatch count="1">
+                <assign name="Greeting" expr="true" />
+                <reprompt />
+            </nomatch>
+        </initial>
+
+        <field name="RequestTypeField">
+            <grammar src="hello_grammar.xml#RequestType" type="application/grammar-xml" />
+            <prompt>
+                Do you want hours, an address, or a phone number?
+            </prompt>
+
+            <filled>
+                <assign name="document.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
+            </filled>
+        </field>
+
+        <field name="BusinessField">
+            <grammar src="business_grammar.xml#Names" type="application/grammar-xml" />
+            <prompt>
+                What business are you wondering about?
+            </prompt>
+
+            <filled>
+                <assign name="document.business" expr="BusinessField$.interpretation.BusinessField" />
+            </filled>
+        </field>
+
+        <field name="LocationField">
+            <grammar src="location_grammar.xml#Location" type="application/grammar-xml" />
+            <prompt>
+                Where are you?
+            </prompt>
+
+            <filled>
+                <assign name="document.location" expr="LocationField$.interpretation.LocationField" />
+            </filled>
+        </field>
+
+        <filled mode="all">
+            <if cond="document.request_type!=false">
+                <prompt>
+                    <value expr="document.request_type" />
+                </prompt>
+            </if>
+            <if cond="document.business!=false">
+                <prompt>
+                    <value expr="document.business" />
+                </prompt>
+            </if>
+            <if cond="document.location!=false">
+                <prompt>
+                    <value expr="document.location" />
+                </prompt>
+            </if>
+        </filled>
+    </form>
+
+</vxml>

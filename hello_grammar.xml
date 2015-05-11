@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+
+<grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US">
+    <rule id="Greeting" scope="public">
+        <item repeat="1-3">
+            <item repeat="0-1">
+                <ruleref uri="#RequestType" />
+            </item>
+            <item repeat="0-1">
+                <ruleref uri="business_grammar.xml#Names" />
+            </item>
+            <item repeat="0-1">
+                <ruleref uri="location_grammar.xml#Location" />
+            </item>
+            <!-- <tag>
+                out.RequestTypeField = rules.RequestType.RequestTypeField;
+                out.BusinessField = rules.Businesses.BusinessField;
+                out.LocationField = rules.Location.LocationField;
+            </tag> -->
+        </item>
+    </rule>
+
+    <rule id="RequestType" scope="public">
+        <one-of>
+            <item>
+                Hours
+                <tag>
+                    out.RequestTypeField = "hours";
+                </tag>
+            </item>
+            <item>
+                Address
+                <tag>
+                    out.RequestTypeField = "address";
+                </tag>
+            </item>
+            <item>
+                Phone number
+                <tag>
+                    out.RequestTypeField = "phone";
+                </tag>
+            </item>
+        </one-of>
+    </rule>
+</grammar>
