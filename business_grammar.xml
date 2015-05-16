@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US">
-    <rule id="Names" scope="public">
+    <rule id="Business" scope="public">
         <one-of>
             <item>
                 Safeway

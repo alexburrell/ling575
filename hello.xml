@@ -10,6 +10,8 @@
 
     <form id="hello">
         <grammar src="hello_grammar.xml#Greeting" type="application/grammar-xml" maxage="1" />
+        <!-- <grammar src="business_grammar.xml#Business" type="application/grammar-xml" maxage="1" /> -->
+        <!-- <grammar src="location_grammar.xml#Location" type="application/grammar-xml" maxage="1" /> -->
 
         <initial name="Greeting">
             <!-- Hi there! Do you want hours, an address, or a phone number? -->
@@ -22,7 +24,7 @@
         </initial>
 
         <field name="RequestTypeField">
-            <grammar src="hello_grammar.xml#RequestType" type="application/grammar-xml" />
+            <grammar src="hello_grammar.xml#RequestType" type="application/grammar-xml" maxage="1" />
             <prompt>
                 Do you want hours, an address, or a phone number?
             </prompt>
@@ -33,7 +35,7 @@
         </field>
 
         <field name="BusinessField">
-            <grammar src="business_grammar.xml#Names" type="application/grammar-xml" />
+            <grammar src="business_grammar.xml#Business" type="application/grammar-xml" maxage="1" />
             <prompt>
                 What business are you wondering about?
             </prompt>
@@ -44,7 +46,7 @@
         </field>
 
         <field name="LocationField">
-            <grammar src="location_grammar.xml#Location" type="application/grammar-xml" />
+            <grammar src="location_grammar.xml#Location" type="application/grammar-xml" maxage="1" />
             <prompt>
                 Where are you?
             </prompt>
@@ -55,21 +57,14 @@
         </field>
 
         <filled mode="all">
-            <if cond="document.request_type!=false">
-                <prompt>
-                    <value expr="document.request_type" />
-                </prompt>
-            </if>
-            <if cond="document.business!=false">
-                <prompt>
-                    <value expr="document.business" />
-                </prompt>
-            </if>
-            <if cond="document.location!=false">
-                <prompt>
-                    <value expr="document.location" />
-                </prompt>
-            </if>
+            <prompt>
+                <value expr="document.request_type" />
+                <value expr="document.business" />
+                <value expr="document.location" />
+            </prompt>
+
+            <!-- Repeat (good for testing) -->
+            <goto next="#hello" />
         </filled>
     </form>
 
