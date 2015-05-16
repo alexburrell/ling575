@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/2007/REC-voicexml21-20070619/vxml.dtd">
 
-<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml" xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml" xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="root.xml">
     <meta name="maintainer" content="burrelal@gmail.com" />
-
-    <var name="request_type" expr="false" />
-    <var name="business" expr="false" />
-    <var name="location" expr="false" />
 
     <form id="hello">
         <grammar src="hello_grammar.xml#Greeting" type="application/grammar-xml" maxage="1" />
@@ -14,8 +10,7 @@
         <!-- <grammar src="location_grammar.xml#Location" type="application/grammar-xml" maxage="1" /> -->
 
         <initial name="Greeting">
-            <!-- Hi there! Do you want hours, an address, or a phone number? -->
-            Hi
+            Hi there!
 
             <nomatch count="1">
                 <assign name="Greeting" expr="true" />
@@ -28,10 +23,6 @@
             <prompt>
                 Do you want hours, an address, or a phone number?
             </prompt>
-
-            <filled>
-                <assign name="document.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
-            </filled>
         </field>
 
         <field name="BusinessField">
@@ -39,10 +30,6 @@
             <prompt>
                 What business are you wondering about?
             </prompt>
-
-            <filled>
-                <assign name="document.business" expr="BusinessField$.interpretation.BusinessField" />
-            </filled>
         </field>
 
         <field name="LocationField">
@@ -50,21 +37,13 @@
             <prompt>
                 Where are you?
             </prompt>
-
-            <filled>
-                <assign name="document.location" expr="LocationField$.interpretation.LocationField" />
-            </filled>
         </field>
 
         <filled mode="all">
-            <prompt>
-                <value expr="document.request_type" />
-                <value expr="document.business" />
-                <value expr="document.location" />
-            </prompt>
-
-            <!-- Repeat (good for testing) -->
-            <goto next="#hello" />
+            <assign name="application.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
+            <assign name="application.business" expr="BusinessField$.interpretation.BusinessField" />
+            <assign name="application.location" expr="LocationField$.interpretation.LocationField" />
+            <goto next="details.xml#GetDetails" />
         </filled>
     </form>
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/2007/REC-voicexml21-20070619/vxml.dtd">
+
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml" xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
+    <meta name="maintainer" content="burrelal@gmail.com" />
+
+    <var name="request_type" expr="1" />
+    <var name="business" expr="2" />
+    <var name="location" expr="3" />
+</vxml>
