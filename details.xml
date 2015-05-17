@@ -4,12 +4,25 @@
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml" xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="root.xml">
     <meta name="maintainer" content="burrelal@gmail.com" />
 
+    <script><![CDATA[
+        function parseResults(results) {
+            return results.getElementsByTagName("result").length;
+        }
+    ]]></script>
+
     <form id="GetDetails">
         <block>
             <prompt>
+                6
                 <value expr="application.request_type" />
                 <value expr="application.business" />
                 <value expr="application.location" />
+            </prompt>
+
+            <data name="SearchResults" srcexpr="'https://maps.googleapis.com/maps/api/place/search/xml?location=-33.88471,151.218237&amp;radius=100&amp;sensor=true&amp;key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag'" />
+            <assign name="SearchResults" expr="SearchResults.documentElement" />
+            <prompt>
+                <value expr="parseResults(SearchResults)" />
             </prompt>
         </block>
     </form>

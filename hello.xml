@@ -9,6 +9,13 @@
         <!-- <grammar src="business_grammar.xml#Business" type="application/grammar-xml" maxage="1" /> -->
         <!-- <grammar src="location_grammar.xml#Location" type="application/grammar-xml" maxage="1" /> -->
 
+        <block>
+            <assign name="application.request_type" expr="'address'" />
+            <assign name="application.business" expr="'safeway'" />
+            <assign name="application.location" expr="'sunnyvale'" />
+            <goto next="details.xml#GetDetails" />
+        </block>
+
         <initial name="Greeting">
             Hi there!
 
