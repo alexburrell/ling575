@@ -9,17 +9,18 @@
         <!-- <grammar src="business_grammar.xml#Business" type="application/grammar-xml" maxage="1" /> -->
         <!-- <grammar src="location_grammar.xml#Location" type="application/grammar-xml" maxage="1" /> -->
 
-        <block>
+        <!-- <block>
             <assign name="application.request_type" expr="'address'" />
             <assign name="application.business" expr="'safeway'" />
             <assign name="application.location" expr="'santa cruz'" />
             <goto next="details.xml#GetDetails" />
-        </block>
+        </block> -->
 
         <initial name="Greeting">
-            Hi there!
+            Hi there! What business information can I help you find?
 
             <nomatch count="1">
+                I'm sorry, I'm having trouble understanding.
                 <assign name="Greeting" expr="true" />
                 <reprompt />
             </nomatch>
