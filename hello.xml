@@ -12,7 +12,7 @@
         <block>
             <assign name="application.request_type" expr="'address'" />
             <assign name="application.business" expr="'safeway'" />
-            <assign name="application.location" expr="'sunnyvale'" />
+            <assign name="application.location" expr="'santa cruz'" />
             <goto next="details.xml#GetDetails" />
         </block>
 
