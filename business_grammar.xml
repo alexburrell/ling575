@@ -9,6 +9,12 @@
                     out.BusinessField = "Safeway";
                 </tag>
             </item>
+            <item>
+                Target
+                <tag>
+                    out.BusinessField = "Target";
+                </tag>
+            </item>
         </one-of>
     </rule>
 </grammar>

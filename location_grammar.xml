@@ -9,6 +9,12 @@
                     out.LocationField = "Santa Cruz";
                 </tag>
             </item>
+            <item>
+                San Francisco
+                <tag>
+                    out.LocationField = "San Francisco";
+                </tag>
+            </item>
         </one-of>
     </rule>
 </grammar>
