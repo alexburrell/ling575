@@ -3,16 +3,1055 @@
 <grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US">
     <rule id="Location" scope="public">
         <one-of>
+            <!-- ALABAMA -->
             <item>
-                Santa Cruz
+                <one-of>
+                    <item> Birmingham <tag> out.LocationField="Birmingham"; </tag> </item>
+                    <item> Montgomery <tag> out.LocationField="Montgomery"; </tag> </item>
+                    <item> Mobile <tag> out.LocationField="Mobile"; </tag> </item>
+                    <item> Huntsville <tag> out.LocationField="Huntsville"; </tag> </item>
+                    <item> Tuscaloosa <tag> out.LocationField="Tuscaloosa"; </tag> </item>
+                    <item> Hoover <tag> out.LocationField="Hoover"; </tag> </item>
+                    <item> Dothan <tag> out.LocationField="Dothan"; </tag> </item>
+                    <item> Decatur <tag> out.LocationField="Decatur"; </tag> </item>
+                    <item> Auburn <tag> out.LocationField="Auburn"; </tag> </item>
+                    <item> Gadsden <tag> out.LocationField="Gadsden"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Alabama </item>
                 <tag>
-                    out.LocationField = "Santa Cruz";
+                    out.LocationFieldState="Alabama";
+                    out.LocationFieldStateCode="AL";
                 </tag>
             </item>
+
+            <!-- ALASKA -->
             <item>
-                San Francisco
+                <one-of>
+                    <item> Anchorage <tag> out.LocationField="Anchorage"; </tag> </item>
+                    <item> Juneau <tag> out.LocationField="Juneau"; </tag> </item>
+                    <item> Fairbanks <tag> out.LocationField="Fairbanks"; </tag> </item>
+                    <item> Sitka <tag> out.LocationField="Sitka"; </tag> </item>
+                    <item> Ketchikan <tag> out.LocationField="Ketchikan"; </tag> </item>
+                    <item> Kenai <tag> out.LocationField="Kenai"; </tag> </item>
+                    <item> Kodiak <tag> out.LocationField="Kodiak"; </tag> </item>
+                    <item> Bethel <tag> out.LocationField="Bethel"; </tag> </item>
+                    <item> Wasilla <tag> out.LocationField="Wasilla"; </tag> </item>
+                    <item> Barrow <tag> out.LocationField="Barrow"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Alaska </item>
                 <tag>
-                    out.LocationField = "San Francisco";
+                    out.LocationFieldState="Alaska";
+                    out.LocationFieldStateCode="AK";
+                </tag>
+            </item>
+
+            <!-- ARIZONA -->
+            <item>
+                <one-of>
+                    <item> Phoenix <tag> out.LocationField="Phoenix"; </tag> </item>
+                    <item> Tuscan <tag> out.LocationField="Tuscan"; </tag> </item>
+                    <item> Mesa <tag> out.LocationField="Mesa"; </tag> </item>
+                    <item> Glendale <tag> out.LocationField="Glendale"; </tag> </item>
+                    <item> Scottsdale <tag> out.LocationField="Scottsdale"; </tag> </item>
+                    <item> Chandler <tag> out.LocationField="Chandler"; </tag> </item>
+                    <item> Tempe <tag> out.LocationField="Tempe"; </tag> </item>
+                    <item> Gilbert <tag> out.LocationField="Gilbert"; </tag> </item>
+                    <item> Peoria <tag> out.LocationField="Peoria"; </tag> </item>
+                    <item> Yuma <tag> out.LocationField="Yuma"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Arizona </item>
+                <tag>
+                    out.LocationFieldState="Arizona";
+                    out.LocationFieldStateCode="AZ";
+                </tag>
+            </item>
+
+            <!-- ARKANSAS -->
+            <item>
+                <one-of>
+                    <item> Little Rock <tag> out.LocationField="Little Rock"; </tag> </item>
+                    <item> Fort Smith <tag> out.LocationField="Fort Smith"; </tag> </item>
+                    <item> North Little Rock <tag> out.LocationField="North Little Rock"; </tag> </item>
+                    <item> Fayetteville <tag> out.LocationField="Fayetteville"; </tag> </item>
+                    <item> Jonesboro <tag> out.LocationField="Jonesboro"; </tag> </item>
+                    <item> Pine Bluff <tag> out.LocationField="Pine Bluff"; </tag> </item>
+                    <item> Springdale <tag> out.LocationField="Springdale"; </tag> </item>
+                    <item> Conway <tag> out.LocationField="Conway"; </tag> </item>
+                    <item> Rogers <tag> out.LocationField="Rogers"; </tag> </item>
+                    <item> Hot Springs <tag> out.LocationField="Hot Springs"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Arkansas </item>
+                <tag>
+                    out.LocationFieldState="Arkansas";
+                    out.LocationFieldStateCode="AR";
+                </tag>
+            </item>
+
+            <!-- CALIFORNIA -->
+            <item>
+                <one-of>
+                    <item> Los Angeles <tag> out.LocationField="Los Angeles"; </tag> </item>
+                    <item> San Diego <tag> out.LocationField="San Diego"; </tag> </item>
+                    <item> San Jose <tag> out.LocationField="San Jose"; </tag> </item>
+                    <item> San Francisco <tag> out.LocationField="San Francisco"; </tag> </item>
+                    <item> Long Beach <tag> out.LocationField="Long Beach"; </tag> </item>
+                    <item> Fresno <tag> out.LocationField="Fresno"; </tag> </item>
+                    <item> Sacramento <tag> out.LocationField="Sacramento"; </tag> </item>
+                    <item> Oakland <tag> out.LocationField="Oakland"; </tag> </item>
+                    <item> Santa Ana <tag> out.LocationField="Santa Ana"; </tag> </item>
+                    <item> Anaheim <tag> out.LocationField="Anaheim"; </tag> </item>
+                    <item> Santa Cruz <tag> out.LocationField="Santa Cruz"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> California </item>
+                <tag>
+                    out.LocationFieldState="California";
+                    out.LocationFieldStateCode="CA";
+                </tag>
+            </item>
+
+            <!-- COLORADO -->
+            <item>
+                <one-of>
+                    <item> Denver <tag> out.LocationField="Denver"; </tag> </item>
+                    <item> Colorado Springs <tag> out.LocationField="Colorado Springs"; </tag> </item>
+                    <item> Aurora <tag> out.LocationField="Aurora"; </tag> </item>
+                    <item> Lakewood <tag> out.LocationField="Lakewood"; </tag> </item>
+                    <item> Fort Collins <tag> out.LocationField="Fort Collins"; </tag> </item>
+                    <item> Arvada <tag> out.LocationField="Arvada"; </tag> </item>
+                    <item> Pueblo <tag> out.LocationField="Pueblo"; </tag> </item>
+                    <item> Westminster <tag> out.LocationField="Westminster"; </tag> </item>
+                    <item> Boulder <tag> out.LocationField="Boulder"; </tag> </item>
+                    <item> Thornton <tag> out.LocationField="Thornton"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Colorado </item>
+                <tag>
+                    out.LocationFieldState="Colorado";
+                    out.LocationFieldStateCode="CO";
+                </tag>
+            </item>
+
+            <!-- CONNECTICUT -->
+            <item>
+                <one-of>
+                    <item> Bridgeport <tag> out.LocationField="Bridgeport"; </tag> </item>
+                    <item> New Haven <tag> out.LocationField="New Haven"; </tag> </item>
+                    <item> Hartford <tag> out.LocationField="Hartford"; </tag> </item>
+                    <item> Stamford <tag> out.LocationField="Stamford"; </tag> </item>
+                    <item> Waterbury <tag> out.LocationField="Waterbury"; </tag> </item>
+                    <item> Norwalk <tag> out.LocationField="Norwalk"; </tag> </item>
+                    <item> Danbury <tag> out.LocationField="Danbury"; </tag> </item>
+                    <item> New Britain <tag> out.LocationField="New Britain"; </tag> </item>
+                    <item> West Hartford <tag> out.LocationField="West Hartford"; </tag> </item>
+                    <item> Greenwich <tag> out.LocationField="Greenwich"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Connecticut </item>
+                <tag>
+                    out.LocationFieldState="Connecticut";
+                    out.LocationFieldStateCode="CT";
+                </tag>
+            </item>
+
+            <!-- DELAWARE -->
+            <item>
+                <one-of>
+                    <item> Wilmington <tag> out.LocationField="Wilmington"; </tag> </item>
+                    <item> Dover <tag> out.LocationField="Dover"; </tag> </item>
+                    <item> Newark <tag> out.LocationField="Newark"; </tag> </item>
+                    <item> Milford <tag> out.LocationField="Milford"; </tag> </item>
+                    <item> Seaford <tag> out.LocationField="Seaford"; </tag> </item>
+                    <item> Middletown <tag> out.LocationField="Middletown"; </tag> </item>
+                    <item> Elsmere <tag> out.LocationField="Elsmere"; </tag> </item>
+                    <item> Smyrna <tag> out.LocationField="Smyrna"; </tag> </item>
+                    <item> New Castle <tag> out.LocationField="New Castle"; </tag> </item>
+                    <item> Georgetown <tag> out.LocationField="Georgetown"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Delaware </item>
+                <tag>
+                    out.LocationFieldState="Delaware";
+                    out.LocationFieldStateCode="DE";
+                </tag>
+            </item>
+
+            <!-- FLORIDA -->
+            <item>
+                <one-of>
+                    <item> Jacksonville <tag> out.LocationField="Jacksonville"; </tag> </item>
+                    <item> Miami <tag> out.LocationField="Miami"; </tag> </item>
+                    <item> Tampa <tag> out.LocationField="Tampa"; </tag> </item>
+                    <item> Saint Petersburg <tag> out.LocationField="Saint Petersburg"; </tag> </item>
+                    <item> Hialeah <tag> out.LocationField="Hialeah"; </tag> </item>
+                    <item> Orlando <tag> out.LocationField="Orlando"; </tag> </item>
+                    <item> Fort Lauderdale <tag> out.LocationField="Fort Lauderdale"; </tag> </item>
+                    <item> Tallahassee <tag> out.LocationField="Tallahassee"; </tag> </item>
+                    <item> Hollywood <tag> out.LocationField="Hollywood"; </tag> </item>
+                    <item> Pembroke Pines <tag> out.LocationField="Pembroke Pines"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Florida </item>
+                <tag>
+                    out.LocationFieldState="Florida";
+                    out.LocationFieldStateCode="FL";
+                </tag>
+            </item>
+
+            <!-- GEORGIA -->
+            <item>
+                <one-of>
+                    <item> Atlanta <tag> out.LocationField="Atlanta"; </tag> </item>
+                    <item> Augusta Richmond <item repeat="0-1"> County </item> <tag> out.LocationField="Augusta Richmond County"; </tag> </item>
+                    <item> Columbus <tag> out.LocationField="Columbus"; </tag> </item>
+                    <item> Savannah <tag> out.LocationField="Savannah"; </tag> </item>
+                    <item> Athens Clarke <item repeat="0-1"> County </item> <tag> out.LocationField="Athens Clarke County"; </tag> </item>
+                    <item> Macon <tag> out.LocationField="Macon"; </tag> </item>
+                    <item> Roswell <tag> out.LocationField="Roswell"; </tag> </item>
+                    <item> Albany <tag> out.LocationField="Albany"; </tag> </item>
+                    <item> Marietta <tag> out.LocationField="Marietta"; </tag> </item>
+                    <item> Warner Robins <tag> out.LocationField="Warner Robins"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Georgia </item>
+                <tag>
+                    out.LocationFieldState="Georgia";
+                    out.LocationFieldStateCode="GA";
+                </tag>
+            </item>
+
+            <!-- HAWAII -->
+            <item>
+                <one-of>
+                    <item> Honolulu <tag> out.LocationField="Honolulu"; </tag> </item>
+                    <item> Hilo <tag> out.LocationField="Hilo"; </tag> </item>
+                    <item> Kailua <tag> out.LocationField="Kailua"; </tag> </item>
+                    <item> Kaneohe <tag> out.LocationField="Kaneohe"; </tag> </item>
+                    <item> Waipahu <tag> out.LocationField="Waipahu"; </tag> </item>
+                    <item> Pearl City <tag> out.LocationField="Pearl City"; </tag> </item>
+                    <item> Waimalu <tag> out.LocationField="Waimalu"; </tag> </item>
+                    <item> Mililani Town <tag> out.LocationField="Mililani Town"; </tag> </item>
+                    <item> Kahului <tag> out.LocationField="Kahului"; </tag> </item>
+                    <item> Kihei <tag> out.LocationField="Kihei"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Hawaii </item>
+                <tag>
+                    out.LocationFieldState="Hawaii";
+                    out.LocationFieldStateCode="HI";
+                </tag>
+            </item>
+
+            <!-- IDAHO -->
+            <item>
+                <one-of>
+                    <item> Boise <tag> out.LocationField="Boise"; </tag> </item>
+                    <item> Nampa <tag> out.LocationField="Nampa"; </tag> </item>
+                    <item> Pocatello <tag> out.LocationField="Pocatello"; </tag> </item>
+                    <item> Idaho Falls <tag> out.LocationField="Idaho Falls"; </tag> </item>
+                    <item> Meridian <tag> out.LocationField="Meridian"; </tag> </item>
+                    <item> Coeur d Alene <tag> out.LocationField="Coeur d Alene"; </tag> </item>
+                    <item> Twin Falls <tag> out.LocationField="Twin Falls"; </tag> </item>
+                    <item> Lewiston <tag> out.LocationField="Lewiston"; </tag> </item>
+                    <item> Caldwell <tag> out.LocationField="Caldwell"; </tag> </item>
+                    <item> Moscow <tag> out.LocationField="Moscow"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Idaho </item>
+                <tag>
+                    out.LocationFieldState="Idaho";
+                    out.LocationFieldStateCode="ID";
+                </tag>
+            </item>
+
+            <!-- ILLINOIS -->
+            <item>
+                <one-of>
+                    <item> Chicago <tag> out.LocationField="Chicago"; </tag> </item>
+                    <item> Rockford <tag> out.LocationField="Rockford"; </tag> </item>
+                    <item> Aurora <tag> out.LocationField="Aurora"; </tag> </item>
+                    <item> Naperville <tag> out.LocationField="Naperville"; </tag> </item>
+                    <item> Peoria <tag> out.LocationField="Peoria"; </tag> </item>
+                    <item> Springfield <tag> out.LocationField="Springfield"; </tag> </item>
+                    <item> Joliet <tag> out.LocationField="Joliet"; </tag> </item>
+                    <item> Elgin <tag> out.LocationField="Elgin"; </tag> </item>
+                    <item> Waukegan <tag> out.LocationField="Waukegan"; </tag> </item>
+                    <item> Cicero <tag> out.LocationField="Cicero"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Illinois </item>
+                <tag>
+                    out.LocationFieldState="Illinois";
+                    out.LocationFieldStateCode="IL";
+                </tag>
+            </item>
+
+            <!-- INDIANA -->
+            <item>
+                <one-of>
+                    <item> Indianapolis <tag> out.LocationField="Indianapolis"; </tag> </item>
+                    <item> Fort Wayne <tag> out.LocationField="Fort Wayne"; </tag> </item>
+                    <item> Evansville <tag> out.LocationField="Evansville"; </tag> </item>
+                    <item> South Bend <tag> out.LocationField="South Bend"; </tag> </item>
+                    <item> Gary <tag> out.LocationField="Gary"; </tag> </item>
+                    <item> Hammond <tag> out.LocationField="Hammond"; </tag> </item>
+                    <item> Bloomington <tag> out.LocationField="Bloomington"; </tag> </item>
+                    <item> Muncie <tag> out.LocationField="Muncie"; </tag> </item>
+                    <item> Anderson <tag> out.LocationField="Anderson"; </tag> </item>
+                    <item> Terre Haute <tag> out.LocationField="Terre Haute"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Indiana </item>
+                <tag>
+                    out.LocationFieldState="Indiana";
+                    out.LocationFieldStateCode="IN";
+                </tag>
+            </item>
+
+            <!-- IOWA -->
+            <item>
+                <one-of>
+                    <item> Des Moines <tag> out.LocationField="Des Moines"; </tag> </item>
+                    <item> Cedar Rapids <tag> out.LocationField="Cedar Rapids"; </tag> </item>
+                    <item> Davenport <tag> out.LocationField="Davenport"; </tag> </item>
+                    <item> Sioux City <tag> out.LocationField="Sioux City"; </tag> </item>
+                    <item> Waterloo <tag> out.LocationField="Waterloo"; </tag> </item>
+                    <item> Iowa City <tag> out.LocationField="Iowa City"; </tag> </item>
+                    <item> Council Bluffs <tag> out.LocationField="Council Bluffs"; </tag> </item>
+                    <item> Dubuque <tag> out.LocationField="Dubuque"; </tag> </item>
+                    <item> Ames <tag> out.LocationField="Ames"; </tag> </item>
+                    <item> West Des Moines <tag> out.LocationField="West Des Moines"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Iowa </item>
+                <tag>
+                    out.LocationFieldState="Iowa";
+                    out.LocationFieldStateCode="IA";
+                </tag>
+            </item>
+
+            <!-- KANSAS -->
+            <item>
+                <one-of>
+                    <item> Wichita <tag> out.LocationField="Wichita"; </tag> </item>
+                    <item> Overland Park <tag> out.LocationField="Overland Park"; </tag> </item>
+                    <item> Kansas Park <tag> out.LocationField="Kansas Park"; </tag> </item>
+                    <item> Topeka <tag> out.LocationField="Topeka"; </tag> </item>
+                    <item> Olathe <tag> out.LocationField="Olathe"; </tag> </item>
+                    <item> Lawrence <tag> out.LocationField="Lawrence"; </tag> </item>
+                    <item> Shawnee <tag> out.LocationField="Shawnee"; </tag> </item>
+                    <item> Salina <tag> out.LocationField="Salina"; </tag> </item>
+                    <item> Manhattan <tag> out.LocationField="Manhattan"; </tag> </item>
+                    <item> Hutchinson <tag> out.LocationField="Hutchinson"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Kansas </item>
+                <tag>
+                    out.LocationFieldState="Kansas";
+                    out.LocationFieldStateCode="KS";
+                </tag>
+            </item>
+
+            <!-- KENTUCKY -->
+            <item>
+                <one-of>
+                    <item> Lexington <tag> out.LocationField="Lexington"; </tag> </item>
+                    <item> Fayette <tag> out.LocationField="Fayette"; </tag> </item>
+                    <item> Louisville <tag> out.LocationField="Louisville"; </tag> </item>
+                    <item> Owensboro <tag> out.LocationField="Owensboro"; </tag> </item>
+                    <item> Bowling Green <tag> out.LocationField="Bowling Green"; </tag> </item>
+                    <item> Covington <tag> out.LocationField="Covington"; </tag> </item>
+                    <item> Hopkinsville <tag> out.LocationField="Hopkinsville"; </tag> </item>
+                    <item> Frankfort <tag> out.LocationField="Frankfort"; </tag> </item>
+                    <item> Henderson <tag> out.LocationField="Henderson"; </tag> </item>
+                    <item> Richmond <tag> out.LocationField="Richmond"; </tag> </item>
+                    <item> Jeffersontown <tag> out.LocationField="Jeffersontown"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Kentucky </item>
+                <tag>
+                    out.LocationFieldState="Kentucky";
+                    out.LocationFieldStateCode="KY";
+                </tag>
+            </item>
+
+            <!-- LOUISIANA -->
+            <item>
+                <one-of>
+                    <item> New Orleans <tag> out.LocationField="New Orleans"; </tag> </item>
+                    <item> Baton Rouge <tag> out.LocationField="Baton Rouge"; </tag> </item>
+                    <item> Shreveport <tag> out.LocationField="Shreveport"; </tag> </item>
+                    <item> Lafayette <tag> out.LocationField="Lafayette"; </tag> </item>
+                    <item> Lake Charles <tag> out.LocationField="Lake Charles"; </tag> </item>
+                    <item> Kenner <tag> out.LocationField="Kenner"; </tag> </item>
+                    <item> Bossier City <tag> out.LocationField="Bossier City"; </tag> </item>
+                    <item> Monroe <tag> out.LocationField="Monroe"; </tag> </item>
+                    <item> Alexandria <tag> out.LocationField="Alexandria"; </tag> </item>
+                    <item> New Iberia <tag> out.LocationField="New Iberia"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Louisiana </item>
+                <tag>
+                    out.LocationFieldState="Louisiana";
+                    out.LocationFieldStateCode="LA";
+                </tag>
+            </item>
+
+            <!-- MAINE -->
+            <item>
+                <one-of>
+                    <item> Portland <tag> out.LocationField="Portland"; </tag> </item>
+                    <item> Lewiston <tag> out.LocationField="Lewiston"; </tag> </item>
+                    <item> Bangor <tag> out.LocationField="Bangor"; </tag> </item>
+                    <item> South Portland <tag> out.LocationField="South Portland"; </tag> </item>
+                    <item> Auburn <tag> out.LocationField="Auburn"; </tag> </item>
+                    <item> Brunswick <tag> out.LocationField="Brunswick"; </tag> </item>
+                    <item> Biddeford <tag> out.LocationField="Biddeford"; </tag> </item>
+                    <item> Sanford <tag> out.LocationField="Sanford"; </tag> </item>
+                    <item> Augusta <tag> out.LocationField="Augusta"; </tag> </item>
+                    <item> Scarborough <tag> out.LocationField="Scarborough"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Maine </item>
+                <tag>
+                    out.LocationFieldState="Maine";
+                    out.LocationFieldStateCode="ME";
+                </tag>
+            </item>
+
+            <!-- MARYLAND -->
+            <item>
+                <one-of>
+                    <item> Baltimore <tag> out.LocationField="Baltimore"; </tag> </item>
+                    <item> Frederick <tag> out.LocationField="Frederick"; </tag> </item>
+                    <item> Gaithersburg <tag> out.LocationField="Gaithersburg"; </tag> </item>
+                    <item> Bowie <tag> out.LocationField="Bowie"; </tag> </item>
+                    <item> Rockville <tag> out.LocationField="Rockville"; </tag> </item>
+                    <item> Hagerstown <tag> out.LocationField="Hagerstown"; </tag> </item>
+                    <item> Annapolis <tag> out.LocationField="Annapolis"; </tag> </item>
+                    <item> College Park <tag> out.LocationField="College Park"; </tag> </item>
+                    <item> Salisbury <tag> out.LocationField="Salisbury"; </tag> </item>
+                    <item> Cumberland <tag> out.LocationField="Cumberland"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Maryland </item>
+                <tag>
+                    out.LocationFieldState="Maryland";
+                    out.LocationFieldStateCode="MD";
+                </tag>
+            </item>
+
+            <!-- MASSACHUSETTS -->
+            <item>
+                <one-of>
+                    <item> Boston <tag> out.LocationField="Boston"; </tag> </item>
+                    <item> Worcester <tag> out.LocationField="Worcester"; </tag> </item>
+                    <item> Springfield <tag> out.LocationField="Springfield"; </tag> </item>
+                    <item> Lowell <tag> out.LocationField="Lowell"; </tag> </item>
+                    <item> Cambridge <tag> out.LocationField="Cambridge"; </tag> </item>
+                    <item> Brockton <tag> out.LocationField="Brockton"; </tag> </item>
+                    <item> New Bedford <tag> out.LocationField="New Bedford"; </tag> </item>
+                    <item> Fall River <tag> out.LocationField="Fall River"; </tag> </item>
+                    <item> Lynn <tag> out.LocationField="Lynn"; </tag> </item>
+                    <item> Quincy <tag> out.LocationField="Quincy"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Massachusetts </item>
+                <tag>
+                    out.LocationFieldState="Massachusetts";
+                    out.LocationFieldStateCode="MA";
+                </tag>
+            </item>
+
+            <!-- MICHIGAN -->
+            <item>
+                <one-of>
+                    <item> Detroit <tag> out.LocationField="Detroit"; </tag> </item>
+                    <item> Grand Rapids <tag> out.LocationField="Grand Rapids"; </tag> </item>
+                    <item> Warren <tag> out.LocationField="Warren"; </tag> </item>
+                    <item> Flint <tag> out.LocationField="Flint"; </tag> </item>
+                    <item> Sterling Heights <tag> out.LocationField="Sterling Heights"; </tag> </item>
+                    <item> Lansing <tag> out.LocationField="Lansing"; </tag> </item>
+                    <item> Ann Arbor <tag> out.LocationField="Ann Arbor"; </tag> </item>
+                    <item> Livonia <tag> out.LocationField="Livonia"; </tag> </item>
+                    <item> Dearborn <tag> out.LocationField="Dearborn"; </tag> </item>
+                    <item> Westland <tag> out.LocationField="Westland"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Michigan </item>
+                <tag>
+                    out.LocationFieldState="Michigan";
+                    out.LocationFieldStateCode="MI";
+                </tag>
+            </item>
+
+            <!-- MINNESOTA -->
+            <item>
+                <one-of>
+                    <item> Minneapolis <tag> out.LocationField="Minneapolis"; </tag> </item>
+                    <item> Saint Paul <tag> out.LocationField="Saint Paul"; </tag> </item>
+                    <item> Duluth <tag> out.LocationField="Duluth"; </tag> </item>
+                    <item> Rochester <tag> out.LocationField="Rochester"; </tag> </item>
+                    <item> Bloomington <tag> out.LocationField="Bloomington"; </tag> </item>
+                    <item> Brooklyn Park <tag> out.LocationField="Brooklyn Park"; </tag> </item>
+                    <item> Plymouth <tag> out.LocationField="Plymouth"; </tag> </item>
+                    <item> Eagan <tag> out.LocationField="Eagan"; </tag> </item>
+                    <item> Coon Rapids <tag> out.LocationField="Coon Rapids"; </tag> </item>
+                    <item> Burnsville <tag> out.LocationField="Burnsville"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Minnesota </item>
+                <tag>
+                    out.LocationFieldState="Minnesota";
+                    out.LocationFieldStateCode="MN";
+                </tag>
+            </item>
+
+            <!-- MISSISSIPPI -->
+            <item>
+                <one-of>
+                    <item> Jackson <tag> out.LocationField="Jackson"; </tag> </item>
+                    <item> Gulfport <tag> out.LocationField="Gulfport"; </tag> </item>
+                    <item> Biloxi <tag> out.LocationField="Biloxi"; </tag> </item>
+                    <item> Hattiesburg <tag> out.LocationField="Hattiesburg"; </tag> </item>
+                    <item> Greenville <tag> out.LocationField="Greenville"; </tag> </item>
+                    <item> Meridian <tag> out.LocationField="Meridian"; </tag> </item>
+                    <item> Tupelo <tag> out.LocationField="Tupelo"; </tag> </item>
+                    <item> Southaven <tag> out.LocationField="Southaven"; </tag> </item>
+                    <item> Vicksburg <tag> out.LocationField="Vicksburg"; </tag> </item>
+                    <item> Pascagoula <tag> out.LocationField="Pascagoula"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Mississippi </item>
+                <tag>
+                    out.LocationFieldState="Mississippi";
+                    out.LocationFieldStateCode="MS";
+                </tag>
+            </item>
+
+            <!-- MISSOURI -->
+            <item>
+                <one-of>
+                    <item> Kansas City <tag> out.LocationField="Kansas City"; </tag> </item>
+                    <item> Saint Louis <tag> out.LocationField="Saint Louis"; </tag> </item>
+                    <item> Springfield <tag> out.LocationField="Springfield"; </tag> </item>
+                    <item> Independence <tag> out.LocationField="Independence"; </tag> </item>
+                    <item> Columbia <tag> out.LocationField="Columbia"; </tag> </item>
+                    <item> Saint Joseph <tag> out.LocationField="Saint Joseph"; </tag> </item>
+                    <item> Lees Summit <tag> out.LocationField="Lees Summit"; </tag> </item>
+                    <item> Saint Charles <tag> out.LocationField="Saint Charles"; </tag> </item>
+                    <item> Saint Peters <tag> out.LocationField="Saint Peters"; </tag> </item>
+                    <item> Florissant <tag> out.LocationField="Florissant"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Missouri </item>
+                <tag>
+                    out.LocationFieldState="Missouri";
+                    out.LocationFieldStateCode="MO";
+                </tag>
+            </item>
+
+            <!-- MONTANA -->
+            <item>
+                <one-of>
+                    <item> Billings <tag> out.LocationField="Billings"; </tag> </item>
+                    <item> Missoula <tag> out.LocationField="Missoula"; </tag> </item>
+                    <item> Great Falls <tag> out.LocationField="Great Falls"; </tag> </item>
+                    <item> Butte Silver Bow <tag> out.LocationField="Butte Silver Bow"; </tag> </item>
+                    <item> Bozeman <tag> out.LocationField="Bozeman"; </tag> </item>
+                    <item> Helena <tag> out.LocationField="Helena"; </tag> </item>
+                    <item> Kalispell <tag> out.LocationField="Kalispell"; </tag> </item>
+                    <item> Havre <tag> out.LocationField="Havre"; </tag> </item>
+                    <item> Anaconda Deer Lodge <item repeat="0-1"> County </item> <tag> out.LocationField="Anaconda Deer Lodge County"; </tag> </item>
+                    <item> Miles City <tag> out.LocationField="Miles City"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Montana </item>
+                <tag>
+                    out.LocationFieldState="Montana";
+                    out.LocationFieldStateCode="MT";
+                </tag>
+            </item>
+
+            <!-- NEBRASKA -->
+            <item>
+                <one-of>
+                    <item> Omaha <tag> out.LocationField="Omaha"; </tag> </item>
+                    <item> Lincoln <tag> out.LocationField="Lincoln"; </tag> </item>
+                    <item> Bellevue <tag> out.LocationField="Bellevue"; </tag> </item>
+                    <item> Grand Island <tag> out.LocationField="Grand Island"; </tag> </item>
+                    <item> Kearney <tag> out.LocationField="Kearney"; </tag> </item>
+                    <item> Fremont <tag> out.LocationField="Fremont"; </tag> </item>
+                    <item> Hastings <tag> out.LocationField="Hastings"; </tag> </item>
+                    <item> North Platte <tag> out.LocationField="North Platte"; </tag> </item>
+                    <item> Norfolk <tag> out.LocationField="Norfolk"; </tag> </item>
+                    <item> Columbus <tag> out.LocationField="Columbus"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Nebraska </item>
+                <tag>
+                    out.LocationFieldState="Nebraska";
+                    out.LocationFieldStateCode="NE";
+                </tag>
+            </item>
+
+            <!-- NEVADA -->
+            <item>
+                <one-of>
+                    <item> Las Vegas <tag> out.LocationField="Las Vegas"; </tag> </item>
+                    <item> Reno <tag> out.LocationField="Reno"; </tag> </item>
+                    <item> Henderson <tag> out.LocationField="Henderson"; </tag> </item>
+                    <item> North Las Vegas <tag> out.LocationField="North Las Vegas"; </tag> </item>
+                    <item> Sparks <tag> out.LocationField="Sparks"; </tag> </item>
+                    <item> Carson City <tag> out.LocationField="Carson City"; </tag> </item>
+                    <item> Elko <tag> out.LocationField="Elko"; </tag> </item>
+                    <item> Boulder City <tag> out.LocationField="Boulder City"; </tag> </item>
+                    <item> Mesquite <tag> out.LocationField="Mesquite"; </tag> </item>
+                    <item> Fallon <tag> out.LocationField="Fallon"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Nevada </item>
+                <tag>
+                    out.LocationFieldState="Nevada";
+                    out.LocationFieldStateCode="NV";
+                </tag>
+            </item>
+
+            <!-- NEW HAMPSHIRE -->
+            <item>
+                <one-of>
+                    <item> Manchester <tag> out.LocationField="Manchester"; </tag> </item>
+                    <item> Nashua <tag> out.LocationField="Nashua"; </tag> </item>
+                    <item> Concord <tag> out.LocationField="Concord"; </tag> </item>
+                    <item> Rochester <tag> out.LocationField="Rochester"; </tag> </item>
+                    <item> Salem <tag> out.LocationField="Salem"; </tag> </item>
+                    <item> Dover <tag> out.LocationField="Dover"; </tag> </item>
+                    <item> Merrimack <tag> out.LocationField="Merrimack"; </tag> </item>
+                    <item> Londonderry <tag> out.LocationField="Londonderry"; </tag> </item>
+                    <item> Derry <tag> out.LocationField="Derry"; </tag> </item>
+                    <item> Hudson <tag> out.LocationField="Hudson"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> New Hampshire </item>
+                <tag>
+                    out.LocationFieldState="New Hampshire";
+                    out.LocationFieldStateCode="NH";
+                </tag>
+            </item>
+
+            <!-- NEW JERSEY -->
+            <item>
+                <one-of>
+                    <item> Newark <tag> out.LocationField="Newark"; </tag> </item>
+                    <item> Jersey City <tag> out.LocationField="Jersey City"; </tag> </item>
+                    <item> Paterson <tag> out.LocationField="Paterson"; </tag> </item>
+                    <item> Elizabeth <tag> out.LocationField="Elizabeth"; </tag> </item>
+                    <item> Edison <tag> out.LocationField="Edison"; </tag> </item>
+                    <item> Woodbridge <tag> out.LocationField="Woodbridge"; </tag> </item>
+                    <item> Dover <tag> out.LocationField="Dover"; </tag> </item>
+                    <item> Hamilton <tag> out.LocationField="Hamilton"; </tag> </item>
+                    <item> Trenton <tag> out.LocationField="Trenton"; </tag> </item>
+                    <item> Camden <tag> out.LocationField="Camden"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> New Jersey </item>
+                <tag>
+                    out.LocationFieldState="New Jersey";
+                    out.LocationFieldStateCode="NJ";
+                </tag>
+            </item>
+
+            <!-- NEW MEXICO -->
+            <item>
+                <one-of>
+                    <item> Albuquerque <tag> out.LocationField="Albuquerque"; </tag> </item>
+                    <item> Las Cruces <tag> out.LocationField="Las Cruces"; </tag> </item>
+                    <item> Santa Fe <tag> out.LocationField="Santa Fe"; </tag> </item>
+                    <item> Rio Rancho <tag> out.LocationField="Rio Rancho"; </tag> </item>
+                    <item> Roswell <tag> out.LocationField="Roswell"; </tag> </item>
+                    <item> Farmington <tag> out.LocationField="Farmington"; </tag> </item>
+                    <item> Alamogordo <tag> out.LocationField="Alamogordo"; </tag> </item>
+                    <item> Clovis <tag> out.LocationField="Clovis"; </tag> </item>
+                    <item> Hobbs <tag> out.LocationField="Hobbs"; </tag> </item>
+                    <item> Carlsbad <tag> out.LocationField="Carlsbad"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> New Mexico </item>
+                <tag>
+                    out.LocationFieldState="New Mexico";
+                    out.LocationFieldStateCode="NM";
+                </tag>
+            </item>
+
+            <!-- NEW YORK -->
+            <item>
+                <one-of>
+                    <item> New York <item repeat="0-1"> City </item> <tag> out.LocationField="New York City"; </tag> </item>
+                    <item> Buffalo <tag> out.LocationField="Buffalo"; </tag> </item>
+                    <item> Rochester <tag> out.LocationField="Rochester"; </tag> </item>
+                    <item> Yonkers <tag> out.LocationField="Yonkers"; </tag> </item>
+                    <item> Syracuse <tag> out.LocationField="Syracuse"; </tag> </item>
+                    <item> Albany <tag> out.LocationField="Albany"; </tag> </item>
+                    <item> New Rochelle <tag> out.LocationField="New Rochelle"; </tag> </item>
+                    <item> Mount Vernon <tag> out.LocationField="Mount Vernon"; </tag> </item>
+                    <item> Schenectady <tag> out.LocationField="Schenectady"; </tag> </item>
+                    <item> Utica <tag> out.LocationField="Utica"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> New York </item>
+                <tag>
+                    out.LocationFieldState="New York";
+                    out.LocationFieldStateCode="NY";
+                </tag>
+            </item>
+
+            <!-- NORTH CAROLINA -->
+            <item>
+                <one-of>
+                    <item> Charlotte <tag> out.LocationField="Charlotte"; </tag> </item>
+                    <item> Raleigh <tag> out.LocationField="Raleigh"; </tag> </item>
+                    <item> Greensboro <tag> out.LocationField="Greensboro"; </tag> </item>
+                    <item> Durham <tag> out.LocationField="Durham"; </tag> </item>
+                    <item> Winston Salem <tag> out.LocationField="Winston Salem"; </tag> </item>
+                    <item> Fayetteville <tag> out.LocationField="Fayetteville"; </tag> </item>
+                    <item> Cary <tag> out.LocationField="Cary"; </tag> </item>
+                    <item> High Point <tag> out.LocationField="High Point"; </tag> </item>
+                    <item> Wilmington <tag> out.LocationField="Wilmington"; </tag> </item>
+                    <item> Asheville <tag> out.LocationField="Asheville"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> North Carolina </item>
+                <tag>
+                    out.LocationFieldState="North Carolina";
+                    out.LocationFieldStateCode="NC";
+                </tag>
+            </item>
+
+            <!-- NORTH DAKOTA -->
+            <item>
+                <one-of>
+                    <item> Fargo <tag> out.LocationField="Fargo"; </tag> </item>
+                    <item> Bismarck <tag> out.LocationField="Bismarck"; </tag> </item>
+                    <item> Grand Forks <tag> out.LocationField="Grand Forks"; </tag> </item>
+                    <item> Minot <tag> out.LocationField="Minot"; </tag> </item>
+                    <item> Mandan <tag> out.LocationField="Mandan"; </tag> </item>
+                    <item> Dickinson <tag> out.LocationField="Dickinson"; </tag> </item>
+                    <item> Jamestown <tag> out.LocationField="Jamestown"; </tag> </item>
+                    <item> West Fargo <tag> out.LocationField="West Fargo"; </tag> </item>
+                    <item> Williston <tag> out.LocationField="Williston"; </tag> </item>
+                    <item> Wahpeton <tag> out.LocationField="Wahpeton"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> North Dakota </item>
+                <tag>
+                    out.LocationFieldState="North Dakota";
+                    out.LocationFieldStateCode="ND";
+                </tag>
+            </item>
+
+            <!-- OHIO -->
+            <item>
+                <one-of>
+                    <item> Columbus <tag> out.LocationField="Columbus"; </tag> </item>
+                    <item> Cleveland <tag> out.LocationField="Cleveland"; </tag> </item>
+                    <item> Cincinnati <tag> out.LocationField="Cincinnati"; </tag> </item>
+                    <item> Toledo <tag> out.LocationField="Toledo"; </tag> </item>
+                    <item> Akron <tag> out.LocationField="Akron"; </tag> </item>
+                    <item> Dayton <tag> out.LocationField="Dayton"; </tag> </item>
+                    <item> Parma <tag> out.LocationField="Parma"; </tag> </item>
+                    <item> Youngstown <tag> out.LocationField="Youngstown"; </tag> </item>
+                    <item> Canton <tag> out.LocationField="Canton"; </tag> </item>
+                    <item> Lorain <tag> out.LocationField="Lorain"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Ohio </item>
+                <tag>
+                    out.LocationFieldState="Ohio";
+                    out.LocationFieldStateCode="OH";
+                </tag>
+            </item>
+
+            <!-- OKLAHOMA -->
+            <item>
+                <one-of>
+                    <item> Oklahoma City <tag> out.LocationField="Oklahoma City"; </tag> </item>
+                    <item> Tulsa <tag> out.LocationField="Tulsa"; </tag> </item>
+                    <item> Norman <tag> out.LocationField="Norman"; </tag> </item>
+                    <item> Lawton <tag> out.LocationField="Lawton"; </tag> </item>
+                    <item> Broken Arrow <tag> out.LocationField="Broken Arrow"; </tag> </item>
+                    <item> Edmond <tag> out.LocationField="Edmond"; </tag> </item>
+                    <item> Midwest City <tag> out.LocationField="Midwest City"; </tag> </item>
+                    <item> Enid <tag> out.LocationField="Enid"; </tag> </item>
+                    <item> Moore <tag> out.LocationField="Moore"; </tag> </item>
+                    <item> Stillwater <tag> out.LocationField="Stillwater"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Oklahoma </item>
+                <tag>
+                    out.LocationFieldState="Oklahoma";
+                    out.LocationFieldStateCode="OK";
+                </tag>
+            </item>
+
+            <!-- OREGON -->
+            <item>
+                <one-of>
+                    <item> Portland <tag> out.LocationField="Portland"; </tag> </item>
+                    <item> Eugene <tag> out.LocationField="Eugene"; </tag> </item>
+                    <item> Salem <tag> out.LocationField="Salem"; </tag> </item>
+                    <item> Gresham <tag> out.LocationField="Gresham"; </tag> </item>
+                    <item> Beaverton <tag> out.LocationField="Beaverton"; </tag> </item>
+                    <item> Hillsboro <tag> out.LocationField="Hillsboro"; </tag> </item>
+                    <item> Medford <tag> out.LocationField="Medford"; </tag> </item>
+                    <item> Springfield <tag> out.LocationField="Springfield"; </tag> </item>
+                    <item> Bend <tag> out.LocationField="Bend"; </tag> </item>
+                    <item> Corvallis <tag> out.LocationField="Corvallis"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Oregon </item>
+                <tag>
+                    out.LocationFieldState="Oregon";
+                    out.LocationFieldStateCode="OR";
+                </tag>
+            </item>
+
+            <!-- PENNSYLVANIA -->
+            <item>
+                <one-of>
+                    <item> Philadelphia <tag> out.LocationField="Philadelphia"; </tag> </item>
+                    <item> Pittsburgh <tag> out.LocationField="Pittsburgh"; </tag> </item>
+                    <item> Allentown <tag> out.LocationField="Allentown"; </tag> </item>
+                    <item> Erie <tag> out.LocationField="Erie"; </tag> </item>
+                    <item> Upper Darby <tag> out.LocationField="Upper Darby"; </tag> </item>
+                    <item> Reading <tag> out.LocationField="Reading"; </tag> </item>
+                    <item> Scranton <tag> out.LocationField="Scranton"; </tag> </item>
+                    <item> Bethlehem <tag> out.LocationField="Bethlehem"; </tag> </item>
+                    <item> Lower Merion <tag> out.LocationField="Lower Merion"; </tag> </item>
+                    <item> Bensalem <tag> out.LocationField="Bensalem"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Pennsylvania </item>
+                <tag>
+                    out.LocationFieldState="Pennsylvania";
+                    out.LocationFieldStateCode="PA";
+                </tag>
+            </item>
+
+            <!-- RHODE ISLAND -->
+            <item>
+                <one-of>
+                    <item> Providence <tag> out.LocationField="Providence"; </tag> </item>
+                    <item> Warwick <tag> out.LocationField="Warwick"; </tag> </item>
+                    <item> Cranston <tag> out.LocationField="Cranston"; </tag> </item>
+                    <item> Pawtucket <tag> out.LocationField="Pawtucket"; </tag> </item>
+                    <item> East Providence <tag> out.LocationField="East Providence"; </tag> </item>
+                    <item> Woonsocket <tag> out.LocationField="Woonsocket"; </tag> </item>
+                    <item> Coventry <tag> out.LocationField="Coventry"; </tag> </item>
+                    <item> North Providence <tag> out.LocationField="North Providence"; </tag> </item>
+                    <item> Cumberland <tag> out.LocationField="Cumberland"; </tag> </item>
+                    <item> West Warwick <tag> out.LocationField="West Warwick"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Rhode Island </item>
+                <tag>
+                    out.LocationFieldState="Rhode Island";
+                    out.LocationFieldStateCode="RI";
+                </tag>
+            </item>
+
+            <!-- SOUTH CAROLINA -->
+            <item>
+                <one-of>
+                    <item> Columbia <tag> out.LocationField="Columbia"; </tag> </item>
+                    <item> Charleston <tag> out.LocationField="Charleston"; </tag> </item>
+                    <item> North Charleston <tag> out.LocationField="North Charleston"; </tag> </item>
+                    <item> Greenville <tag> out.LocationField="Greenville"; </tag> </item>
+                    <item> Rock Hill <tag> out.LocationField="Rock Hill"; </tag> </item>
+                    <item> Mount Pleasant <tag> out.LocationField="Mount Pleasant"; </tag> </item>
+                    <item> Spartanburg <tag> out.LocationField="Spartanburg"; </tag> </item>
+                    <item> Sumter <tag> out.LocationField="Sumter"; </tag> </item>
+                    <item> Hilton Head Island <tag> out.LocationField="Hilton Head Island"; </tag> </item>
+                    <item> Florence <tag> out.LocationField="Florence"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> South Carolina </item>
+                <tag>
+                    out.LocationFieldState="South Carolina";
+                    out.LocationFieldStateCode="SC";
+                </tag>
+            </item>
+
+            <!-- SOUTH DAKOTA -->
+            <item>
+                <one-of>
+                    <item> Sioux Falls <tag> out.LocationField="Sioux Falls"; </tag> </item>
+                    <item> Rapid City <tag> out.LocationField="Rapid City"; </tag> </item>
+                    <item> Aberdeen <tag> out.LocationField="Aberdeen"; </tag> </item>
+                    <item> Watertown <tag> out.LocationField="Watertown"; </tag> </item>
+                    <item> Brookings <tag> out.LocationField="Brookings"; </tag> </item>
+                    <item> Mitchell <tag> out.LocationField="Mitchell"; </tag> </item>
+                    <item> Pierre <tag> out.LocationField="Pierre"; </tag> </item>
+                    <item> Yankton <tag> out.LocationField="Yankton"; </tag> </item>
+                    <item> Huron <tag> out.LocationField="Huron"; </tag> </item>
+                    <item> Vermillion <tag> out.LocationField="Vermillion"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> South Dakota </item>
+                <tag>
+                    out.LocationFieldState="South Dakota";
+                    out.LocationFieldStateCode="SD";
+                </tag>
+            </item>
+
+            <!-- TENNESSEE -->
+            <item>
+                <one-of>
+                    <item> Memphis <tag> out.LocationField="Memphis"; </tag> </item>
+                    <item> Nashville <tag> out.LocationField="Nashville"; </tag> </item>
+                    <item> Knoxville <tag> out.LocationField="Knoxville"; </tag> </item>
+                    <item> Chattanooga <tag> out.LocationField="Chattanooga"; </tag> </item>
+                    <item> Clarksville <tag> out.LocationField="Clarksville"; </tag> </item>
+                    <item> Murfreesboro <tag> out.LocationField="Murfreesboro"; </tag> </item>
+                    <item> Jackson <tag> out.LocationField="Jackson"; </tag> </item>
+                    <item> Johnson City <tag> out.LocationField="Johnson City"; </tag> </item>
+                    <item> Kingsport <tag> out.LocationField="Kingsport"; </tag> </item>
+                    <item> Franklin <tag> out.LocationField="Franklin"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Tennessee </item>
+                <tag>
+                    out.LocationFieldState="Tennessee";
+                    out.LocationFieldStateCode="TN";
+                </tag>
+            </item>
+
+            <!-- TEXAS -->
+            <item>
+                <one-of>
+                    <item> Houston <tag> out.LocationField="Houston"; </tag> </item>
+                    <item> Dallas <tag> out.LocationField="Dallas"; </tag> </item>
+                    <item> San Antonio <tag> out.LocationField="San Antonio"; </tag> </item>
+                    <item> Austin <tag> out.LocationField="Austin"; </tag> </item>
+                    <item> El Paso <tag> out.LocationField="El Paso"; </tag> </item>
+                    <item> Fort Worth <tag> out.LocationField="Fort Worth"; </tag> </item>
+                    <item> Arlington <tag> out.LocationField="Arlington"; </tag> </item>
+                    <item> Corpus Christi <tag> out.LocationField="Corpus Christi"; </tag> </item>
+                    <item> Plano <tag> out.LocationField="Plano"; </tag> </item>
+                    <item> Garland <tag> out.LocationField="Garland"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Texas </item>
+                <tag>
+                    out.LocationFieldState="Texas";
+                    out.LocationFieldStateCode="TX";
+                </tag>
+            </item>
+
+            <!-- UTAH -->
+            <item>
+                <one-of>
+                    <item> Salt Lake City <tag> out.LocationField="Salt Lake City"; </tag> </item>
+                    <item> West Valley City <tag> out.LocationField="West Valley City"; </tag> </item>
+                    <item> Provo <tag> out.LocationField="Provo"; </tag> </item>
+                    <item> Sandy <tag> out.LocationField="Sandy"; </tag> </item>
+                    <item> Orem <tag> out.LocationField="Orem"; </tag> </item>
+                    <item> Ogden <tag> out.LocationField="Ogden"; </tag> </item>
+                    <item> West Jordan <tag> out.LocationField="West Jordan"; </tag> </item>
+                    <item> Layton <tag> out.LocationField="Layton"; </tag> </item>
+                    <item> Taylorsville <tag> out.LocationField="Taylorsville"; </tag> </item>
+                    <item> Saint George <tag> out.LocationField="St George"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Utah </item>
+                <tag>
+                    out.LocationFieldState="Utah";
+                    out.LocationFieldStateCode="UT";
+                </tag>
+            </item>
+
+            <!-- VERMONT -->
+            <item>
+                <one-of>
+                    <item> Burlington <tag> out.LocationField="Burlington"; </tag> </item>
+                    <item> Essex <tag> out.LocationField="Essex"; </tag> </item>
+                    <item> Rutland <tag> out.LocationField="Rutland"; </tag> </item>
+                    <item> Colchester <tag> out.LocationField="Colchester"; </tag> </item>
+                    <item> South Burlington <tag> out.LocationField="South Burlington"; </tag> </item>
+                    <item> Bennington <tag> out.LocationField="Bennington"; </tag> </item>
+                    <item> Brattleboro <tag> out.LocationField="Brattleboro"; </tag> </item>
+                    <item> Hartford <tag> out.LocationField="Hartford"; </tag> </item>
+                    <item> Milton <tag> out.LocationField="Milton"; </tag> </item>
+                    <item> Barre <tag> out.LocationField="Barre"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Vermont </item>
+                <tag>
+                    out.LocationFieldState="Vermont";
+                    out.LocationFieldStateCode="VT";
+                </tag>
+            </item>
+
+            <!-- VIRGINIA -->
+            <item>
+                <one-of>
+                    <item> Virginia Beach <tag> out.LocationField="Virginia Beach"; </tag> </item>
+                    <item> Norfolk <tag> out.LocationField="Norfolk"; </tag> </item>
+                    <item> Chesapeake <tag> out.LocationField="Chesapeake"; </tag> </item>
+                    <item> Richmond <tag> out.LocationField="Richmond"; </tag> </item>
+                    <item> Newport News <tag> out.LocationField="Newport News"; </tag> </item>
+                    <item> Hampton <tag> out.LocationField="Hampton"; </tag> </item>
+                    <item> Alexandria <tag> out.LocationField="Alexandria"; </tag> </item>
+                    <item> Portsmouth <tag> out.LocationField="Portsmouth"; </tag> </item>
+                    <item> Roanoke <tag> out.LocationField="Roanoke"; </tag> </item>
+                    <item> Lynchburg <tag> out.LocationField="Lynchburg"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Virginia </item>
+                <tag>
+                    out.LocationFieldState="Virginia";
+                    out.LocationFieldStateCode="VA";
+                </tag>
+            </item>
+
+            <!-- WASHINGTON -->
+            <item>
+                <one-of>
+                    <item> Seattle <tag> out.LocationField="Seattle"; </tag> </item>
+                    <item> Spokane <tag> out.LocationField="Spokane"; </tag> </item>
+                    <item> Tacoma <tag> out.LocationField="Tacoma"; </tag> </item>
+                    <item> Vancouver <tag> out.LocationField="Vancouver"; </tag> </item>
+                    <item> Bellevue <tag> out.LocationField="Bellevue"; </tag> </item>
+                    <item> Everett <tag> out.LocationField="Everett"; </tag> </item>
+                    <item> Federal Way <tag> out.LocationField="Federal Way"; </tag> </item>
+                    <item> Kent <tag> out.LocationField="Kent"; </tag> </item>
+                    <item> Yakima <tag> out.LocationField="Yakima"; </tag> </item>
+                    <item> Bellingham <tag> out.LocationField="Bellingham"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Washington </item>
+                <tag>
+                    out.LocationFieldState="Washington";
+                    out.LocationFieldStateCode="WA";
+                </tag>
+            </item>
+
+            <!-- WEST VIRGINIA -->
+            <item>
+                <one-of>
+                    <item> Charleston <tag> out.LocationField="Charleston"; </tag> </item>
+                    <item> Huntington <tag> out.LocationField="Huntington"; </tag> </item>
+                    <item> Parkersburg <tag> out.LocationField="Parkersburg"; </tag> </item>
+                    <item> Wheeling <tag> out.LocationField="Wheeling"; </tag> </item>
+                    <item> Morgantown <tag> out.LocationField="Morgantown"; </tag> </item>
+                    <item> Weirton <tag> out.LocationField="Weirton"; </tag> </item>
+                    <item> Fairmont <tag> out.LocationField="Fairmont"; </tag> </item>
+                    <item> Beckley <tag> out.LocationField="Beckley"; </tag> </item>
+                    <item> Clarksburg <tag> out.LocationField="Clarksburg"; </tag> </item>
+                    <item> Martinsburg <tag> out.LocationField="Martinsburg"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> West Virginia </item>
+                <tag>
+                    out.LocationFieldState="West Virginia";
+                    out.LocationFieldStateCode="WV";
+                </tag>
+            </item>
+
+            <!-- WISCONSIN -->
+            <item>
+                <one-of>
+                    <item> Milwaukee <tag> out.LocationField="Milwaukee"; </tag> </item>
+                    <item> Madison <tag> out.LocationField="Madison"; </tag> </item>
+                    <item> Green Bay <tag> out.LocationField="Green Bay"; </tag> </item>
+                    <item> Kenosha <tag> out.LocationField="Kenosha"; </tag> </item>
+                    <item> Racine <tag> out.LocationField="Racine"; </tag> </item>
+                    <item> Appleton <tag> out.LocationField="Appleton"; </tag> </item>
+                    <item> Waukesha <tag> out.LocationField="Waukesha"; </tag> </item>
+                    <item> Oshkosh <tag> out.LocationField="Oshkosh"; </tag> </item>
+                    <item> Eau Claire <tag> out.LocationField="Eau Claire"; </tag> </item>
+                    <item> West Allis <tag> out.LocationField="West Allis"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Wisconsin </item>
+                <tag>
+                    out.LocationFieldState="Wisconsin";
+                    out.LocationFieldStateCode="WI";
+                </tag>
+            </item>
+
+            <!-- WYOMING -->
+            <item>
+                <one-of>
+                    <item> Cheyenne <tag> out.LocationField="Cheyenne"; </tag> </item>
+                    <item> Casper <tag> out.LocationField="Casper"; </tag> </item>
+                    <item> Laramie <tag> out.LocationField="Laramie"; </tag> </item>
+                    <item> Gillette <tag> out.LocationField="Gillette"; </tag> </item>
+                    <item> Rock Springs <tag> out.LocationField="Rock Springs"; </tag> </item>
+                    <item> Sheridan <tag> out.LocationField="Sheridan"; </tag> </item>
+                    <item> Green River <tag> out.LocationField="Green River"; </tag> </item>
+                    <item> Evanston <tag> out.LocationField="Evanston"; </tag> </item>
+                    <item> Riverton <tag> out.LocationField="Riverton"; </tag> </item>
+                    <item> Cody <tag> out.LocationField="Cody"; </tag> </item>
+                </one-of>
+                <item repeat="0-1"> Wyoming </item>
+                <tag>
+                    out.LocationFieldState="Wyoming";
+                    out.LocationFieldStateCode="WY";
                 </tag>
             </item>
         </one-of>
