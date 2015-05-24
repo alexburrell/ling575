@@ -2,27 +2,57 @@
 
 <grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US">
     <rule id="Greeting" scope="public">
-        <item repeat="1-3">
-            <item repeat="0-1">
-                <ruleref uri="#RequestType" />
-                <tag>
-                    out.RequestTypeField = rules.RequestType.RequestTypeField;
-                </tag>
-            </item>
-            <item repeat="0-1">
-                <ruleref uri="business_grammar.xml#Business" />
-                <tag>
-                    out.BusinessField = rules.Business.BusinessField;
-                </tag>
-            </item>
-            <item repeat="0-1">
-                <ruleref uri="location_grammar.xml#Location" />
-                <tag>
-                    out.LocationField = rules.Location.LocationField;
-                </tag>
-            </item>
+    	<!-- Prefix e.g. "Give me the" -->
+    	<item repeat="0-1">
+    		<ruleref uri="#Prefix" />
+    	</item>
+    	
+    	<!-- Request type e.g. "address" -->
+        <item>
+            <ruleref uri="#RequestType" />
+            <tag>
+                out.RequestTypeField = rules.RequestType.RequestTypeField;
+            </tag>
         </item>
-    </rule>
+        
+        <!-- Infix e.g. "of" -->
+        <item repeat="0-1">
+        	<one-of>
+        		<item>for</item>
+        		<item>of</item>
+        	</one-of>
+        </item>
+        
+        <!-- Business e.g. "Safeway" -->
+        <item>
+        	<ruleref uri="business_grammar.xml#Business" />
+            <tag>
+            	out.BusinessField = rules.Business.BusinessField;
+            </tag>
+        </item>
+        
+        <!-- Infix e.g. "in" -->
+        <item repeat="0-1">
+        	<one-of>
+        		<item>in</item>
+        	</one-of>
+        </item>
+        
+        <!-- Location e.g. "San Francisco" -->
+        <item repeat="0-1">
+            <ruleref uri="location_grammar.xml#Location" />
+            <tag>
+                out.LocationField = rules.Location.LocationField;
+            </tag>
+        </item>
+        
+        <!-- Postfix e.g. "please" -->
+        <item repeat="0-1">
+        	<one-of>
+        		<item>please</item>
+        	</one-of>
+        </item>
+	</rule>
 
     <rule id="RequestType" scope="public">
         <one-of>
@@ -45,5 +75,13 @@
                 </tag>
             </item>
         </one-of>
+    </rule>
+    
+    <rule id="Prefix" scope="public">
+    	<one-of>
+    		<item>Give me the</item>
+    		<item>Please give me the</item>
+    		<item>What is the</item>
+    	</one-of>
     </rule>
 </grammar>
