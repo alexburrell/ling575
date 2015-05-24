@@ -28,10 +28,22 @@
 
             <data name="SearchResults" srcexpr="assembleUrl(application.location, application.business)" />
             <assign name="SearchResults" expr="SearchResults.documentElement" />
-            <prompt>
-                <value expr="parseResults(SearchResults)" />
-            </prompt>
+            <assign name="application.result" expr="parseResults(SearchResults)" />
+			<goto next="#ProvideResults" />
         </block>
+    </form>
+    
+    <form id="ProvideResults">
+    	<field>
+    		<prompt>
+	    		Providing <value expr="application.request_type"/> for <value expr="application.business"/>
+    	    	in <value expr="application.location"/>. <break strength="weak" />
+        		<value expr="application.result" />. <break strength="weak" />
+        	</prompt>
+    	</field>
+    	
+    	<filled>
+    	</filled>
     </form>
 
 </vxml>

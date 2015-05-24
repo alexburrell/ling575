@@ -4,7 +4,7 @@
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml" xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
     <meta name="maintainer" content="burrelal@gmail.com" />
 
-	<link next="hello.xml#hello">
+	<link next="hello.xml#AskInfo">
 		<grammar xml:lang="en-us" type="application/grammar-xml" root="goBack">
 			<rule id="goBack" scope="public">
 				<one-of>
@@ -33,6 +33,15 @@
 			</rule>
 		</grammar>
 	</link>
+	
+	<nomatch>
+		Excuse me?
+	</nomatch>
+	
+	<nomatch count="2">
+		Could you please repeat?
+		<reprompt />
+	</nomatch>
 
     <var name="request_type" expr="1" />
     <var name="business" expr="2" />
