@@ -4,6 +4,36 @@
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml" xmlns:voxeo="http://community.voxeo.com/xmlns/vxml">
     <meta name="maintainer" content="burrelal@gmail.com" />
 
+	<link next="hello.xml#hello">
+		<grammar xml:lang="en-us" type="application/grammar-xml" root="goBack">
+			<rule id="goBack" scope="public">
+				<one-of>
+					<!-- This matches "main" and "main menu" -->
+					<item>
+						<item> Main </item>
+						<item repeat="0-1"> menu </item>
+					</item>
+					<item> Back </item>
+				</one-of>
+			</rule>
+		</grammar>
+	</link>
+	
+	<!-- The user can end the conversation at any time -->
+	<link next="hello.xml#Exit">
+		<grammar xml:lang="en-us" type="application/xml-grammar" root="exit">
+			<rule id="exit" scope="public">
+				<one-of>
+					<item> Exit </item>
+					<item>
+						<item repeat="0-1"> Good </item>
+						<item> bye </item>
+					</item>
+				</one-of>
+			</rule>
+		</grammar>
+	</link>
+
     <var name="request_type" expr="1" />
     <var name="business" expr="2" />
     <var name="location" expr="3" />
