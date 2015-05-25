@@ -34,16 +34,22 @@
         }
 
         function parseResults(results) {
+            var today = new Date(),
+                today = today.getDay() - 1;
+
+            if (today < 0) today = 6;
+
             var establishment = results.getElementsByTagName("result").item(0),
                 address = establishment.getElementsByTagName("formatted_address").item(0).firstChild.data,
-                phone = establishment.getElementsByTagName("formatted_phone_number").item(0).firstChild.data;
+                phone = establishment.getElementsByTagName("formatted_phone_number").item(0).firstChild.data,
+                hours = establishment.getElementsByTagName("weekday_text").item(today).firstChild.data;
 
             address = address.replace(', United States', '')
 
             return results = {
                 'address': address,
                 'phone': phone,
-                'hours': false
+                'hours': today
             }
         }
 
@@ -54,12 +60,6 @@
 
     <form id="GetDetails">
         <block>
-            <!-- <prompt>
-                <value expr="application.request_type" />
-                <value expr="application.business" />
-                <value expr="application.location" />
-            </prompt> -->
-
             <!-- Search using the location and business params, and get the ID -->
             <data name="SearchResults" srcexpr="assembleSearchUrl(application.location, application.business)" />
             <assign name="SearchResults" expr="SearchResults.documentElement" />
