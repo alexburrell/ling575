@@ -6,15 +6,32 @@
 
     <script><![CDATA[
         var apiUrl = "https://maps.googleapis.com/maps/api/place/textsearch/xml?query={query}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag";
+		var idUrl  = "https://maps.googleapis.com/maps/api/place/details/xml?placeid={query}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag";
 
         function assembleUrl(location, business) {
             location = location.replace(" ", "+");
             business = business.replace(" ", "+");
             return apiUrl.replace("{query}", location+"+"+business);
         }
+        
+        function assembleIdUrl (place_id) {
+        	return idUrl.replace("{query}", place_id);
+        }
+        
+        function getPlaceId (document) {
+        	return document.getElementsByTagName("place_id").item(0).textContent;
+        }
 
         function parseResults(results) {
-            return results.getElementsByTagName("result").length;
+            var firstResult = results.getElementsByTagName("result").item(0);
+			var name = firstResult.getElementsByTagName("name").item(0).textContent;
+        	if (application.request_type == "address")
+        		return firstResult.getElementsByTagName("formatted_address").item(0).textContent;
+			if (application.request_type == "phone")
+        		return firstResult.getElementsByTagName("formatted_phone_number").item(0).textContent;
+			if (application.request_type == "hours")
+        		return firstResult.getElementsByTagName("weekday_text").item(0).textContent;
+			return name;
         }
     ]]></script>
 
@@ -26,9 +43,14 @@
                 <value expr="application.location" />
             </prompt> -->
 
+			<!-- Get place_id of first result provided by place/textsearch -->
             <data name="SearchResults" srcexpr="assembleUrl(application.location, application.business)" />
-            <assign name="SearchResults" expr="SearchResults.documentElement" />
-            <assign name="application.result" expr="parseResults(SearchResults)" />
+            <assign name="place_id" expr="getPlaceId(SearchResults)" />
+            
+            <!-- Get information requested by the user as provided by place/details -->
+            <data name="detailedDocument" srcexpr="assembleIdUrl(place_id)" />
+            <assign name="application.result" expr="parseResults(detailedDocument)" />
+            
 			<goto next="#ProvideResults" />
         </block>
     </form>
