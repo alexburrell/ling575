@@ -25,6 +25,14 @@
             return id;
         }
 
+        function assembleIdUrl (place_id) {
+        	return idUrl.replace("{query}", place_id);
+        }
+
+        function getPlaceId (document) {
+        	return document.getElementsByTagName("place_id").item(0).textContent;
+        }
+
         function parseResults(results) {
             var establishment = results.getElementsByTagName("result").item(0),
                 address = establishment.getElementsByTagName("formatted_address").item(0).firstChild.data,
