@@ -18,7 +18,7 @@
 			</rule>
 		</grammar>
 	</link>
-	
+
 	<!-- The user can end the conversation at any time -->
 	<link next="hello.xml#Exit">
 		<grammar xml:lang="en-us" type="application/xml-grammar" root="exit">
@@ -33,11 +33,11 @@
 			</rule>
 		</grammar>
 	</link>
-	
+
 	<nomatch>
 		Excuse me?
 	</nomatch>
-	
+
 	<nomatch count="2">
 		Could you please repeat?
 		<reprompt />
@@ -46,4 +46,5 @@
     <var name="request_type" expr="1" />
     <var name="business" expr="2" />
     <var name="location" expr="3" />
+    <var name="timezone" expr="4" />
 </vxml>

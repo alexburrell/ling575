@@ -21,6 +21,7 @@
                 <tag>
                     out.LocationFieldState="Alabama";
                     out.LocationFieldStateCode="AL";
+                    out.LocationFieldTimezone=-5;
                 </tag>
             </item>
 
@@ -42,6 +43,7 @@
                 <tag>
                     out.LocationFieldState="Alaska";
                     out.LocationFieldStateCode="AK";
+                    out.LocationFieldTimezone=-9;
                 </tag>
             </item>
 
@@ -63,6 +65,7 @@
                 <tag>
                     out.LocationFieldState="Arizona";
                     out.LocationFieldStateCode="AZ";
+                    out.LocationFieldTimezone=-7;
                 </tag>
             </item>
 
@@ -84,6 +87,7 @@
                 <tag>
                     out.LocationFieldState="Arkansas";
                     out.LocationFieldStateCode="AR";
+                    out.LocationFieldTimezone=-6;
                 </tag>
             </item>
 
@@ -106,6 +110,7 @@
                 <tag>
                     out.LocationFieldState="California";
                     out.LocationFieldStateCode="CA";
+                    out.LocationFieldTimezone=-8;
                 </tag>
             </item>
 
@@ -127,6 +132,7 @@
                 <tag>
                     out.LocationFieldState="Colorado";
                     out.LocationFieldStateCode="CO";
+                    out.LocationFieldTimezone=-7;
                 </tag>
             </item>
 
@@ -148,6 +154,7 @@
                 <tag>
                     out.LocationFieldState="Connecticut";
                     out.LocationFieldStateCode="CT";
+                    out.LocationFieldTimezone=-5;
                 </tag>
             </item>
 
@@ -169,6 +176,7 @@
                 <tag>
                     out.LocationFieldState="Delaware";
                     out.LocationFieldStateCode="DE";
+                    out.LocationFieldTimezone=-5;
                 </tag>
             </item>
 
@@ -190,6 +198,7 @@
                 <tag>
                     out.LocationFieldState="Florida";
                     out.LocationFieldStateCode="FL";
+                    out.LocationFieldTimezone=-5;
                 </tag>
             </item>
 
@@ -211,6 +220,7 @@
                 <tag>
                     out.LocationFieldState="Georgia";
                     out.LocationFieldStateCode="GA";
+                    out.LocationFieldTimezone=-5;
                 </tag>
             </item>
 
@@ -232,7 +242,8 @@
                 <tag>
                     out.LocationFieldState="Hawaii";
                     out.LocationFieldStateCode="HI";
-                </tag>
+                    out.LocationFieldTimezone=-10;
+            </tag>
             </item>
 
             <!-- IDAHO -->
@@ -253,6 +264,7 @@
                 <tag>
                     out.LocationFieldState="Idaho";
                     out.LocationFieldStateCode="ID";
+                    out.LocationFieldTimezone=-7;
                 </tag>
             </item>
 
@@ -274,6 +286,7 @@
                 <tag>
                     out.LocationFieldState="Illinois";
                     out.LocationFieldStateCode="IL";
+                    out.LocationFieldTimezone=-6;
                 </tag>
             </item>
 
@@ -295,6 +308,7 @@
                 <tag>
                     out.LocationFieldState="Indiana";
                     out.LocationFieldStateCode="IN";
+                    out.LocationFieldTimezone=-5;
                 </tag>
             </item>
 
@@ -316,7 +330,8 @@
                 <tag>
                     out.LocationFieldState="Iowa";
                     out.LocationFieldStateCode="IA";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+            </tag>
             </item>
 
             <!-- KANSAS -->
@@ -337,7 +352,8 @@
                 <tag>
                     out.LocationFieldState="Kansas";
                     out.LocationFieldStateCode="KS";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+            </tag>
             </item>
 
             <!-- KENTUCKY -->
@@ -359,7 +375,8 @@
                 <tag>
                     out.LocationFieldState="Kentucky";
                     out.LocationFieldStateCode="KY";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- LOUISIANA -->
@@ -380,7 +397,8 @@
                 <tag>
                     out.LocationFieldState="Louisiana";
                     out.LocationFieldStateCode="LA";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+            </tag>
             </item>
 
             <!-- MAINE -->
@@ -401,6 +419,7 @@
                 <tag>
                     out.LocationFieldState="Maine";
                     out.LocationFieldStateCode="ME";
+                    out.LocationFieldTimezone=-5;
                 </tag>
             </item>
 
@@ -422,6 +441,7 @@
                 <tag>
                     out.LocationFieldState="Maryland";
                     out.LocationFieldStateCode="MD";
+                    out.LocationFieldTimezone=-5;
                 </tag>
             </item>
 
@@ -443,6 +463,7 @@
                 <tag>
                     out.LocationFieldState="Massachusetts";
                     out.LocationFieldStateCode="MA";
+                    out.LocationFieldTimezone=-5;
                 </tag>
             </item>
 
@@ -464,7 +485,8 @@
                 <tag>
                     out.LocationFieldState="Michigan";
                     out.LocationFieldStateCode="MI";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- MINNESOTA -->
@@ -485,7 +507,8 @@
                 <tag>
                     out.LocationFieldState="Minnesota";
                     out.LocationFieldStateCode="MN";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+            </tag>
             </item>
 
             <!-- MISSISSIPPI -->
@@ -506,6 +529,7 @@
                 <tag>
                     out.LocationFieldState="Mississippi";
                     out.LocationFieldStateCode="MS";
+                    out.LocationFieldTimezone=-6;
                 </tag>
             </item>
 
@@ -527,7 +551,8 @@
                 <tag>
                     out.LocationFieldState="Missouri";
                     out.LocationFieldStateCode="MO";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+            </tag>
             </item>
 
             <!-- MONTANA -->
@@ -548,6 +573,7 @@
                 <tag>
                     out.LocationFieldState="Montana";
                     out.LocationFieldStateCode="MT";
+                    out.LocationFieldTimezone=-7;
                 </tag>
             </item>
 
@@ -569,7 +595,8 @@
                 <tag>
                     out.LocationFieldState="Nebraska";
                     out.LocationFieldStateCode="NE";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+            </tag>
             </item>
 
             <!-- NEVADA -->
@@ -590,7 +617,8 @@
                 <tag>
                     out.LocationFieldState="Nevada";
                     out.LocationFieldStateCode="NV";
-                </tag>
+                    out.LocationFieldTimezone=-7;
+            </tag>
             </item>
 
             <!-- NEW HAMPSHIRE -->
@@ -611,6 +639,7 @@
                 <tag>
                     out.LocationFieldState="New Hampshire";
                     out.LocationFieldStateCode="NH";
+                    out.LocationFieldTimezone=-5;
                 </tag>
             </item>
 
@@ -632,7 +661,8 @@
                 <tag>
                     out.LocationFieldState="New Jersey";
                     out.LocationFieldStateCode="NJ";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- NEW MEXICO -->
@@ -653,7 +683,8 @@
                 <tag>
                     out.LocationFieldState="New Mexico";
                     out.LocationFieldStateCode="NM";
-                </tag>
+                    out.LocationFieldTimezone=-7;
+            </tag>
             </item>
 
             <!-- NEW YORK -->
@@ -674,7 +705,8 @@
                 <tag>
                     out.LocationFieldState="New York";
                     out.LocationFieldStateCode="NY";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- NORTH CAROLINA -->
@@ -695,7 +727,8 @@
                 <tag>
                     out.LocationFieldState="North Carolina";
                     out.LocationFieldStateCode="NC";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- NORTH DAKOTA -->
@@ -716,7 +749,8 @@
                 <tag>
                     out.LocationFieldState="North Dakota";
                     out.LocationFieldStateCode="ND";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+            </tag>
             </item>
 
             <!-- OHIO -->
@@ -737,7 +771,8 @@
                 <tag>
                     out.LocationFieldState="Ohio";
                     out.LocationFieldStateCode="OH";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- OKLAHOMA -->
@@ -758,7 +793,8 @@
                 <tag>
                     out.LocationFieldState="Oklahoma";
                     out.LocationFieldStateCode="OK";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+            </tag>
             </item>
 
             <!-- OREGON -->
@@ -779,7 +815,8 @@
                 <tag>
                     out.LocationFieldState="Oregon";
                     out.LocationFieldStateCode="OR";
-                </tag>
+                    out.LocationFieldTimezone=-8;
+            </tag>
             </item>
 
             <!-- PENNSYLVANIA -->
@@ -800,7 +837,8 @@
                 <tag>
                     out.LocationFieldState="Pennsylvania";
                     out.LocationFieldStateCode="PA";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- RHODE ISLAND -->
@@ -821,7 +859,8 @@
                 <tag>
                     out.LocationFieldState="Rhode Island";
                     out.LocationFieldStateCode="RI";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- SOUTH CAROLINA -->
@@ -842,7 +881,8 @@
                 <tag>
                     out.LocationFieldState="South Carolina";
                     out.LocationFieldStateCode="SC";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- SOUTH DAKOTA -->
@@ -863,7 +903,8 @@
                 <tag>
                     out.LocationFieldState="South Dakota";
                     out.LocationFieldStateCode="SD";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+        </tag>
             </item>
 
             <!-- TENNESSEE -->
@@ -884,7 +925,8 @@
                 <tag>
                     out.LocationFieldState="Tennessee";
                     out.LocationFieldStateCode="TN";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+            </tag>
             </item>
 
             <!-- TEXAS -->
@@ -905,7 +947,8 @@
                 <tag>
                     out.LocationFieldState="Texas";
                     out.LocationFieldStateCode="TX";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+            </tag>
             </item>
 
             <!-- UTAH -->
@@ -926,7 +969,8 @@
                 <tag>
                     out.LocationFieldState="Utah";
                     out.LocationFieldStateCode="UT";
-                </tag>
+                    out.LocationFieldTimezone=-7;
+            </tag>
             </item>
 
             <!-- VERMONT -->
@@ -947,7 +991,8 @@
                 <tag>
                     out.LocationFieldState="Vermont";
                     out.LocationFieldStateCode="VT";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- VIRGINIA -->
@@ -968,7 +1013,8 @@
                 <tag>
                     out.LocationFieldState="Virginia";
                     out.LocationFieldStateCode="VA";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- WASHINGTON -->
@@ -989,7 +1035,8 @@
                 <tag>
                     out.LocationFieldState="Washington";
                     out.LocationFieldStateCode="WA";
-                </tag>
+                    out.LocationFieldTimezone=-8;
+            </tag>
             </item>
 
             <!-- WEST VIRGINIA -->
@@ -1010,7 +1057,8 @@
                 <tag>
                     out.LocationFieldState="West Virginia";
                     out.LocationFieldStateCode="WV";
-                </tag>
+                    out.LocationFieldTimezone=-5;
+            </tag>
             </item>
 
             <!-- WISCONSIN -->
@@ -1031,7 +1079,8 @@
                 <tag>
                     out.LocationFieldState="Wisconsin";
                     out.LocationFieldStateCode="WI";
-                </tag>
+                    out.LocationFieldTimezone=-6;
+            </tag>
             </item>
 
             <!-- WYOMING -->
@@ -1052,7 +1101,8 @@
                 <tag>
                     out.LocationFieldState="Wyoming";
                     out.LocationFieldStateCode="WY";
-                </tag>
+                    out.LocationFieldTimezone=-7;
+            </tag>
             </item>
         </one-of>
     </rule>
