@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/2007/REC-voicexml21-20070619/vxml.dtd">
 
-<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml" 
+<vxml version="2.1" xmlns="http://www.w3.org/2001/vxml"
 	xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="root.xml">
     <meta name="maintainer" content="la.farfelue@gmail.com" />
 
@@ -18,9 +18,10 @@
         <!-- <grammar src="location_grammar.xml#Location" type="application/grammar-xml" maxage="1" /> -->
 
         <!-- <block>
-            <assign name="application.request_type" expr="'address'" />
+            <assign name="application.request_type" expr="'hours'" />
             <assign name="application.business" expr="'safeway'" />
             <assign name="application.location" expr="'santa cruz'" />
+			<assign name="application.timezone" expr="-8" />
             <goto next="details.xml#GetDetails" />
         </block> -->
 
@@ -59,10 +60,11 @@
         	<assign name="application.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
             <assign name="application.business" expr="BusinessField$.interpretation.BusinessField" />
             <assign name="application.location" expr="LocationField$.interpretation.LocationField" />
+			<assign name="application.timezone" expr="LocationField$.interpretation.LocationFieldTimezone" />
             <goto next="details.xml#GetDetails" />
         </filled>
     </form>
-    
+
     	<!-- Form to end conversation -->
 	<form id="Exit">
 		<block>
