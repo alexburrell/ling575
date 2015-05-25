@@ -5,16 +5,42 @@
     <meta name="maintainer" content="burrelal@gmail.com" />
 
     <script><![CDATA[
-        var apiUrl = "https://maps.googleapis.com/maps/api/place/textsearch/xml?query={query}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag";
+        var searchUrl = "https://maps.googleapis.com/maps/api/place/textsearch/xml?query={query}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
+            placeUrl = "https://maps.googleapis.com/maps/api/place/details/xml?placeid={id}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag"
 
-        function assembleUrl(location, business) {
+        function assembleSearchUrl(location, business) {
             location = location.replace(" ", "+");
             business = business.replace(" ", "+");
-            return apiUrl.replace("{query}", location+"+"+business);
+            return searchUrl.replace("{query}", location+"+"+business);
+        }
+
+        function assemblePlaceUrl(place_id) {
+            return placeUrl.replace("{id}", place_id);
+        }
+
+        function getPlaceId(results) {
+            var establishment = results.getElementsByTagName("result").item(0),
+                id = establishment.getElementsByTagName("place_id").item(0).firstChild.data;
+
+            return id;
         }
 
         function parseResults(results) {
-            return results.getElementsByTagName("result").length;
+            var establishment = results.getElementsByTagName("result").item(0),
+                address = establishment.getElementsByTagName("formatted_address").item(0).firstChild.data,
+                phone = establishment.getElementsByTagName("formatted_phone_number").item(0).firstChild.data;
+
+            address = address.replace(', United States', '')
+
+            return results = {
+                'address': address,
+                'phone': phone,
+                'hours': false
+            }
+        }
+
+        function get(obj, key) {
+            return obj[key];
         }
     ]]></script>
 
@@ -26,22 +52,31 @@
                 <value expr="application.location" />
             </prompt> -->
 
-            <data name="SearchResults" srcexpr="assembleUrl(application.location, application.business)" />
+            <!-- Search using the location and business params, and get the ID -->
+            <data name="SearchResults" srcexpr="assembleSearchUrl(application.location, application.business)" />
             <assign name="SearchResults" expr="SearchResults.documentElement" />
-            <assign name="application.result" expr="parseResults(SearchResults)" />
+            <assign name="application.placeid" expr="getPlaceId(SearchResults)" />
+
+            <!-- Get the place details -->
+            <data name="PlaceDetails" srcexpr="assemblePlaceUrl(application.placeid)" />
+            <assign name="PlaceDetails" expr="PlaceDetails.documentElement" />
+            <assign name="application.result" expr="parseResults(PlaceDetails)" />
+
 			<goto next="#ProvideResults" />
         </block>
     </form>
-    
+
     <form id="ProvideResults">
     	<field>
     		<prompt>
-	    		Providing <value expr="application.request_type"/> for <value expr="application.business"/>
-    	    	in <value expr="application.location"/>. <break strength="weak" />
-        		<value expr="application.result" />. <break strength="weak" />
+                The <value expr="application.request_type"/> for <value expr="application.business"/>
+    	    	in <value expr="application.location"/> is
+                <break strength="weak" />
+        		<value expr="get(application.result, application.request_type)" />
+                <break strength="weak" />
         	</prompt>
     	</field>
-    	
+
     	<filled>
     	</filled>
     </form>
