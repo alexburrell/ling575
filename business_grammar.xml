@@ -5,75 +5,6 @@
     <!-- http://en.wikipedia.org/wiki/List_of_department_stores_of_the_United_States -->
     <!-- http://en.wikipedia.org/wiki/List_of_restaurant_chains_in_the_United_States -->
 
-    <rule id="Alphabet" scope="public">
-        <one-of>
-            <item> zero <tag> out.letter = "0"; </tag> </item>
-            <item> one <tag> out.letter = "1"; </tag> </item>
-            <item> two <tag> out.letter = "2"; </tag> </item>
-            <item> three <tag> out.letter = "3"; </tag> </item>
-            <item> four <tag> out.letter = "4"; </tag> </item>
-            <item> five <tag> out.letter = "5"; </tag> </item>
-            <item> six <tag> out.letter = "6"; </tag> </item>
-            <item> seven <tag> out.letter = "7"; </tag> </item>
-            <item> eight <tag> out.letter = "8"; </tag> </item>
-            <item> nine <tag> out.letter = "9"; </tag> </item>
-            <item> ten <tag> out.letter = "10"; </tag> </item>
-            <item> a <tag> out.letter = "a"; </tag> </item>
-            <item> ay <tag> out.letter = "a"; </tag> </item>
-            <item> eh <tag> out.letter = "a"; </tag> </item>
-            <item> b <tag> out.letter = "b"; </tag> </item>
-            <item> bee <tag> out.letter = "b"; </tag> </item>
-            <item> c <tag> out.letter = "c"; </tag> </item>
-            <item> see <tag> out.letter = "c"; </tag> </item>
-            <item> d <tag> out.letter = "d"; </tag> </item>
-            <item> dee <tag> out.letter = "d"; </tag> </item>
-            <item> e <tag> out.letter = "e"; </tag> </item>
-            <item> ee <tag> out.letter = "e"; </tag> </item>
-            <item> f <tag> out.letter = "f"; </tag> </item>
-            <item> eff <tag> out.letter = "f"; </tag> </item>
-            <item> g <tag> out.letter = "g"; </tag> </item>
-            <item> gee <tag> out.letter = "g"; </tag> </item>
-            <item> h <tag> out.letter = "h"; </tag> </item>
-            <item> aych <tag> out.letter = "h"; </tag> </item>
-            <item> i <tag> out.letter = "i"; </tag> </item>
-            <item> eye <tag> out.letter = "i"; </tag> </item>
-            <item> j <tag> out.letter = "j"; </tag> </item>
-            <item> jay <tag> out.letter = "j"; </tag> </item>
-            <item> k <tag> out.letter = "k"; </tag> </item>
-            <item> kay <tag> out.letter = "k"; </tag> </item>
-            <item> l <tag> out.letter = "k"; </tag> </item>
-            <item> el <tag> out.letter = "l"; </tag> </item>
-            <item> m <tag> out.letter = "m"; </tag> </item>
-            <item> em <tag> out.letter = "m"; </tag> </item>
-            <item> n <tag> out.letter = "m"; </tag> </item>
-            <item> en <tag> out.letter = "n"; </tag> </item>
-            <item> o <tag> out.letter = "m"; </tag> </item>
-            <item> oh <tag> out.letter = "o"; </tag> </item>
-            <item> p <tag> out.letter = "p"; </tag> </item>
-            <item> pee <tag> out.letter = "p"; </tag> </item>
-            <item> q <tag> out.letter = "p"; </tag> </item>
-            <item> cue <tag> out.letter = "q"; </tag> </item>
-            <item> r <tag> out.letter = "p"; </tag> </item>
-            <item> are <tag> out.letter = "r"; </tag> </item>
-            <item> s <tag> out.letter = "p"; </tag> </item>
-            <item> es <tag> out.letter = "s"; </tag> </item>
-            <item> t <tag> out.letter = "p"; </tag> </item>
-            <item> tee <tag> out.letter = "t"; </tag> </item>
-            <item> u <tag> out.letter = "p"; </tag> </item>
-            <item> you <tag> out.letter = "u"; </tag> </item>
-            <item> v <tag> out.letter = "p"; </tag> </item>
-            <item> vee <tag> out.letter = "v"; </tag> </item>
-            <item> w <tag> out.letter = "p"; </tag> </item>
-            <item> double you <tag> out.letter = "w"; </tag> </item>
-            <item> x <tag> out.letter = "p"; </tag> </item>
-            <item> ex <tag> out.letter = "x"; </tag> </item>
-            <item> y <tag> out.letter = "p"; </tag> </item>
-            <item> why <tag> out.letter = "y"; </tag> </item>
-            <item> z <tag> out.letter = "p"; </tag> </item>
-            <item> zee <tag> out.letter = "z"; </tag> </item>
-        </one-of>
-    </rule>
-
     <rule id="Business" scope="public">
         <tag> out.BusinessField = ""; </tag>
         <one-of>
@@ -485,6 +416,75 @@
                 <item repeat="0-1"> Store </item>
                 <item repeat="0-1"> Stores </item>
             </item>
+        </one-of>
+    </rule>
+
+    <rule id="Alphabet" scope="public">
+        <one-of>
+            <item> zero <tag> out.letter = "0"; </tag> </item>
+            <item> one <tag> out.letter = "1"; </tag> </item>
+            <item> two <tag> out.letter = "2"; </tag> </item>
+            <item> three <tag> out.letter = "3"; </tag> </item>
+            <item> four <tag> out.letter = "4"; </tag> </item>
+            <item> five <tag> out.letter = "5"; </tag> </item>
+            <item> six <tag> out.letter = "6"; </tag> </item>
+            <item> seven <tag> out.letter = "7"; </tag> </item>
+            <item> eight <tag> out.letter = "8"; </tag> </item>
+            <item> nine <tag> out.letter = "9"; </tag> </item>
+            <item> ten <tag> out.letter = "10"; </tag> </item>
+            <item> a <tag> out.letter = "a"; </tag> </item>
+            <item> ay <tag> out.letter = "a"; </tag> </item>
+            <item> eh <tag> out.letter = "a"; </tag> </item>
+            <item> b <tag> out.letter = "b"; </tag> </item>
+            <item> bee <tag> out.letter = "b"; </tag> </item>
+            <item> c <tag> out.letter = "c"; </tag> </item>
+            <item> see <tag> out.letter = "c"; </tag> </item>
+            <item> d <tag> out.letter = "d"; </tag> </item>
+            <item> dee <tag> out.letter = "d"; </tag> </item>
+            <item> e <tag> out.letter = "e"; </tag> </item>
+            <item> ee <tag> out.letter = "e"; </tag> </item>
+            <item> f <tag> out.letter = "f"; </tag> </item>
+            <item> eff <tag> out.letter = "f"; </tag> </item>
+            <item> g <tag> out.letter = "g"; </tag> </item>
+            <item> gee <tag> out.letter = "g"; </tag> </item>
+            <item> h <tag> out.letter = "h"; </tag> </item>
+            <item> aych <tag> out.letter = "h"; </tag> </item>
+            <item> i <tag> out.letter = "i"; </tag> </item>
+            <item> eye <tag> out.letter = "i"; </tag> </item>
+            <item> j <tag> out.letter = "j"; </tag> </item>
+            <item> jay <tag> out.letter = "j"; </tag> </item>
+            <item> k <tag> out.letter = "k"; </tag> </item>
+            <item> kay <tag> out.letter = "k"; </tag> </item>
+            <item> l <tag> out.letter = "k"; </tag> </item>
+            <item> el <tag> out.letter = "l"; </tag> </item>
+            <item> m <tag> out.letter = "m"; </tag> </item>
+            <item> em <tag> out.letter = "m"; </tag> </item>
+            <item> n <tag> out.letter = "m"; </tag> </item>
+            <item> en <tag> out.letter = "n"; </tag> </item>
+            <item> o <tag> out.letter = "m"; </tag> </item>
+            <item> oh <tag> out.letter = "o"; </tag> </item>
+            <item> p <tag> out.letter = "p"; </tag> </item>
+            <item> pee <tag> out.letter = "p"; </tag> </item>
+            <item> q <tag> out.letter = "p"; </tag> </item>
+            <item> cue <tag> out.letter = "q"; </tag> </item>
+            <item> r <tag> out.letter = "p"; </tag> </item>
+            <item> are <tag> out.letter = "r"; </tag> </item>
+            <item> s <tag> out.letter = "p"; </tag> </item>
+            <item> es <tag> out.letter = "s"; </tag> </item>
+            <item> t <tag> out.letter = "p"; </tag> </item>
+            <item> tee <tag> out.letter = "t"; </tag> </item>
+            <item> u <tag> out.letter = "p"; </tag> </item>
+            <item> you <tag> out.letter = "u"; </tag> </item>
+            <item> v <tag> out.letter = "p"; </tag> </item>
+            <item> vee <tag> out.letter = "v"; </tag> </item>
+            <item> w <tag> out.letter = "p"; </tag> </item>
+            <item> double you <tag> out.letter = "w"; </tag> </item>
+            <item> x <tag> out.letter = "p"; </tag> </item>
+            <item> ex <tag> out.letter = "x"; </tag> </item>
+            <item> y <tag> out.letter = "p"; </tag> </item>
+            <item> why <tag> out.letter = "y"; </tag> </item>
+            <item> z <tag> out.letter = "p"; </tag> </item>
+            <item> zee <tag> out.letter = "z"; </tag> </item>
         </one-of>
     </rule>
 </grammar>

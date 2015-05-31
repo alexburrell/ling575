@@ -3,7 +3,6 @@
 <grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US">
     <rule id="Location" scope="public">
         <one-of>
-            <!-- ALABAMA -->
             <item>
                 <one-of>
                     <item> Birmingham <tag> out.LocationField="Birmingham"; </tag> </item>
@@ -21,11 +20,9 @@
                 <tag>
                     out.LocationFieldState="Alabama";
                     out.LocationFieldStateCode="AL";
-                    out.LocationFieldTimezone=-5;
+                    out.LocationFieldTimezone="-5";
                 </tag>
             </item>
-
-            <!-- ALASKA -->
             <item>
                 <one-of>
                     <item> Anchorage <tag> out.LocationField="Anchorage"; </tag> </item>
@@ -43,11 +40,9 @@
                 <tag>
                     out.LocationFieldState="Alaska";
                     out.LocationFieldStateCode="AK";
-                    out.LocationFieldTimezone=-9;
+                    out.LocationFieldTimezone="-9";
                 </tag>
             </item>
-
-            <!-- ARIZONA -->
             <item>
                 <one-of>
                     <item> Phoenix <tag> out.LocationField="Phoenix"; </tag> </item>
@@ -65,11 +60,9 @@
                 <tag>
                     out.LocationFieldState="Arizona";
                     out.LocationFieldStateCode="AZ";
-                    out.LocationFieldTimezone=-7;
+                    out.LocationFieldTimezone="-7";
                 </tag>
             </item>
-
-            <!-- ARKANSAS -->
             <item>
                 <one-of>
                     <item> Little Rock <tag> out.LocationField="Little Rock"; </tag> </item>
@@ -87,11 +80,9 @@
                 <tag>
                     out.LocationFieldState="Arkansas";
                     out.LocationFieldStateCode="AR";
-                    out.LocationFieldTimezone=-6;
+                    out.LocationFieldTimezone="-6";
                 </tag>
             </item>
-
-            <!-- CALIFORNIA -->
             <item>
                 <one-of>
                     <item> Los Angeles <tag> out.LocationField="Los Angeles"; </tag> </item>
@@ -110,11 +101,9 @@
                 <tag>
                     out.LocationFieldState="California";
                     out.LocationFieldStateCode="CA";
-                    out.LocationFieldTimezone=-8;
+                    out.LocationFieldTimezone="-8";
                 </tag>
             </item>
-
-            <!-- COLORADO -->
             <item>
                 <one-of>
                     <item> Denver <tag> out.LocationField="Denver"; </tag> </item>
@@ -132,11 +121,9 @@
                 <tag>
                     out.LocationFieldState="Colorado";
                     out.LocationFieldStateCode="CO";
-                    out.LocationFieldTimezone=-7;
+                    out.LocationFieldTimezone="-7";
                 </tag>
             </item>
-
-            <!-- CONNECTICUT -->
             <item>
                 <one-of>
                     <item> Bridgeport <tag> out.LocationField="Bridgeport"; </tag> </item>
@@ -154,11 +141,9 @@
                 <tag>
                     out.LocationFieldState="Connecticut";
                     out.LocationFieldStateCode="CT";
-                    out.LocationFieldTimezone=-5;
+                    out.LocationFieldTimezone="-5";
                 </tag>
             </item>
-
-            <!-- DELAWARE -->
             <item>
                 <one-of>
                     <item> Wilmington <tag> out.LocationField="Wilmington"; </tag> </item>
@@ -176,11 +161,9 @@
                 <tag>
                     out.LocationFieldState="Delaware";
                     out.LocationFieldStateCode="DE";
-                    out.LocationFieldTimezone=-5;
+                    out.LocationFieldTimezone="-5";
                 </tag>
             </item>
-
-            <!-- FLORIDA -->
             <item>
                 <one-of>
                     <item> Jacksonville <tag> out.LocationField="Jacksonville"; </tag> </item>
@@ -198,11 +181,9 @@
                 <tag>
                     out.LocationFieldState="Florida";
                     out.LocationFieldStateCode="FL";
-                    out.LocationFieldTimezone=-5;
+                    out.LocationFieldTimezone="-5";
                 </tag>
             </item>
-
-            <!-- GEORGIA -->
             <item>
                 <one-of>
                     <item> Atlanta <tag> out.LocationField="Atlanta"; </tag> </item>
@@ -220,11 +201,9 @@
                 <tag>
                     out.LocationFieldState="Georgia";
                     out.LocationFieldStateCode="GA";
-                    out.LocationFieldTimezone=-5;
+                    out.LocationFieldTimezone="-5";
                 </tag>
             </item>
-
-            <!-- HAWAII -->
             <item>
                 <one-of>
                     <item> Honolulu <tag> out.LocationField="Honolulu"; </tag> </item>
@@ -242,11 +221,9 @@
                 <tag>
                     out.LocationFieldState="Hawaii";
                     out.LocationFieldStateCode="HI";
-                    out.LocationFieldTimezone=-10;
-            </tag>
+                    out.LocationFieldTimezone="-10";
+                </tag>
             </item>
-
-            <!-- IDAHO -->
             <item>
                 <one-of>
                     <item> Boise <tag> out.LocationField="Boise"; </tag> </item>
@@ -264,11 +241,9 @@
                 <tag>
                     out.LocationFieldState="Idaho";
                     out.LocationFieldStateCode="ID";
-                    out.LocationFieldTimezone=-7;
+                    out.LocationFieldTimezone="-7";
                 </tag>
             </item>
-
-            <!-- ILLINOIS -->
             <item>
                 <one-of>
                     <item> Chicago <tag> out.LocationField="Chicago"; </tag> </item>
@@ -286,11 +261,9 @@
                 <tag>
                     out.LocationFieldState="Illinois";
                     out.LocationFieldStateCode="IL";
-                    out.LocationFieldTimezone=-6;
+                    out.LocationFieldTimezone="-6";
                 </tag>
             </item>
-
-            <!-- INDIANA -->
             <item>
                 <one-of>
                     <item> Indianapolis <tag> out.LocationField="Indianapolis"; </tag> </item>
@@ -308,11 +281,9 @@
                 <tag>
                     out.LocationFieldState="Indiana";
                     out.LocationFieldStateCode="IN";
-                    out.LocationFieldTimezone=-5;
+                    out.LocationFieldTimezone="-5";
                 </tag>
             </item>
-
-            <!-- IOWA -->
             <item>
                 <one-of>
                     <item> Des Moines <tag> out.LocationField="Des Moines"; </tag> </item>
@@ -330,11 +301,9 @@
                 <tag>
                     out.LocationFieldState="Iowa";
                     out.LocationFieldStateCode="IA";
-                    out.LocationFieldTimezone=-6;
-            </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- KANSAS -->
             <item>
                 <one-of>
                     <item> Wichita <tag> out.LocationField="Wichita"; </tag> </item>
@@ -352,11 +321,9 @@
                 <tag>
                     out.LocationFieldState="Kansas";
                     out.LocationFieldStateCode="KS";
-                    out.LocationFieldTimezone=-6;
-            </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- KENTUCKY -->
             <item>
                 <one-of>
                     <item> Lexington <tag> out.LocationField="Lexington"; </tag> </item>
@@ -375,11 +342,9 @@
                 <tag>
                     out.LocationFieldState="Kentucky";
                     out.LocationFieldStateCode="KY";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- LOUISIANA -->
             <item>
                 <one-of>
                     <item> New Orleans <tag> out.LocationField="New Orleans"; </tag> </item>
@@ -397,11 +362,9 @@
                 <tag>
                     out.LocationFieldState="Louisiana";
                     out.LocationFieldStateCode="LA";
-                    out.LocationFieldTimezone=-6;
-            </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- MAINE -->
             <item>
                 <one-of>
                     <item> Portland <tag> out.LocationField="Portland"; </tag> </item>
@@ -419,11 +382,9 @@
                 <tag>
                     out.LocationFieldState="Maine";
                     out.LocationFieldStateCode="ME";
-                    out.LocationFieldTimezone=-5;
+                    out.LocationFieldTimezone="-5";
                 </tag>
             </item>
-
-            <!-- MARYLAND -->
             <item>
                 <one-of>
                     <item> Baltimore <tag> out.LocationField="Baltimore"; </tag> </item>
@@ -441,11 +402,9 @@
                 <tag>
                     out.LocationFieldState="Maryland";
                     out.LocationFieldStateCode="MD";
-                    out.LocationFieldTimezone=-5;
+                    out.LocationFieldTimezone="-5";
                 </tag>
             </item>
-
-            <!-- MASSACHUSETTS -->
             <item>
                 <one-of>
                     <item> Boston <tag> out.LocationField="Boston"; </tag> </item>
@@ -463,11 +422,9 @@
                 <tag>
                     out.LocationFieldState="Massachusetts";
                     out.LocationFieldStateCode="MA";
-                    out.LocationFieldTimezone=-5;
+                    out.LocationFieldTimezone="-5";
                 </tag>
             </item>
-
-            <!-- MICHIGAN -->
             <item>
                 <one-of>
                     <item> Detroit <tag> out.LocationField="Detroit"; </tag> </item>
@@ -485,11 +442,9 @@
                 <tag>
                     out.LocationFieldState="Michigan";
                     out.LocationFieldStateCode="MI";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- MINNESOTA -->
             <item>
                 <one-of>
                     <item> Minneapolis <tag> out.LocationField="Minneapolis"; </tag> </item>
@@ -507,11 +462,9 @@
                 <tag>
                     out.LocationFieldState="Minnesota";
                     out.LocationFieldStateCode="MN";
-                    out.LocationFieldTimezone=-6;
-            </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- MISSISSIPPI -->
             <item>
                 <one-of>
                     <item> Jackson <tag> out.LocationField="Jackson"; </tag> </item>
@@ -529,11 +482,9 @@
                 <tag>
                     out.LocationFieldState="Mississippi";
                     out.LocationFieldStateCode="MS";
-                    out.LocationFieldTimezone=-6;
+                    out.LocationFieldTimezone="-6";
                 </tag>
             </item>
-
-            <!-- MISSOURI -->
             <item>
                 <one-of>
                     <item> Kansas City <tag> out.LocationField="Kansas City"; </tag> </item>
@@ -551,11 +502,9 @@
                 <tag>
                     out.LocationFieldState="Missouri";
                     out.LocationFieldStateCode="MO";
-                    out.LocationFieldTimezone=-6;
-            </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- MONTANA -->
             <item>
                 <one-of>
                     <item> Billings <tag> out.LocationField="Billings"; </tag> </item>
@@ -573,11 +522,9 @@
                 <tag>
                     out.LocationFieldState="Montana";
                     out.LocationFieldStateCode="MT";
-                    out.LocationFieldTimezone=-7;
+                    out.LocationFieldTimezone="-7";
                 </tag>
             </item>
-
-            <!-- NEBRASKA -->
             <item>
                 <one-of>
                     <item> Omaha <tag> out.LocationField="Omaha"; </tag> </item>
@@ -595,11 +542,9 @@
                 <tag>
                     out.LocationFieldState="Nebraska";
                     out.LocationFieldStateCode="NE";
-                    out.LocationFieldTimezone=-6;
-            </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- NEVADA -->
             <item>
                 <one-of>
                     <item> Las Vegas <tag> out.LocationField="Las Vegas"; </tag> </item>
@@ -617,11 +562,9 @@
                 <tag>
                     out.LocationFieldState="Nevada";
                     out.LocationFieldStateCode="NV";
-                    out.LocationFieldTimezone=-7;
-            </tag>
+                    out.LocationFieldTimezone="-7";
+                </tag>
             </item>
-
-            <!-- NEW HAMPSHIRE -->
             <item>
                 <one-of>
                     <item> Manchester <tag> out.LocationField="Manchester"; </tag> </item>
@@ -639,11 +582,9 @@
                 <tag>
                     out.LocationFieldState="New Hampshire";
                     out.LocationFieldStateCode="NH";
-                    out.LocationFieldTimezone=-5;
+                    out.LocationFieldTimezone="-5";
                 </tag>
             </item>
-
-            <!-- NEW JERSEY -->
             <item>
                 <one-of>
                     <item> Newark <tag> out.LocationField="Newark"; </tag> </item>
@@ -661,11 +602,9 @@
                 <tag>
                     out.LocationFieldState="New Jersey";
                     out.LocationFieldStateCode="NJ";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- NEW MEXICO -->
             <item>
                 <one-of>
                     <item> Albuquerque <tag> out.LocationField="Albuquerque"; </tag> </item>
@@ -683,11 +622,9 @@
                 <tag>
                     out.LocationFieldState="New Mexico";
                     out.LocationFieldStateCode="NM";
-                    out.LocationFieldTimezone=-7;
-            </tag>
+                    out.LocationFieldTimezone="-7";
+                </tag>
             </item>
-
-            <!-- NEW YORK -->
             <item>
                 <one-of>
                     <item> New York <item repeat="0-1"> City </item> <tag> out.LocationField="New York City"; </tag> </item>
@@ -705,11 +642,9 @@
                 <tag>
                     out.LocationFieldState="New York";
                     out.LocationFieldStateCode="NY";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- NORTH CAROLINA -->
             <item>
                 <one-of>
                     <item> Charlotte <tag> out.LocationField="Charlotte"; </tag> </item>
@@ -727,11 +662,9 @@
                 <tag>
                     out.LocationFieldState="North Carolina";
                     out.LocationFieldStateCode="NC";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- NORTH DAKOTA -->
             <item>
                 <one-of>
                     <item> Fargo <tag> out.LocationField="Fargo"; </tag> </item>
@@ -749,11 +682,9 @@
                 <tag>
                     out.LocationFieldState="North Dakota";
                     out.LocationFieldStateCode="ND";
-                    out.LocationFieldTimezone=-6;
-            </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- OHIO -->
             <item>
                 <one-of>
                     <item> Columbus <tag> out.LocationField="Columbus"; </tag> </item>
@@ -771,11 +702,9 @@
                 <tag>
                     out.LocationFieldState="Ohio";
                     out.LocationFieldStateCode="OH";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- OKLAHOMA -->
             <item>
                 <one-of>
                     <item> Oklahoma City <tag> out.LocationField="Oklahoma City"; </tag> </item>
@@ -793,11 +722,9 @@
                 <tag>
                     out.LocationFieldState="Oklahoma";
                     out.LocationFieldStateCode="OK";
-                    out.LocationFieldTimezone=-6;
-            </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- OREGON -->
             <item>
                 <one-of>
                     <item> Portland <tag> out.LocationField="Portland"; </tag> </item>
@@ -815,11 +742,9 @@
                 <tag>
                     out.LocationFieldState="Oregon";
                     out.LocationFieldStateCode="OR";
-                    out.LocationFieldTimezone=-8;
-            </tag>
+                    out.LocationFieldTimezone="-8";
+                </tag>
             </item>
-
-            <!-- PENNSYLVANIA -->
             <item>
                 <one-of>
                     <item> Philadelphia <tag> out.LocationField="Philadelphia"; </tag> </item>
@@ -837,11 +762,9 @@
                 <tag>
                     out.LocationFieldState="Pennsylvania";
                     out.LocationFieldStateCode="PA";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- RHODE ISLAND -->
             <item>
                 <one-of>
                     <item> Providence <tag> out.LocationField="Providence"; </tag> </item>
@@ -859,11 +782,9 @@
                 <tag>
                     out.LocationFieldState="Rhode Island";
                     out.LocationFieldStateCode="RI";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- SOUTH CAROLINA -->
             <item>
                 <one-of>
                     <item> Columbia <tag> out.LocationField="Columbia"; </tag> </item>
@@ -881,11 +802,9 @@
                 <tag>
                     out.LocationFieldState="South Carolina";
                     out.LocationFieldStateCode="SC";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- SOUTH DAKOTA -->
             <item>
                 <one-of>
                     <item> Sioux Falls <tag> out.LocationField="Sioux Falls"; </tag> </item>
@@ -903,11 +822,9 @@
                 <tag>
                     out.LocationFieldState="South Dakota";
                     out.LocationFieldStateCode="SD";
-                    out.LocationFieldTimezone=-6;
-        </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- TENNESSEE -->
             <item>
                 <one-of>
                     <item> Memphis <tag> out.LocationField="Memphis"; </tag> </item>
@@ -925,11 +842,9 @@
                 <tag>
                     out.LocationFieldState="Tennessee";
                     out.LocationFieldStateCode="TN";
-                    out.LocationFieldTimezone=-6;
-            </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- TEXAS -->
             <item>
                 <one-of>
                     <item> Houston <tag> out.LocationField="Houston"; </tag> </item>
@@ -947,11 +862,9 @@
                 <tag>
                     out.LocationFieldState="Texas";
                     out.LocationFieldStateCode="TX";
-                    out.LocationFieldTimezone=-6;
-            </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- UTAH -->
             <item>
                 <one-of>
                     <item> Salt Lake City <tag> out.LocationField="Salt Lake City"; </tag> </item>
@@ -969,11 +882,9 @@
                 <tag>
                     out.LocationFieldState="Utah";
                     out.LocationFieldStateCode="UT";
-                    out.LocationFieldTimezone=-7;
-            </tag>
+                    out.LocationFieldTimezone="-7";
+                </tag>
             </item>
-
-            <!-- VERMONT -->
             <item>
                 <one-of>
                     <item> Burlington <tag> out.LocationField="Burlington"; </tag> </item>
@@ -991,11 +902,9 @@
                 <tag>
                     out.LocationFieldState="Vermont";
                     out.LocationFieldStateCode="VT";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- VIRGINIA -->
             <item>
                 <one-of>
                     <item> Virginia Beach <tag> out.LocationField="Virginia Beach"; </tag> </item>
@@ -1013,11 +922,9 @@
                 <tag>
                     out.LocationFieldState="Virginia";
                     out.LocationFieldStateCode="VA";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- WASHINGTON -->
             <item>
                 <one-of>
                     <item> Seattle <tag> out.LocationField="Seattle"; </tag> </item>
@@ -1035,11 +942,9 @@
                 <tag>
                     out.LocationFieldState="Washington";
                     out.LocationFieldStateCode="WA";
-                    out.LocationFieldTimezone=-8;
-            </tag>
+                    out.LocationFieldTimezone="-8";
+                </tag>
             </item>
-
-            <!-- WEST VIRGINIA -->
             <item>
                 <one-of>
                     <item> Charleston <tag> out.LocationField="Charleston"; </tag> </item>
@@ -1057,11 +962,9 @@
                 <tag>
                     out.LocationFieldState="West Virginia";
                     out.LocationFieldStateCode="WV";
-                    out.LocationFieldTimezone=-5;
-            </tag>
+                    out.LocationFieldTimezone="-5";
+                </tag>
             </item>
-
-            <!-- WISCONSIN -->
             <item>
                 <one-of>
                     <item> Milwaukee <tag> out.LocationField="Milwaukee"; </tag> </item>
@@ -1079,11 +982,9 @@
                 <tag>
                     out.LocationFieldState="Wisconsin";
                     out.LocationFieldStateCode="WI";
-                    out.LocationFieldTimezone=-6;
-            </tag>
+                    out.LocationFieldTimezone="-6";
+                </tag>
             </item>
-
-            <!-- WYOMING -->
             <item>
                 <one-of>
                     <item> Cheyenne <tag> out.LocationField="Cheyenne"; </tag> </item>
@@ -1101,8 +1002,8 @@
                 <tag>
                     out.LocationFieldState="Wyoming";
                     out.LocationFieldStateCode="WY";
-                    out.LocationFieldTimezone=-7;
-            </tag>
+                    out.LocationFieldTimezone="-7";
+                </tag>
             </item>
         </one-of>
     </rule>

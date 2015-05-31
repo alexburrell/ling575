@@ -6,7 +6,8 @@
 
     <script><![CDATA[
         var searchUrl = "https://maps.googleapis.com/maps/api/place/textsearch/xml?query={query}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
-            placeUrl = "https://maps.googleapis.com/maps/api/place/details/xml?placeid={id}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag"
+            placeUrl = "https://maps.googleapis.com/maps/api/place/details/xml?placeid={id}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
+            textUrl = "http://api.messaging.staging.voxeo.net/1.0/messaging?botkey=505480&apimethod=send&msg={message}&user=16169012822&network=SMS&from=12026601401";
 
         function assembleSearchUrl(location, business) {
             location = location.replace(" ", "+");
@@ -16,6 +17,10 @@
 
         function assemblePlaceUrl(place_id) {
             return placeUrl.replace("{id}", place_id);
+        }
+
+        function assembleTextUrl(details) {
+            return textUrl.replace("{message}", details);
         }
 
         function getPlaceId(results) {
@@ -83,17 +88,21 @@
     </form>
 
     <form id="ProvideResults">
-    	<field>
+    	<block>
     		<prompt>
                 Here's the <value expr="application.request_type"/> for <value expr="application.business"/>
     	    	in <value expr="application.location"/>
                 <break strength="weak" />
         		<value expr="get(application.result, application.request_type)" />
+                <!-- <goto next="#TextResults" /> -->
         	</prompt>
-    	</field>
-
-    	<filled>
-    	</filled>
+    	</block>
     </form>
+
+    <!-- <form id="TextResults">
+        <field>
+            <data name="TextResponse" srcexpr="assembleTextUrl(get(application.result, application.request_type))" />
+        </field>
+    </form> -->
 
 </vxml>
