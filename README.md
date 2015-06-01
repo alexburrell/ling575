@@ -12,6 +12,6 @@
 - <say-as interpret-as="telephone">
 -
 
-## Challenges to mention in paper
+## Notes for project writeup
 - Spelling is particularly hard
--
+- Texting will only work until __date__
