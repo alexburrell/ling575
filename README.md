@@ -2,10 +2,11 @@
 
 ## To do
 - Get user's location
-- Text back the response
 - add option to specify area
 - cut extra info from address (98105, Seattle, WA -- too much info for the user)
--
+- Texting:
+    - Ask if user wants to be texted, before texting
+    - Add location/business to text message
 
 ## Things to try:
 - <say-as interpret-as="telephone">
