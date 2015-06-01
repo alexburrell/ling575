@@ -13,13 +13,14 @@
 	</form>
 
     <form id="AskInfo">
-		<!-- Include all of these, to avoid caching -->
-        <grammar src="business_grammar.xml#Business" type="application/grammar-xml" maxage="1" />
-        <grammar src="location_grammar.xml#Location" type="application/grammar-xml" maxage="1" />
+		<!-- Uncomment these to avoid caching -->
+        <!-- <grammar src="business_grammar.xml#Business" type="application/grammar-xml" maxage="1" />
+        <grammar src="location_grammar.xml#Location" type="application/grammar-xml" maxage="1" /> -->
 		<grammar src="hello_grammar.xml#Greeting" type="application/grammar-xml" maxage="1" />
 
+		<!-- This is useful for going straight to details.xml, for development -->
         <!-- <block>
-            <assign name="application.request_type" expr="'hours'" />
+            <assign name="application.request_type" expr="'phone'" />
             <assign name="application.business" expr="'safeway'" />
             <assign name="application.location" expr="'santa cruz'" />
 			<assign name="application.timezone" expr="-8" />
@@ -62,10 +63,6 @@
         </field>
 
         <filled mode="all">
-			<!-- <prompt>
-				<value expr="BusinessField$.interpretation.BusinessField"/>
-			</prompt>
-			<goto next="#AskInfo" /> -->
         	<assign name="application.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
             <assign name="application.business" expr="BusinessField$.interpretation.BusinessField" />
             <assign name="application.location" expr="LocationField$.interpretation.LocationField" />
