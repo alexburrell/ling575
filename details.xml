@@ -103,10 +103,9 @@
     <form id="TextResults">
         <block>
             <prompt>
-                Text 1
+                Text 2
             </prompt>
             <submit expr="assembleTextUrl(get(application.result, application.request_type))" namelist="application.requestedData session.callerid" />
-            <goto next="#TextedResults" />
         </block>
     </form>
 
