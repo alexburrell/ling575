@@ -7,7 +7,7 @@
     <script><![CDATA[
         var searchUrl = "https://maps.googleapis.com/maps/api/place/textsearch/xml?query={query}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
             placeUrl = "https://maps.googleapis.com/maps/api/place/details/xml?placeid={id}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
-            textUrl = "http://api.messaging.staging.voxeo.net/1.0/messaging?botkey=505480&apimethod=send&msg={message}&user=16169012822&network=SMS&from=12026601401";
+            textUrl = "text.php";
 
         function assembleSearchUrl(location, business) {
             location = location.replace(" ", "+");
@@ -20,6 +20,7 @@
         }
 
         function assembleTextUrl(details) {
+            details = details.replace(' ', '%20');
             return textUrl.replace("{message}", details);
         }
 
@@ -89,20 +90,31 @@
 
     <form id="ProvideResults">
     	<block>
+            <assign name="application.requestedData" expr="get(application.result, application.request_type)" />
     		<prompt>
                 Here's the <value expr="application.request_type"/> for <value expr="application.business"/>
     	    	in <value expr="application.location"/>
-                <break strength="weak" />
-        		<value expr="get(application.result, application.request_type)" />
-                <!-- <goto next="#TextResults" /> -->
+        		<value expr="application.requestedData" />
         	</prompt>
+            <goto next="#TextResults" />
     	</block>
     </form>
 
-    <!-- <form id="TextResults">
-        <field>
-            <data name="TextResponse" srcexpr="assembleTextUrl(get(application.result, application.request_type))" />
-        </field>
-    </form> -->
+    <form id="TextResults">
+        <block>
+            <prompt>
+                Text 1
+            </prompt>
+            <submit expr="assembleTextUrl(get(application.result, application.request_type))" namelist="application.requestedData" />
+        </block>
+    </form>
+
+    <form id="TextedResults">
+        <block>
+            <prompt>
+                Texted
+            </prompt>
+        </block>
+    </form>
 
 </vxml>
