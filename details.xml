@@ -94,7 +94,9 @@
     		<prompt>
                 Here's the <value expr="application.request_type"/> for <value expr="application.business"/>
     	    	in <value expr="application.location"/>
+                <break />
         		<value expr="application.requestedData" />
+                <break />
         	</prompt>
             <goto next="#TextResults" />
     	</block>
@@ -103,7 +105,8 @@
     <form id="TextResults">
         <block>
             <prompt>
-                Text 2
+                Text result
+                <break />
             </prompt>
             <submit expr="assembleTextUrl(get(application.result, application.request_type))" namelist="application.requestedData session.callerid" />
         </block>
@@ -113,6 +116,7 @@
         <block>
             <prompt>
                 Texted
+                <break />
             </prompt>
         </block>
     </form>
