@@ -7,7 +7,7 @@
     <script><![CDATA[
         var searchUrl = "https://maps.googleapis.com/maps/api/place/textsearch/xml?query={query}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
             placeUrl = "https://maps.googleapis.com/maps/api/place/details/xml?placeid={id}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
-            textUrl = "text.php";
+            textUrl = "http://alexburrell.com/uw/dialog/project/text.php";
 
         function assembleSearchUrl(location, business) {
             location = location.replace(" ", "+");
@@ -93,7 +93,7 @@
             <assign name="application.requestedData" expr="get(application.result, application.request_type)" />
     		<prompt>
                 Here's the <value expr="application.request_type"/> for <value expr="application.business"/>
-    	    	in <value expr="application.location"/>
+    	    	in <value expr="application.location" />
                 <break />
         		<value expr="application.requestedData" />
                 <break />
@@ -105,17 +105,18 @@
     <form id="TextResults">
         <block>
             <prompt>
-                Text result
+                Will text result
                 <break />
             </prompt>
-            <submit expr="assembleTextUrl(get(application.result, application.request_type))" namelist="application.requestedData session.callerid" />
+            <data srcexpr="assembleTextUrl(get(application.result, application.request_type))" namelist="application.requestedData session.callerid" />
+            <goto next="#TextedResults" />
         </block>
     </form>
 
     <form id="TextedResults">
         <block>
             <prompt>
-                Texted
+                Did text result
                 <break />
             </prompt>
         </block>
