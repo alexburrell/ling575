@@ -10,8 +10,8 @@
             textUrl = "http://alexburrell.com/uw/dialog/project/text.php";
 
         function assembleSearchUrl(location, business) {
-            location = location.replace(" ", "+");
-            business = business.replace(" ", "+");
+            location = location.replace(/ /g, "+");
+            business = business.replace(/ /g, "+");
             return searchUrl.replace("{query}", location+"+"+business);
         }
 
