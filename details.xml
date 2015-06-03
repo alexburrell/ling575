@@ -2,11 +2,12 @@
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/2007/REC-voicexml21-20070619/vxml.dtd">
 
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml" xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="root.xml">
-    <meta name="maintainer" content="burrelal@gmail.com" />
+    <meta name="maintainer" content="la.farfelue@gmail.com" />
 
     <script><![CDATA[
         var searchUrl = "https://maps.googleapis.com/maps/api/place/textsearch/xml?query={query}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
-            placeUrl = "https://maps.googleapis.com/maps/api/place/details/xml?placeid={id}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
+
+        	placeUrl = "https://maps.googleapis.com/maps/api/place/details/xml?placeid={id}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
             textUrl = "http://alexburrell.com/uw/dialog/project/text.php";
 
         function assembleSearchUrl(location, business) {
@@ -54,7 +55,8 @@
             var today = getLocalDay(timezone);
 
             var establishment = results.getElementsByTagName("result").item(0),
-                address = establishment.getElementsByTagName("formatted_address").item(0).firstChild.data,
+
+            	address = establishment.getElementsByTagName("formatted_address").item(0).firstChild.data,
                 phone = establishment.getElementsByTagName("formatted_phone_number").item(0).firstChild.data,
                 hours = establishment.getElementsByTagName("weekday_text").item(today).firstChild.data;
 
@@ -98,9 +100,45 @@
         		<value expr="application.requestedData" />
                 <break />
         	</prompt>
-            <goto next="#TextResults" />
+            <goto next="#Further" />
     	</block>
     </form>
+
+	<!-- Provide further information about current business -->
+	<form id="Further">
+		<field name="Request">
+			<prompt> Would you like other information about <value expr="application.business" />? </prompt>
+
+			<grammar xml:lang="en-us" root = "request">
+				<rule id="request">
+					<one-of>
+						<item> hours <tag> out.Request = "hours" </tag> </item>
+						<item> address <tag> out.Request = "address" </tag> </item>
+						<item> phone number <tag> out.Request = "phone" </tag> </item>
+						<item> no </item>
+					</one-of>
+				</rule>
+			</grammar>
+		</field>
+		
+		<filled namelist="Request">
+			<assign name="application.request_type" expr="Request" />
+			<if cond="Request != 'no'">
+				<assign name="application.requestedData" expr="get(application.result, application.request_type)" />
+				<prompt>
+					<value expr="application.request_type" /> for <value expr="application.business" /> <break />
+					<value expr="application.requestedData" /> <break />
+				</prompt>
+			<elseif cond="Request == 'no'" />
+				<goto next="#TextResults" />
+			<else />
+				<prompt> I say whaaaat? </prompt>
+			</if>
+			
+			<goto next="#Further" />
+		</filled>
+	</form>
+
 
     <form id="TextResults">
         <block>
@@ -108,7 +146,7 @@
                 Will text result
                 <break />
             </prompt>
-            <data srcexpr="assembleTextUrl(get(application.result, application.request_type))" namelist="application.requestedData session.callerid" />
+            <data srcexpr="assembleTextUrl(application.requestedData)" namelist="application.requestedData session.callerid" />
             <goto next="#TextedResults" />
         </block>
     </form>
