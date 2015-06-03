@@ -97,6 +97,14 @@
         </item>
 	</rule>
 
+    <rule id="RequestType">
+        <one-of>
+            <item> Hours <tag> out.RequestTypeField = "hours"; </tag> </item>
+            <item> Address <tag> out.RequestTypeField = "address"; </tag> </item>
+            <item> Phone number <tag> out.RequestTypeField = "phone"; </tag> </item>
+        </one-of>
+    </rule>
+
     <rule id="Alphabet" scope="public">
         <one-of>
             <item> zero <tag> out.letter = "0"; </tag> </item>

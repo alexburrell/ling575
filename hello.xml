@@ -45,7 +45,7 @@
         </field>
 
         <field name="BusinessField">
-            <grammar src="business_grammar.xml#Business" type="application/grammar-xml" maxage="1" />
+            <grammar src="hello_grammar.xml#Business" type="application/grammar-xml" maxage="1" />
             <prompt>
                 What business are you wondering about?
             </prompt>
@@ -56,7 +56,7 @@
         </field>
 
         <field name="LocationField">
-            <grammar src="location_grammar.xml#Location" type="application/grammar-xml" maxage="1" />
+            <grammar src="hello_grammar.xml#Location" type="application/grammar-xml" maxage="1" />
             <prompt>
                 Where are you?
             </prompt>
