@@ -23,7 +23,7 @@
         </item>
 
         <item>
-        	<ruleref uri="business_grammar.xml#Business" />
+        	<ruleref uri="#Business" />
             <tag> out.BusinessField = rules.Business.BusinessField; </tag>
         </item>
 
@@ -33,10 +33,10 @@
         	</one-of>
         </item>
 
-        <!-- <item repeat="0-1">
-            <ruleref uri="location_grammar.xml#Location" />
+        <item repeat="0-1">
+            <ruleref uri="#Location" />
             <tag> out.LocationField = rules.Location.LocationField; </tag>
-        </item> -->
+        </item>
 
         <item repeat="0-1">
         	<one-of>
@@ -50,6 +50,1507 @@
             <item> Hours <tag> out.RequestTypeField = "hours"; </tag> </item>
             <item> Address <tag> out.RequestTypeField = "address"; </tag> </item>
             <item> Phone number <tag> out.RequestTypeField = "phone"; </tag> </item>
+        </one-of>
+    </rule>
+
+    <rule id="Alphabet" scope="public">
+        <one-of>
+            <item> zero <tag> out.letter = "0"; </tag> </item>
+            <item> one <tag> out.letter = "1"; </tag> </item>
+            <item> two <tag> out.letter = "2"; </tag> </item>
+            <item> three <tag> out.letter = "3"; </tag> </item>
+            <item> four <tag> out.letter = "4"; </tag> </item>
+            <item> five <tag> out.letter = "5"; </tag> </item>
+            <item> six <tag> out.letter = "6"; </tag> </item>
+            <item> seven <tag> out.letter = "7"; </tag> </item>
+            <item> eight <tag> out.letter = "8"; </tag> </item>
+            <item> nine <tag> out.letter = "9"; </tag> </item>
+            <item> ten <tag> out.letter = "10"; </tag> </item>
+            <item> a <tag> out.letter = "a"; </tag> </item>
+            <item> ay <tag> out.letter = "a"; </tag> </item>
+            <item> eh <tag> out.letter = "a"; </tag> </item>
+            <item> b <tag> out.letter = "b"; </tag> </item>
+            <item> bee <tag> out.letter = "b"; </tag> </item>
+            <item> c <tag> out.letter = "c"; </tag> </item>
+            <item> see <tag> out.letter = "c"; </tag> </item>
+            <item> d <tag> out.letter = "d"; </tag> </item>
+            <item> dee <tag> out.letter = "d"; </tag> </item>
+            <item> e <tag> out.letter = "e"; </tag> </item>
+            <item> ee <tag> out.letter = "e"; </tag> </item>
+            <item> f <tag> out.letter = "f"; </tag> </item>
+            <item> eff <tag> out.letter = "f"; </tag> </item>
+            <item> g <tag> out.letter = "g"; </tag> </item>
+            <item> gee <tag> out.letter = "g"; </tag> </item>
+            <item> h <tag> out.letter = "h"; </tag> </item>
+            <item> aych <tag> out.letter = "h"; </tag> </item>
+            <item> i <tag> out.letter = "i"; </tag> </item>
+            <item> eye <tag> out.letter = "i"; </tag> </item>
+            <item> j <tag> out.letter = "j"; </tag> </item>
+            <item> jay <tag> out.letter = "j"; </tag> </item>
+            <item> k <tag> out.letter = "k"; </tag> </item>
+            <item> kay <tag> out.letter = "k"; </tag> </item>
+            <item> l <tag> out.letter = "k"; </tag> </item>
+            <item> el <tag> out.letter = "l"; </tag> </item>
+            <item> m <tag> out.letter = "m"; </tag> </item>
+            <item> em <tag> out.letter = "m"; </tag> </item>
+            <item> n <tag> out.letter = "m"; </tag> </item>
+            <item> en <tag> out.letter = "n"; </tag> </item>
+            <item> o <tag> out.letter = "m"; </tag> </item>
+            <item> oh <tag> out.letter = "o"; </tag> </item>
+            <item> p <tag> out.letter = "p"; </tag> </item>
+            <item> pee <tag> out.letter = "p"; </tag> </item>
+            <item> q <tag> out.letter = "p"; </tag> </item>
+            <item> cue <tag> out.letter = "q"; </tag> </item>
+            <item> r <tag> out.letter = "p"; </tag> </item>
+            <item> are <tag> out.letter = "r"; </tag> </item>
+            <item> s <tag> out.letter = "p"; </tag> </item>
+            <item> es <tag> out.letter = "s"; </tag> </item>
+            <item> t <tag> out.letter = "p"; </tag> </item>
+            <item> tee <tag> out.letter = "t"; </tag> </item>
+            <item> u <tag> out.letter = "p"; </tag> </item>
+            <item> you <tag> out.letter = "u"; </tag> </item>
+            <item> v <tag> out.letter = "p"; </tag> </item>
+            <item> vee <tag> out.letter = "v"; </tag> </item>
+            <item> w <tag> out.letter = "p"; </tag> </item>
+            <item> double you <tag> out.letter = "w"; </tag> </item>
+            <item> x <tag> out.letter = "p"; </tag> </item>
+            <item> ex <tag> out.letter = "x"; </tag> </item>
+            <item> y <tag> out.letter = "p"; </tag> </item>
+            <item> why <tag> out.letter = "y"; </tag> </item>
+            <item> z <tag> out.letter = "p"; </tag> </item>
+            <item> zee <tag> out.letter = "z"; </tag> </item>
+        </one-of>
+    </rule>
+
+    <rule id="Location" scope="public">
+        <tag> out.LocationField = ""; </tag>
+        <one-of>
+            <item>
+                <item repeat="1-200">
+                    <ruleref uri="#Alphabet" />
+                    <tag> out.LocationField = out.LocationField + rules.Alphabet.letter; </tag>
+                </item>
+            </item>
+            <item>
+                <one-of>
+                    <item>
+                        <one-of>
+                            <item> Birmingham <tag> out.LocationField="Birmingham"; </tag> </item>
+                            <item> Montgomery <tag> out.LocationField="Montgomery"; </tag> </item>
+                            <item> Mobile <tag> out.LocationField="Mobile"; </tag> </item>
+                            <item> Huntsville <tag> out.LocationField="Huntsville"; </tag> </item>
+                            <item> Tuscaloosa <tag> out.LocationField="Tuscaloosa"; </tag> </item>
+                            <item> Hoover <tag> out.LocationField="Hoover"; </tag> </item>
+                            <item> Dothan <tag> out.LocationField="Dothan"; </tag> </item>
+                            <item> Decatur <tag> out.LocationField="Decatur"; </tag> </item>
+                            <item> Auburn <tag> out.LocationField="Auburn"; </tag> </item>
+                            <item> Gadsden <tag> out.LocationField="Gadsden"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Alabama </item>
+                        <tag>
+                            out.LocationFieldState="Alabama";
+                            out.LocationFieldStateCode="AL";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Anchorage <tag> out.LocationField="Anchorage"; </tag> </item>
+                            <item> Juneau <tag> out.LocationField="Juneau"; </tag> </item>
+                            <item> Fairbanks <tag> out.LocationField="Fairbanks"; </tag> </item>
+                            <item> Sitka <tag> out.LocationField="Sitka"; </tag> </item>
+                            <item> Ketchikan <tag> out.LocationField="Ketchikan"; </tag> </item>
+                            <item> Kenai <tag> out.LocationField="Kenai"; </tag> </item>
+                            <item> Kodiak <tag> out.LocationField="Kodiak"; </tag> </item>
+                            <item> Bethel <tag> out.LocationField="Bethel"; </tag> </item>
+                            <item> Wasilla <tag> out.LocationField="Wasilla"; </tag> </item>
+                            <item> Barrow <tag> out.LocationField="Barrow"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Alaska </item>
+                        <tag>
+                            out.LocationFieldState="Alaska";
+                            out.LocationFieldStateCode="AK";
+                            out.LocationFieldTimezone="-9";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Phoenix <tag> out.LocationField="Phoenix"; </tag> </item>
+                            <item> Tuscan <tag> out.LocationField="Tuscan"; </tag> </item>
+                            <item> Mesa <tag> out.LocationField="Mesa"; </tag> </item>
+                            <item> Glendale <tag> out.LocationField="Glendale"; </tag> </item>
+                            <item> Scottsdale <tag> out.LocationField="Scottsdale"; </tag> </item>
+                            <item> Chandler <tag> out.LocationField="Chandler"; </tag> </item>
+                            <item> Tempe <tag> out.LocationField="Tempe"; </tag> </item>
+                            <item> Gilbert <tag> out.LocationField="Gilbert"; </tag> </item>
+                            <item> Peoria <tag> out.LocationField="Peoria"; </tag> </item>
+                            <item> Yuma <tag> out.LocationField="Yuma"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Arizona </item>
+                        <tag>
+                            out.LocationFieldState="Arizona";
+                            out.LocationFieldStateCode="AZ";
+                            out.LocationFieldTimezone="-7";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Little Rock <tag> out.LocationField="Little Rock"; </tag> </item>
+                            <item> Fort Smith <tag> out.LocationField="Fort Smith"; </tag> </item>
+                            <item> North Little Rock <tag> out.LocationField="North Little Rock"; </tag> </item>
+                            <item> Fayetteville <tag> out.LocationField="Fayetteville"; </tag> </item>
+                            <item> Jonesboro <tag> out.LocationField="Jonesboro"; </tag> </item>
+                            <item> Pine Bluff <tag> out.LocationField="Pine Bluff"; </tag> </item>
+                            <item> Springdale <tag> out.LocationField="Springdale"; </tag> </item>
+                            <item> Conway <tag> out.LocationField="Conway"; </tag> </item>
+                            <item> Rogers <tag> out.LocationField="Rogers"; </tag> </item>
+                            <item> Hot Springs <tag> out.LocationField="Hot Springs"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Arkansas </item>
+                        <tag>
+                            out.LocationFieldState="Arkansas";
+                            out.LocationFieldStateCode="AR";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Los Angeles <tag> out.LocationField="Los Angeles"; </tag> </item>
+                            <item> San Diego <tag> out.LocationField="San Diego"; </tag> </item>
+                            <item> San Jose <tag> out.LocationField="San Jose"; </tag> </item>
+                            <item> San Francisco <tag> out.LocationField="San Francisco"; </tag> </item>
+                            <item> Long Beach <tag> out.LocationField="Long Beach"; </tag> </item>
+                            <item> Fresno <tag> out.LocationField="Fresno"; </tag> </item>
+                            <item> Sacramento <tag> out.LocationField="Sacramento"; </tag> </item>
+                            <item> Oakland <tag> out.LocationField="Oakland"; </tag> </item>
+                            <item> Santa Ana <tag> out.LocationField="Santa Ana"; </tag> </item>
+                            <item> Anaheim <tag> out.LocationField="Anaheim"; </tag> </item>
+                            <item> Santa Cruz <tag> out.LocationField="Santa Cruz"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> California </item>
+                        <tag>
+                            out.LocationFieldState="California";
+                            out.LocationFieldStateCode="CA";
+                            out.LocationFieldTimezone="-8";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Denver <tag> out.LocationField="Denver"; </tag> </item>
+                            <item> Colorado Springs <tag> out.LocationField="Colorado Springs"; </tag> </item>
+                            <item> Aurora <tag> out.LocationField="Aurora"; </tag> </item>
+                            <item> Lakewood <tag> out.LocationField="Lakewood"; </tag> </item>
+                            <item> Fort Collins <tag> out.LocationField="Fort Collins"; </tag> </item>
+                            <item> Arvada <tag> out.LocationField="Arvada"; </tag> </item>
+                            <item> Pueblo <tag> out.LocationField="Pueblo"; </tag> </item>
+                            <item> Westminster <tag> out.LocationField="Westminster"; </tag> </item>
+                            <item> Boulder <tag> out.LocationField="Boulder"; </tag> </item>
+                            <item> Thornton <tag> out.LocationField="Thornton"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Colorado </item>
+                        <tag>
+                            out.LocationFieldState="Colorado";
+                            out.LocationFieldStateCode="CO";
+                            out.LocationFieldTimezone="-7";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Bridgeport <tag> out.LocationField="Bridgeport"; </tag> </item>
+                            <item> New Haven <tag> out.LocationField="New Haven"; </tag> </item>
+                            <item> Hartford <tag> out.LocationField="Hartford"; </tag> </item>
+                            <item> Stamford <tag> out.LocationField="Stamford"; </tag> </item>
+                            <item> Waterbury <tag> out.LocationField="Waterbury"; </tag> </item>
+                            <item> Norwalk <tag> out.LocationField="Norwalk"; </tag> </item>
+                            <item> Danbury <tag> out.LocationField="Danbury"; </tag> </item>
+                            <item> New Britain <tag> out.LocationField="New Britain"; </tag> </item>
+                            <item> West Hartford <tag> out.LocationField="West Hartford"; </tag> </item>
+                            <item> Greenwich <tag> out.LocationField="Greenwich"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Connecticut </item>
+                        <tag>
+                            out.LocationFieldState="Connecticut";
+                            out.LocationFieldStateCode="CT";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Wilmington <tag> out.LocationField="Wilmington"; </tag> </item>
+                            <item> Dover <tag> out.LocationField="Dover"; </tag> </item>
+                            <item> Newark <tag> out.LocationField="Newark"; </tag> </item>
+                            <item> Milford <tag> out.LocationField="Milford"; </tag> </item>
+                            <item> Seaford <tag> out.LocationField="Seaford"; </tag> </item>
+                            <item> Middletown <tag> out.LocationField="Middletown"; </tag> </item>
+                            <item> Elsmere <tag> out.LocationField="Elsmere"; </tag> </item>
+                            <item> Smyrna <tag> out.LocationField="Smyrna"; </tag> </item>
+                            <item> New Castle <tag> out.LocationField="New Castle"; </tag> </item>
+                            <item> Georgetown <tag> out.LocationField="Georgetown"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Delaware </item>
+                        <tag>
+                            out.LocationFieldState="Delaware";
+                            out.LocationFieldStateCode="DE";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Jacksonville <tag> out.LocationField="Jacksonville"; </tag> </item>
+                            <item> Miami <tag> out.LocationField="Miami"; </tag> </item>
+                            <item> Tampa <tag> out.LocationField="Tampa"; </tag> </item>
+                            <item> Saint Petersburg <tag> out.LocationField="Saint Petersburg"; </tag> </item>
+                            <item> Hialeah <tag> out.LocationField="Hialeah"; </tag> </item>
+                            <item> Orlando <tag> out.LocationField="Orlando"; </tag> </item>
+                            <item> Fort Lauderdale <tag> out.LocationField="Fort Lauderdale"; </tag> </item>
+                            <item> Tallahassee <tag> out.LocationField="Tallahassee"; </tag> </item>
+                            <item> Hollywood <tag> out.LocationField="Hollywood"; </tag> </item>
+                            <item> Pembroke Pines <tag> out.LocationField="Pembroke Pines"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Florida </item>
+                        <tag>
+                            out.LocationFieldState="Florida";
+                            out.LocationFieldStateCode="FL";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Atlanta <tag> out.LocationField="Atlanta"; </tag> </item>
+                            <item> Augusta Richmond <item repeat="0-1"> County </item> <tag> out.LocationField="Augusta Richmond County"; </tag> </item>
+                            <item> Columbus <tag> out.LocationField="Columbus"; </tag> </item>
+                            <item> Savannah <tag> out.LocationField="Savannah"; </tag> </item>
+                            <item> Athens Clarke <item repeat="0-1"> County </item> <tag> out.LocationField="Athens Clarke County"; </tag> </item>
+                            <item> Macon <tag> out.LocationField="Macon"; </tag> </item>
+                            <item> Roswell <tag> out.LocationField="Roswell"; </tag> </item>
+                            <item> Albany <tag> out.LocationField="Albany"; </tag> </item>
+                            <item> Marietta <tag> out.LocationField="Marietta"; </tag> </item>
+                            <item> Warner Robins <tag> out.LocationField="Warner Robins"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Georgia </item>
+                        <tag>
+                            out.LocationFieldState="Georgia";
+                            out.LocationFieldStateCode="GA";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Honolulu <tag> out.LocationField="Honolulu"; </tag> </item>
+                            <item> Hilo <tag> out.LocationField="Hilo"; </tag> </item>
+                            <item> Kailua <tag> out.LocationField="Kailua"; </tag> </item>
+                            <item> Kaneohe <tag> out.LocationField="Kaneohe"; </tag> </item>
+                            <item> Waipahu <tag> out.LocationField="Waipahu"; </tag> </item>
+                            <item> Pearl City <tag> out.LocationField="Pearl City"; </tag> </item>
+                            <item> Waimalu <tag> out.LocationField="Waimalu"; </tag> </item>
+                            <item> Mililani Town <tag> out.LocationField="Mililani Town"; </tag> </item>
+                            <item> Kahului <tag> out.LocationField="Kahului"; </tag> </item>
+                            <item> Kihei <tag> out.LocationField="Kihei"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Hawaii </item>
+                        <tag>
+                            out.LocationFieldState="Hawaii";
+                            out.LocationFieldStateCode="HI";
+                            out.LocationFieldTimezone="-10";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Boise <tag> out.LocationField="Boise"; </tag> </item>
+                            <item> Nampa <tag> out.LocationField="Nampa"; </tag> </item>
+                            <item> Pocatello <tag> out.LocationField="Pocatello"; </tag> </item>
+                            <item> Idaho Falls <tag> out.LocationField="Idaho Falls"; </tag> </item>
+                            <item> Meridian <tag> out.LocationField="Meridian"; </tag> </item>
+                            <item> Coeur d Alene <tag> out.LocationField="Coeur d Alene"; </tag> </item>
+                            <item> Twin Falls <tag> out.LocationField="Twin Falls"; </tag> </item>
+                            <item> Lewiston <tag> out.LocationField="Lewiston"; </tag> </item>
+                            <item> Caldwell <tag> out.LocationField="Caldwell"; </tag> </item>
+                            <item> Moscow <tag> out.LocationField="Moscow"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Idaho </item>
+                        <tag>
+                            out.LocationFieldState="Idaho";
+                            out.LocationFieldStateCode="ID";
+                            out.LocationFieldTimezone="-7";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Chicago <tag> out.LocationField="Chicago"; </tag> </item>
+                            <item> Rockford <tag> out.LocationField="Rockford"; </tag> </item>
+                            <item> Aurora <tag> out.LocationField="Aurora"; </tag> </item>
+                            <item> Naperville <tag> out.LocationField="Naperville"; </tag> </item>
+                            <item> Peoria <tag> out.LocationField="Peoria"; </tag> </item>
+                            <item> Springfield <tag> out.LocationField="Springfield"; </tag> </item>
+                            <item> Joliet <tag> out.LocationField="Joliet"; </tag> </item>
+                            <item> Elgin <tag> out.LocationField="Elgin"; </tag> </item>
+                            <item> Waukegan <tag> out.LocationField="Waukegan"; </tag> </item>
+                            <item> Cicero <tag> out.LocationField="Cicero"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Illinois </item>
+                        <tag>
+                            out.LocationFieldState="Illinois";
+                            out.LocationFieldStateCode="IL";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Indianapolis <tag> out.LocationField="Indianapolis"; </tag> </item>
+                            <item> Fort Wayne <tag> out.LocationField="Fort Wayne"; </tag> </item>
+                            <item> Evansville <tag> out.LocationField="Evansville"; </tag> </item>
+                            <item> South Bend <tag> out.LocationField="South Bend"; </tag> </item>
+                            <item> Gary <tag> out.LocationField="Gary"; </tag> </item>
+                            <item> Hammond <tag> out.LocationField="Hammond"; </tag> </item>
+                            <item> Bloomington <tag> out.LocationField="Bloomington"; </tag> </item>
+                            <item> Muncie <tag> out.LocationField="Muncie"; </tag> </item>
+                            <item> Anderson <tag> out.LocationField="Anderson"; </tag> </item>
+                            <item> Terre Haute <tag> out.LocationField="Terre Haute"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Indiana </item>
+                        <tag>
+                            out.LocationFieldState="Indiana";
+                            out.LocationFieldStateCode="IN";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Des Moines <tag> out.LocationField="Des Moines"; </tag> </item>
+                            <item> Cedar Rapids <tag> out.LocationField="Cedar Rapids"; </tag> </item>
+                            <item> Davenport <tag> out.LocationField="Davenport"; </tag> </item>
+                            <item> Sioux City <tag> out.LocationField="Sioux City"; </tag> </item>
+                            <item> Waterloo <tag> out.LocationField="Waterloo"; </tag> </item>
+                            <item> Iowa City <tag> out.LocationField="Iowa City"; </tag> </item>
+                            <item> Council Bluffs <tag> out.LocationField="Council Bluffs"; </tag> </item>
+                            <item> Dubuque <tag> out.LocationField="Dubuque"; </tag> </item>
+                            <item> Ames <tag> out.LocationField="Ames"; </tag> </item>
+                            <item> West Des Moines <tag> out.LocationField="West Des Moines"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Iowa </item>
+                        <tag>
+                            out.LocationFieldState="Iowa";
+                            out.LocationFieldStateCode="IA";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Wichita <tag> out.LocationField="Wichita"; </tag> </item>
+                            <item> Overland Park <tag> out.LocationField="Overland Park"; </tag> </item>
+                            <item> Kansas Park <tag> out.LocationField="Kansas Park"; </tag> </item>
+                            <item> Topeka <tag> out.LocationField="Topeka"; </tag> </item>
+                            <item> Olathe <tag> out.LocationField="Olathe"; </tag> </item>
+                            <item> Lawrence <tag> out.LocationField="Lawrence"; </tag> </item>
+                            <item> Shawnee <tag> out.LocationField="Shawnee"; </tag> </item>
+                            <item> Salina <tag> out.LocationField="Salina"; </tag> </item>
+                            <item> Manhattan <tag> out.LocationField="Manhattan"; </tag> </item>
+                            <item> Hutchinson <tag> out.LocationField="Hutchinson"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Kansas </item>
+                        <tag>
+                            out.LocationFieldState="Kansas";
+                            out.LocationFieldStateCode="KS";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Lexington <tag> out.LocationField="Lexington"; </tag> </item>
+                            <item> Fayette <tag> out.LocationField="Fayette"; </tag> </item>
+                            <item> Louisville <tag> out.LocationField="Louisville"; </tag> </item>
+                            <item> Owensboro <tag> out.LocationField="Owensboro"; </tag> </item>
+                            <item> Bowling Green <tag> out.LocationField="Bowling Green"; </tag> </item>
+                            <item> Covington <tag> out.LocationField="Covington"; </tag> </item>
+                            <item> Hopkinsville <tag> out.LocationField="Hopkinsville"; </tag> </item>
+                            <item> Frankfort <tag> out.LocationField="Frankfort"; </tag> </item>
+                            <item> Henderson <tag> out.LocationField="Henderson"; </tag> </item>
+                            <item> Richmond <tag> out.LocationField="Richmond"; </tag> </item>
+                            <item> Jeffersontown <tag> out.LocationField="Jeffersontown"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Kentucky </item>
+                        <tag>
+                            out.LocationFieldState="Kentucky";
+                            out.LocationFieldStateCode="KY";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> New Orleans <tag> out.LocationField="New Orleans"; </tag> </item>
+                            <item> Baton Rouge <tag> out.LocationField="Baton Rouge"; </tag> </item>
+                            <item> Shreveport <tag> out.LocationField="Shreveport"; </tag> </item>
+                            <item> Lafayette <tag> out.LocationField="Lafayette"; </tag> </item>
+                            <item> Lake Charles <tag> out.LocationField="Lake Charles"; </tag> </item>
+                            <item> Kenner <tag> out.LocationField="Kenner"; </tag> </item>
+                            <item> Bossier City <tag> out.LocationField="Bossier City"; </tag> </item>
+                            <item> Monroe <tag> out.LocationField="Monroe"; </tag> </item>
+                            <item> Alexandria <tag> out.LocationField="Alexandria"; </tag> </item>
+                            <item> New Iberia <tag> out.LocationField="New Iberia"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Louisiana </item>
+                        <tag>
+                            out.LocationFieldState="Louisiana";
+                            out.LocationFieldStateCode="LA";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Portland <tag> out.LocationField="Portland"; </tag> </item>
+                            <item> Lewiston <tag> out.LocationField="Lewiston"; </tag> </item>
+                            <item> Bangor <tag> out.LocationField="Bangor"; </tag> </item>
+                            <item> South Portland <tag> out.LocationField="South Portland"; </tag> </item>
+                            <item> Auburn <tag> out.LocationField="Auburn"; </tag> </item>
+                            <item> Brunswick <tag> out.LocationField="Brunswick"; </tag> </item>
+                            <item> Biddeford <tag> out.LocationField="Biddeford"; </tag> </item>
+                            <item> Sanford <tag> out.LocationField="Sanford"; </tag> </item>
+                            <item> Augusta <tag> out.LocationField="Augusta"; </tag> </item>
+                            <item> Scarborough <tag> out.LocationField="Scarborough"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Maine </item>
+                        <tag>
+                            out.LocationFieldState="Maine";
+                            out.LocationFieldStateCode="ME";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Baltimore <tag> out.LocationField="Baltimore"; </tag> </item>
+                            <item> Frederick <tag> out.LocationField="Frederick"; </tag> </item>
+                            <item> Gaithersburg <tag> out.LocationField="Gaithersburg"; </tag> </item>
+                            <item> Bowie <tag> out.LocationField="Bowie"; </tag> </item>
+                            <item> Rockville <tag> out.LocationField="Rockville"; </tag> </item>
+                            <item> Hagerstown <tag> out.LocationField="Hagerstown"; </tag> </item>
+                            <item> Annapolis <tag> out.LocationField="Annapolis"; </tag> </item>
+                            <item> College Park <tag> out.LocationField="College Park"; </tag> </item>
+                            <item> Salisbury <tag> out.LocationField="Salisbury"; </tag> </item>
+                            <item> Cumberland <tag> out.LocationField="Cumberland"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Maryland </item>
+                        <tag>
+                            out.LocationFieldState="Maryland";
+                            out.LocationFieldStateCode="MD";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Boston <tag> out.LocationField="Boston"; </tag> </item>
+                            <item> Worcester <tag> out.LocationField="Worcester"; </tag> </item>
+                            <item> Springfield <tag> out.LocationField="Springfield"; </tag> </item>
+                            <item> Lowell <tag> out.LocationField="Lowell"; </tag> </item>
+                            <item> Cambridge <tag> out.LocationField="Cambridge"; </tag> </item>
+                            <item> Brockton <tag> out.LocationField="Brockton"; </tag> </item>
+                            <item> New Bedford <tag> out.LocationField="New Bedford"; </tag> </item>
+                            <item> Fall River <tag> out.LocationField="Fall River"; </tag> </item>
+                            <item> Lynn <tag> out.LocationField="Lynn"; </tag> </item>
+                            <item> Quincy <tag> out.LocationField="Quincy"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Massachusetts </item>
+                        <tag>
+                            out.LocationFieldState="Massachusetts";
+                            out.LocationFieldStateCode="MA";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Detroit <tag> out.LocationField="Detroit"; </tag> </item>
+                            <item> Grand Rapids <tag> out.LocationField="Grand Rapids"; </tag> </item>
+                            <item> Warren <tag> out.LocationField="Warren"; </tag> </item>
+                            <item> Flint <tag> out.LocationField="Flint"; </tag> </item>
+                            <item> Sterling Heights <tag> out.LocationField="Sterling Heights"; </tag> </item>
+                            <item> Lansing <tag> out.LocationField="Lansing"; </tag> </item>
+                            <item> Ann Arbor <tag> out.LocationField="Ann Arbor"; </tag> </item>
+                            <item> Livonia <tag> out.LocationField="Livonia"; </tag> </item>
+                            <item> Dearborn <tag> out.LocationField="Dearborn"; </tag> </item>
+                            <item> Westland <tag> out.LocationField="Westland"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Michigan </item>
+                        <tag>
+                            out.LocationFieldState="Michigan";
+                            out.LocationFieldStateCode="MI";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Minneapolis <tag> out.LocationField="Minneapolis"; </tag> </item>
+                            <item> Saint Paul <tag> out.LocationField="Saint Paul"; </tag> </item>
+                            <item> Duluth <tag> out.LocationField="Duluth"; </tag> </item>
+                            <item> Rochester <tag> out.LocationField="Rochester"; </tag> </item>
+                            <item> Bloomington <tag> out.LocationField="Bloomington"; </tag> </item>
+                            <item> Brooklyn Park <tag> out.LocationField="Brooklyn Park"; </tag> </item>
+                            <item> Plymouth <tag> out.LocationField="Plymouth"; </tag> </item>
+                            <item> Eagan <tag> out.LocationField="Eagan"; </tag> </item>
+                            <item> Coon Rapids <tag> out.LocationField="Coon Rapids"; </tag> </item>
+                            <item> Burnsville <tag> out.LocationField="Burnsville"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Minnesota </item>
+                        <tag>
+                            out.LocationFieldState="Minnesota";
+                            out.LocationFieldStateCode="MN";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Jackson <tag> out.LocationField="Jackson"; </tag> </item>
+                            <item> Gulfport <tag> out.LocationField="Gulfport"; </tag> </item>
+                            <item> Biloxi <tag> out.LocationField="Biloxi"; </tag> </item>
+                            <item> Hattiesburg <tag> out.LocationField="Hattiesburg"; </tag> </item>
+                            <item> Greenville <tag> out.LocationField="Greenville"; </tag> </item>
+                            <item> Meridian <tag> out.LocationField="Meridian"; </tag> </item>
+                            <item> Tupelo <tag> out.LocationField="Tupelo"; </tag> </item>
+                            <item> Southaven <tag> out.LocationField="Southaven"; </tag> </item>
+                            <item> Vicksburg <tag> out.LocationField="Vicksburg"; </tag> </item>
+                            <item> Pascagoula <tag> out.LocationField="Pascagoula"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Mississippi </item>
+                        <tag>
+                            out.LocationFieldState="Mississippi";
+                            out.LocationFieldStateCode="MS";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Kansas City <tag> out.LocationField="Kansas City"; </tag> </item>
+                            <item> Saint Louis <tag> out.LocationField="Saint Louis"; </tag> </item>
+                            <item> Springfield <tag> out.LocationField="Springfield"; </tag> </item>
+                            <item> Independence <tag> out.LocationField="Independence"; </tag> </item>
+                            <item> Columbia <tag> out.LocationField="Columbia"; </tag> </item>
+                            <item> Saint Joseph <tag> out.LocationField="Saint Joseph"; </tag> </item>
+                            <item> Lees Summit <tag> out.LocationField="Lees Summit"; </tag> </item>
+                            <item> Saint Charles <tag> out.LocationField="Saint Charles"; </tag> </item>
+                            <item> Saint Peters <tag> out.LocationField="Saint Peters"; </tag> </item>
+                            <item> Florissant <tag> out.LocationField="Florissant"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Missouri </item>
+                        <tag>
+                            out.LocationFieldState="Missouri";
+                            out.LocationFieldStateCode="MO";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Billings <tag> out.LocationField="Billings"; </tag> </item>
+                            <item> Missoula <tag> out.LocationField="Missoula"; </tag> </item>
+                            <item> Great Falls <tag> out.LocationField="Great Falls"; </tag> </item>
+                            <item> Butte Silver Bow <tag> out.LocationField="Butte Silver Bow"; </tag> </item>
+                            <item> Bozeman <tag> out.LocationField="Bozeman"; </tag> </item>
+                            <item> Helena <tag> out.LocationField="Helena"; </tag> </item>
+                            <item> Kalispell <tag> out.LocationField="Kalispell"; </tag> </item>
+                            <item> Havre <tag> out.LocationField="Havre"; </tag> </item>
+                            <item> Anaconda Deer Lodge <item repeat="0-1"> County </item> <tag> out.LocationField="Anaconda Deer Lodge County"; </tag> </item>
+                            <item> Miles City <tag> out.LocationField="Miles City"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Montana </item>
+                        <tag>
+                            out.LocationFieldState="Montana";
+                            out.LocationFieldStateCode="MT";
+                            out.LocationFieldTimezone="-7";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Omaha <tag> out.LocationField="Omaha"; </tag> </item>
+                            <item> Lincoln <tag> out.LocationField="Lincoln"; </tag> </item>
+                            <item> Bellevue <tag> out.LocationField="Bellevue"; </tag> </item>
+                            <item> Grand Island <tag> out.LocationField="Grand Island"; </tag> </item>
+                            <item> Kearney <tag> out.LocationField="Kearney"; </tag> </item>
+                            <item> Fremont <tag> out.LocationField="Fremont"; </tag> </item>
+                            <item> Hastings <tag> out.LocationField="Hastings"; </tag> </item>
+                            <item> North Platte <tag> out.LocationField="North Platte"; </tag> </item>
+                            <item> Norfolk <tag> out.LocationField="Norfolk"; </tag> </item>
+                            <item> Columbus <tag> out.LocationField="Columbus"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Nebraska </item>
+                        <tag>
+                            out.LocationFieldState="Nebraska";
+                            out.LocationFieldStateCode="NE";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Las Vegas <tag> out.LocationField="Las Vegas"; </tag> </item>
+                            <item> Reno <tag> out.LocationField="Reno"; </tag> </item>
+                            <item> Henderson <tag> out.LocationField="Henderson"; </tag> </item>
+                            <item> North Las Vegas <tag> out.LocationField="North Las Vegas"; </tag> </item>
+                            <item> Sparks <tag> out.LocationField="Sparks"; </tag> </item>
+                            <item> Carson City <tag> out.LocationField="Carson City"; </tag> </item>
+                            <item> Elko <tag> out.LocationField="Elko"; </tag> </item>
+                            <item> Boulder City <tag> out.LocationField="Boulder City"; </tag> </item>
+                            <item> Mesquite <tag> out.LocationField="Mesquite"; </tag> </item>
+                            <item> Fallon <tag> out.LocationField="Fallon"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Nevada </item>
+                        <tag>
+                            out.LocationFieldState="Nevada";
+                            out.LocationFieldStateCode="NV";
+                            out.LocationFieldTimezone="-7";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Manchester <tag> out.LocationField="Manchester"; </tag> </item>
+                            <item> Nashua <tag> out.LocationField="Nashua"; </tag> </item>
+                            <item> Concord <tag> out.LocationField="Concord"; </tag> </item>
+                            <item> Rochester <tag> out.LocationField="Rochester"; </tag> </item>
+                            <item> Salem <tag> out.LocationField="Salem"; </tag> </item>
+                            <item> Dover <tag> out.LocationField="Dover"; </tag> </item>
+                            <item> Merrimack <tag> out.LocationField="Merrimack"; </tag> </item>
+                            <item> Londonderry <tag> out.LocationField="Londonderry"; </tag> </item>
+                            <item> Derry <tag> out.LocationField="Derry"; </tag> </item>
+                            <item> Hudson <tag> out.LocationField="Hudson"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> New Hampshire </item>
+                        <tag>
+                            out.LocationFieldState="New Hampshire";
+                            out.LocationFieldStateCode="NH";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Newark <tag> out.LocationField="Newark"; </tag> </item>
+                            <item> Jersey City <tag> out.LocationField="Jersey City"; </tag> </item>
+                            <item> Paterson <tag> out.LocationField="Paterson"; </tag> </item>
+                            <item> Elizabeth <tag> out.LocationField="Elizabeth"; </tag> </item>
+                            <item> Edison <tag> out.LocationField="Edison"; </tag> </item>
+                            <item> Woodbridge <tag> out.LocationField="Woodbridge"; </tag> </item>
+                            <item> Dover <tag> out.LocationField="Dover"; </tag> </item>
+                            <item> Hamilton <tag> out.LocationField="Hamilton"; </tag> </item>
+                            <item> Trenton <tag> out.LocationField="Trenton"; </tag> </item>
+                            <item> Camden <tag> out.LocationField="Camden"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> New Jersey </item>
+                        <tag>
+                            out.LocationFieldState="New Jersey";
+                            out.LocationFieldStateCode="NJ";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Albuquerque <tag> out.LocationField="Albuquerque"; </tag> </item>
+                            <item> Las Cruces <tag> out.LocationField="Las Cruces"; </tag> </item>
+                            <item> Santa Fe <tag> out.LocationField="Santa Fe"; </tag> </item>
+                            <item> Rio Rancho <tag> out.LocationField="Rio Rancho"; </tag> </item>
+                            <item> Roswell <tag> out.LocationField="Roswell"; </tag> </item>
+                            <item> Farmington <tag> out.LocationField="Farmington"; </tag> </item>
+                            <item> Alamogordo <tag> out.LocationField="Alamogordo"; </tag> </item>
+                            <item> Clovis <tag> out.LocationField="Clovis"; </tag> </item>
+                            <item> Hobbs <tag> out.LocationField="Hobbs"; </tag> </item>
+                            <item> Carlsbad <tag> out.LocationField="Carlsbad"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> New Mexico </item>
+                        <tag>
+                            out.LocationFieldState="New Mexico";
+                            out.LocationFieldStateCode="NM";
+                            out.LocationFieldTimezone="-7";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> New York <item repeat="0-1"> City </item> <tag> out.LocationField="New York City"; </tag> </item>
+                            <item> Buffalo <tag> out.LocationField="Buffalo"; </tag> </item>
+                            <item> Rochester <tag> out.LocationField="Rochester"; </tag> </item>
+                            <item> Yonkers <tag> out.LocationField="Yonkers"; </tag> </item>
+                            <item> Syracuse <tag> out.LocationField="Syracuse"; </tag> </item>
+                            <item> Albany <tag> out.LocationField="Albany"; </tag> </item>
+                            <item> New Rochelle <tag> out.LocationField="New Rochelle"; </tag> </item>
+                            <item> Mount Vernon <tag> out.LocationField="Mount Vernon"; </tag> </item>
+                            <item> Schenectady <tag> out.LocationField="Schenectady"; </tag> </item>
+                            <item> Utica <tag> out.LocationField="Utica"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> New York </item>
+                        <tag>
+                            out.LocationFieldState="New York";
+                            out.LocationFieldStateCode="NY";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Charlotte <tag> out.LocationField="Charlotte"; </tag> </item>
+                            <item> Raleigh <tag> out.LocationField="Raleigh"; </tag> </item>
+                            <item> Greensboro <tag> out.LocationField="Greensboro"; </tag> </item>
+                            <item> Durham <tag> out.LocationField="Durham"; </tag> </item>
+                            <item> Winston Salem <tag> out.LocationField="Winston Salem"; </tag> </item>
+                            <item> Fayetteville <tag> out.LocationField="Fayetteville"; </tag> </item>
+                            <item> Cary <tag> out.LocationField="Cary"; </tag> </item>
+                            <item> High Point <tag> out.LocationField="High Point"; </tag> </item>
+                            <item> Wilmington <tag> out.LocationField="Wilmington"; </tag> </item>
+                            <item> Asheville <tag> out.LocationField="Asheville"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> North Carolina </item>
+                        <tag>
+                            out.LocationFieldState="North Carolina";
+                            out.LocationFieldStateCode="NC";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Fargo <tag> out.LocationField="Fargo"; </tag> </item>
+                            <item> Bismarck <tag> out.LocationField="Bismarck"; </tag> </item>
+                            <item> Grand Forks <tag> out.LocationField="Grand Forks"; </tag> </item>
+                            <item> Minot <tag> out.LocationField="Minot"; </tag> </item>
+                            <item> Mandan <tag> out.LocationField="Mandan"; </tag> </item>
+                            <item> Dickinson <tag> out.LocationField="Dickinson"; </tag> </item>
+                            <item> Jamestown <tag> out.LocationField="Jamestown"; </tag> </item>
+                            <item> West Fargo <tag> out.LocationField="West Fargo"; </tag> </item>
+                            <item> Williston <tag> out.LocationField="Williston"; </tag> </item>
+                            <item> Wahpeton <tag> out.LocationField="Wahpeton"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> North Dakota </item>
+                        <tag>
+                            out.LocationFieldState="North Dakota";
+                            out.LocationFieldStateCode="ND";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Columbus <tag> out.LocationField="Columbus"; </tag> </item>
+                            <item> Cleveland <tag> out.LocationField="Cleveland"; </tag> </item>
+                            <item> Cincinnati <tag> out.LocationField="Cincinnati"; </tag> </item>
+                            <item> Toledo <tag> out.LocationField="Toledo"; </tag> </item>
+                            <item> Akron <tag> out.LocationField="Akron"; </tag> </item>
+                            <item> Dayton <tag> out.LocationField="Dayton"; </tag> </item>
+                            <item> Parma <tag> out.LocationField="Parma"; </tag> </item>
+                            <item> Youngstown <tag> out.LocationField="Youngstown"; </tag> </item>
+                            <item> Canton <tag> out.LocationField="Canton"; </tag> </item>
+                            <item> Lorain <tag> out.LocationField="Lorain"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Ohio </item>
+                        <tag>
+                            out.LocationFieldState="Ohio";
+                            out.LocationFieldStateCode="OH";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Oklahoma City <tag> out.LocationField="Oklahoma City"; </tag> </item>
+                            <item> Tulsa <tag> out.LocationField="Tulsa"; </tag> </item>
+                            <item> Norman <tag> out.LocationField="Norman"; </tag> </item>
+                            <item> Lawton <tag> out.LocationField="Lawton"; </tag> </item>
+                            <item> Broken Arrow <tag> out.LocationField="Broken Arrow"; </tag> </item>
+                            <item> Edmond <tag> out.LocationField="Edmond"; </tag> </item>
+                            <item> Midwest City <tag> out.LocationField="Midwest City"; </tag> </item>
+                            <item> Enid <tag> out.LocationField="Enid"; </tag> </item>
+                            <item> Moore <tag> out.LocationField="Moore"; </tag> </item>
+                            <item> Stillwater <tag> out.LocationField="Stillwater"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Oklahoma </item>
+                        <tag>
+                            out.LocationFieldState="Oklahoma";
+                            out.LocationFieldStateCode="OK";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Portland <tag> out.LocationField="Portland"; </tag> </item>
+                            <item> Eugene <tag> out.LocationField="Eugene"; </tag> </item>
+                            <item> Salem <tag> out.LocationField="Salem"; </tag> </item>
+                            <item> Gresham <tag> out.LocationField="Gresham"; </tag> </item>
+                            <item> Beaverton <tag> out.LocationField="Beaverton"; </tag> </item>
+                            <item> Hillsboro <tag> out.LocationField="Hillsboro"; </tag> </item>
+                            <item> Medford <tag> out.LocationField="Medford"; </tag> </item>
+                            <item> Springfield <tag> out.LocationField="Springfield"; </tag> </item>
+                            <item> Bend <tag> out.LocationField="Bend"; </tag> </item>
+                            <item> Corvallis <tag> out.LocationField="Corvallis"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Oregon </item>
+                        <tag>
+                            out.LocationFieldState="Oregon";
+                            out.LocationFieldStateCode="OR";
+                            out.LocationFieldTimezone="-8";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Philadelphia <tag> out.LocationField="Philadelphia"; </tag> </item>
+                            <item> Pittsburgh <tag> out.LocationField="Pittsburgh"; </tag> </item>
+                            <item> Allentown <tag> out.LocationField="Allentown"; </tag> </item>
+                            <item> Erie <tag> out.LocationField="Erie"; </tag> </item>
+                            <item> Upper Darby <tag> out.LocationField="Upper Darby"; </tag> </item>
+                            <item> Reading <tag> out.LocationField="Reading"; </tag> </item>
+                            <item> Scranton <tag> out.LocationField="Scranton"; </tag> </item>
+                            <item> Bethlehem <tag> out.LocationField="Bethlehem"; </tag> </item>
+                            <item> Lower Merion <tag> out.LocationField="Lower Merion"; </tag> </item>
+                            <item> Bensalem <tag> out.LocationField="Bensalem"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Pennsylvania </item>
+                        <tag>
+                            out.LocationFieldState="Pennsylvania";
+                            out.LocationFieldStateCode="PA";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Providence <tag> out.LocationField="Providence"; </tag> </item>
+                            <item> Warwick <tag> out.LocationField="Warwick"; </tag> </item>
+                            <item> Cranston <tag> out.LocationField="Cranston"; </tag> </item>
+                            <item> Pawtucket <tag> out.LocationField="Pawtucket"; </tag> </item>
+                            <item> East Providence <tag> out.LocationField="East Providence"; </tag> </item>
+                            <item> Woonsocket <tag> out.LocationField="Woonsocket"; </tag> </item>
+                            <item> Coventry <tag> out.LocationField="Coventry"; </tag> </item>
+                            <item> North Providence <tag> out.LocationField="North Providence"; </tag> </item>
+                            <item> Cumberland <tag> out.LocationField="Cumberland"; </tag> </item>
+                            <item> West Warwick <tag> out.LocationField="West Warwick"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Rhode Island </item>
+                        <tag>
+                            out.LocationFieldState="Rhode Island";
+                            out.LocationFieldStateCode="RI";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Columbia <tag> out.LocationField="Columbia"; </tag> </item>
+                            <item> Charleston <tag> out.LocationField="Charleston"; </tag> </item>
+                            <item> North Charleston <tag> out.LocationField="North Charleston"; </tag> </item>
+                            <item> Greenville <tag> out.LocationField="Greenville"; </tag> </item>
+                            <item> Rock Hill <tag> out.LocationField="Rock Hill"; </tag> </item>
+                            <item> Mount Pleasant <tag> out.LocationField="Mount Pleasant"; </tag> </item>
+                            <item> Spartanburg <tag> out.LocationField="Spartanburg"; </tag> </item>
+                            <item> Sumter <tag> out.LocationField="Sumter"; </tag> </item>
+                            <item> Hilton Head Island <tag> out.LocationField="Hilton Head Island"; </tag> </item>
+                            <item> Florence <tag> out.LocationField="Florence"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> South Carolina </item>
+                        <tag>
+                            out.LocationFieldState="South Carolina";
+                            out.LocationFieldStateCode="SC";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Sioux Falls <tag> out.LocationField="Sioux Falls"; </tag> </item>
+                            <item> Rapid City <tag> out.LocationField="Rapid City"; </tag> </item>
+                            <item> Aberdeen <tag> out.LocationField="Aberdeen"; </tag> </item>
+                            <item> Watertown <tag> out.LocationField="Watertown"; </tag> </item>
+                            <item> Brookings <tag> out.LocationField="Brookings"; </tag> </item>
+                            <item> Mitchell <tag> out.LocationField="Mitchell"; </tag> </item>
+                            <item> Pierre <tag> out.LocationField="Pierre"; </tag> </item>
+                            <item> Yankton <tag> out.LocationField="Yankton"; </tag> </item>
+                            <item> Huron <tag> out.LocationField="Huron"; </tag> </item>
+                            <item> Vermillion <tag> out.LocationField="Vermillion"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> South Dakota </item>
+                        <tag>
+                            out.LocationFieldState="South Dakota";
+                            out.LocationFieldStateCode="SD";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Memphis <tag> out.LocationField="Memphis"; </tag> </item>
+                            <item> Nashville <tag> out.LocationField="Nashville"; </tag> </item>
+                            <item> Knoxville <tag> out.LocationField="Knoxville"; </tag> </item>
+                            <item> Chattanooga <tag> out.LocationField="Chattanooga"; </tag> </item>
+                            <item> Clarksville <tag> out.LocationField="Clarksville"; </tag> </item>
+                            <item> Murfreesboro <tag> out.LocationField="Murfreesboro"; </tag> </item>
+                            <item> Jackson <tag> out.LocationField="Jackson"; </tag> </item>
+                            <item> Johnson City <tag> out.LocationField="Johnson City"; </tag> </item>
+                            <item> Kingsport <tag> out.LocationField="Kingsport"; </tag> </item>
+                            <item> Franklin <tag> out.LocationField="Franklin"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Tennessee </item>
+                        <tag>
+                            out.LocationFieldState="Tennessee";
+                            out.LocationFieldStateCode="TN";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Houston <tag> out.LocationField="Houston"; </tag> </item>
+                            <item> Dallas <tag> out.LocationField="Dallas"; </tag> </item>
+                            <item> San Antonio <tag> out.LocationField="San Antonio"; </tag> </item>
+                            <item> Austin <tag> out.LocationField="Austin"; </tag> </item>
+                            <item> El Paso <tag> out.LocationField="El Paso"; </tag> </item>
+                            <item> Fort Worth <tag> out.LocationField="Fort Worth"; </tag> </item>
+                            <item> Arlington <tag> out.LocationField="Arlington"; </tag> </item>
+                            <item> Corpus Christi <tag> out.LocationField="Corpus Christi"; </tag> </item>
+                            <item> Plano <tag> out.LocationField="Plano"; </tag> </item>
+                            <item> Garland <tag> out.LocationField="Garland"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Texas </item>
+                        <tag>
+                            out.LocationFieldState="Texas";
+                            out.LocationFieldStateCode="TX";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Salt Lake City <tag> out.LocationField="Salt Lake City"; </tag> </item>
+                            <item> West Valley City <tag> out.LocationField="West Valley City"; </tag> </item>
+                            <item> Provo <tag> out.LocationField="Provo"; </tag> </item>
+                            <item> Sandy <tag> out.LocationField="Sandy"; </tag> </item>
+                            <item> Orem <tag> out.LocationField="Orem"; </tag> </item>
+                            <item> Ogden <tag> out.LocationField="Ogden"; </tag> </item>
+                            <item> West Jordan <tag> out.LocationField="West Jordan"; </tag> </item>
+                            <item> Layton <tag> out.LocationField="Layton"; </tag> </item>
+                            <item> Taylorsville <tag> out.LocationField="Taylorsville"; </tag> </item>
+                            <item> Saint George <tag> out.LocationField="St George"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Utah </item>
+                        <tag>
+                            out.LocationFieldState="Utah";
+                            out.LocationFieldStateCode="UT";
+                            out.LocationFieldTimezone="-7";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Burlington <tag> out.LocationField="Burlington"; </tag> </item>
+                            <item> Essex <tag> out.LocationField="Essex"; </tag> </item>
+                            <item> Rutland <tag> out.LocationField="Rutland"; </tag> </item>
+                            <item> Colchester <tag> out.LocationField="Colchester"; </tag> </item>
+                            <item> South Burlington <tag> out.LocationField="South Burlington"; </tag> </item>
+                            <item> Bennington <tag> out.LocationField="Bennington"; </tag> </item>
+                            <item> Brattleboro <tag> out.LocationField="Brattleboro"; </tag> </item>
+                            <item> Hartford <tag> out.LocationField="Hartford"; </tag> </item>
+                            <item> Milton <tag> out.LocationField="Milton"; </tag> </item>
+                            <item> Barre <tag> out.LocationField="Barre"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Vermont </item>
+                        <tag>
+                            out.LocationFieldState="Vermont";
+                            out.LocationFieldStateCode="VT";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Virginia Beach <tag> out.LocationField="Virginia Beach"; </tag> </item>
+                            <item> Norfolk <tag> out.LocationField="Norfolk"; </tag> </item>
+                            <item> Chesapeake <tag> out.LocationField="Chesapeake"; </tag> </item>
+                            <item> Richmond <tag> out.LocationField="Richmond"; </tag> </item>
+                            <item> Newport News <tag> out.LocationField="Newport News"; </tag> </item>
+                            <item> Hampton <tag> out.LocationField="Hampton"; </tag> </item>
+                            <item> Alexandria <tag> out.LocationField="Alexandria"; </tag> </item>
+                            <item> Portsmouth <tag> out.LocationField="Portsmouth"; </tag> </item>
+                            <item> Roanoke <tag> out.LocationField="Roanoke"; </tag> </item>
+                            <item> Lynchburg <tag> out.LocationField="Lynchburg"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Virginia </item>
+                        <tag>
+                            out.LocationFieldState="Virginia";
+                            out.LocationFieldStateCode="VA";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Seattle <tag> out.LocationField="Seattle"; </tag> </item>
+                            <item> Spokane <tag> out.LocationField="Spokane"; </tag> </item>
+                            <item> Tacoma <tag> out.LocationField="Tacoma"; </tag> </item>
+                            <item> Vancouver <tag> out.LocationField="Vancouver"; </tag> </item>
+                            <item> Bellevue <tag> out.LocationField="Bellevue"; </tag> </item>
+                            <item> Everett <tag> out.LocationField="Everett"; </tag> </item>
+                            <item> Federal Way <tag> out.LocationField="Federal Way"; </tag> </item>
+                            <item> Kent <tag> out.LocationField="Kent"; </tag> </item>
+                            <item> Yakima <tag> out.LocationField="Yakima"; </tag> </item>
+                            <item> Bellingham <tag> out.LocationField="Bellingham"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Washington </item>
+                        <tag>
+                            out.LocationFieldState="Washington";
+                            out.LocationFieldStateCode="WA";
+                            out.LocationFieldTimezone="-8";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Charleston <tag> out.LocationField="Charleston"; </tag> </item>
+                            <item> Huntington <tag> out.LocationField="Huntington"; </tag> </item>
+                            <item> Parkersburg <tag> out.LocationField="Parkersburg"; </tag> </item>
+                            <item> Wheeling <tag> out.LocationField="Wheeling"; </tag> </item>
+                            <item> Morgantown <tag> out.LocationField="Morgantown"; </tag> </item>
+                            <item> Weirton <tag> out.LocationField="Weirton"; </tag> </item>
+                            <item> Fairmont <tag> out.LocationField="Fairmont"; </tag> </item>
+                            <item> Beckley <tag> out.LocationField="Beckley"; </tag> </item>
+                            <item> Clarksburg <tag> out.LocationField="Clarksburg"; </tag> </item>
+                            <item> Martinsburg <tag> out.LocationField="Martinsburg"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> West Virginia </item>
+                        <tag>
+                            out.LocationFieldState="West Virginia";
+                            out.LocationFieldStateCode="WV";
+                            out.LocationFieldTimezone="-5";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Milwaukee <tag> out.LocationField="Milwaukee"; </tag> </item>
+                            <item> Madison <tag> out.LocationField="Madison"; </tag> </item>
+                            <item> Green Bay <tag> out.LocationField="Green Bay"; </tag> </item>
+                            <item> Kenosha <tag> out.LocationField="Kenosha"; </tag> </item>
+                            <item> Racine <tag> out.LocationField="Racine"; </tag> </item>
+                            <item> Appleton <tag> out.LocationField="Appleton"; </tag> </item>
+                            <item> Waukesha <tag> out.LocationField="Waukesha"; </tag> </item>
+                            <item> Oshkosh <tag> out.LocationField="Oshkosh"; </tag> </item>
+                            <item> Eau Claire <tag> out.LocationField="Eau Claire"; </tag> </item>
+                            <item> West Allis <tag> out.LocationField="West Allis"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Wisconsin </item>
+                        <tag>
+                            out.LocationFieldState="Wisconsin";
+                            out.LocationFieldStateCode="WI";
+                            out.LocationFieldTimezone="-6";
+                        </tag>
+                    </item>
+                    <item>
+                        <one-of>
+                            <item> Cheyenne <tag> out.LocationField="Cheyenne"; </tag> </item>
+                            <item> Casper <tag> out.LocationField="Casper"; </tag> </item>
+                            <item> Laramie <tag> out.LocationField="Laramie"; </tag> </item>
+                            <item> Gillette <tag> out.LocationField="Gillette"; </tag> </item>
+                            <item> Rock Springs <tag> out.LocationField="Rock Springs"; </tag> </item>
+                            <item> Sheridan <tag> out.LocationField="Sheridan"; </tag> </item>
+                            <item> Green River <tag> out.LocationField="Green River"; </tag> </item>
+                            <item> Evanston <tag> out.LocationField="Evanston"; </tag> </item>
+                            <item> Riverton <tag> out.LocationField="Riverton"; </tag> </item>
+                            <item> Cody <tag> out.LocationField="Cody"; </tag> </item>
+                        </one-of>
+                        <item repeat="0-1"> Wyoming </item>
+                        <tag>
+                            out.LocationFieldState="Wyoming";
+                            out.LocationFieldStateCode="WY";
+                            out.LocationFieldTimezone="-7";
+                        </tag>
+                    </item>
+                </one-of>
+            </item>
+        </one-of>
+    </rule>
+
+    <rule id="Business" scope="public">
+        <tag> out.BusinessField = ""; </tag>
+        <one-of>
+            <item>
+                <item repeat="1-200">
+                    <ruleref uri="#Alphabet" />
+                    <tag> out.BusinessField = out.BusinessField + rules.Alphabet.letter; </tag>
+                </item>
+            </item>
+            <item>
+                <item repeat="0-1"> The </item>
+
+                <one-of>
+                    <!-- Department stores -->
+                    <item> Baileys <tag> out.BusinessField = "Baileys"; </tag> </item>
+                    <item> Bealls <tag> out.BusinessField = "Bealls"; </tag> </item>
+                    <item> Belk <tag> out.BusinessField = "Belk"; </tag> </item>
+                    <item> Ben Franklin <tag> out.BusinessField = "Ben Franklin"; </tag> </item>
+                    <item> Bergners <tag> out.BusinessField = "Bergners"; </tag> </item>
+                    <item> Best Buy <tag> out.BusinessField = "Best Buy"; </tag> </item>
+                    <item> Bi Mart <tag> out.BusinessField = "Bi Mart"; </tag> </item>
+                    <item> Big Lots <tag> out.BusinessField = "Big Lots"; </tag> </item>
+                    <item> BJs Wholesale <item repeat="0-1"> Club </item> <tag> out.BusinessField = "BJs Wholesale Club"; </tag> </item>
+                    <item> Bloomingdales <tag> out.BusinessField = "Bloomingdales"; </tag> </item>
+                    <item> Boscovs <tag> out.BusinessField = "Boscovs"; </tag> </item>
+                    <item> Boston Store <tag> out.BusinessField = "Boston Store"; </tag> </item>
+                    <item> Boyds <tag> out.BusinessField = "Boyds"; </tag> </item>
+                    <item> Burlington Coat Factory <tag> out.BusinessField = "Burlington Coat Factory"; </tag> </item>
+                    <item> Caldor <tag> out.BusinessField = "Caldor"; </tag> </item>
+                    <item> Carsons <tag> out.BusinessField = "Carsons"; </tag> </item>
+                    <item> Childrens Place <tag> out.BusinessField = "The Childrens Place"; </tag> </item>
+                    <item> Christensens <tag> out.BusinessField = "Christensens"; </tag> </item>
+                    <item> Costco <tag> out.BusinessField = "Costco"; </tag> </item>
+                    <item> Curacao <tag> out.BusinessField = "Curacao"; </tag> </item>
+                    <item> Deals <tag> out.BusinessField = "Deals"; </tag> </item>
+                    <item> Dillards <tag> out.BusinessField = "Dillards"; </tag> </item>
+                    <item> Dollar General <tag> out.BusinessField = "Dollar General"; </tag> </item>
+                    <item> Dollar Tree <tag> out.BusinessField = "Dollar Tree"; </tag> </item>
+                    <item> Duebers <tag> out.BusinessField = "Duebers"; </tag> </item>
+                    <item> Elder Beerman <tag> out.BusinessField = "Elder Beerman"; </tag> </item>
+                    <item> Family Dollar <tag> out.BusinessField = "Family Dollar"; </tag> </item>
+                    <item> Family Fare <tag> out.BusinessField = "Family Fare"; </tag> </item>
+                    <item> Fischers <tag> out.BusinessField = "Fischers"; </tag> </item>
+                    <item> Five Below <tag> out.BusinessField = "Five Below"; </tag> </item>
+                    <item> Fords <item repeat="0-1"> Federated </item> <tag> out.BusinessField = "Fords Federated Store"; </tag> </item>
+                    <item> Freds <tag> out.BusinessField = "Freds"; </tag> </item>
+                    <item> Gabriel Brothers <tag> out.BusinessField = "Gabriel Brothers"; </tag> </item>
+                    <item> Getz <tag> out.BusinessField = "Getz"; </tag> </item>
+                    <item> Goffs <tag> out.BusinessField = "Goffs"; </tag> </item>
+                    <item> Goodys <tag> out.BusinessField = "Goodys"; </tag> </item>
+                    <item> Gordmans <tag> out.BusinessField = "Gordmans"; </tag> </item>
+                    <item> Gus Mayer <tag> out.BusinessField = "Gus Mayer"; </tag> </item>
+                    <item> Guy Mayer <tag> out.BusinessField = "Guy Mayer"; </tag> </item>
+                    <item> H Mart <tag> out.BusinessField = "H Mart"; </tag> </item>
+                    <item> Halls <tag> out.BusinessField = "Halls"; </tag> </item>
+                    <item> Harbor Freight Tools <tag> out.BusinessField = "Harbor Freight Tools"; </tag> </item>
+                    <item> Herbergers <tag> out.BusinessField = "Herbergers"; </tag> </item>
+                    <item> Home Depot <tag> out.BusinessField = "Home Depot"; </tag> </item>
+                    <item> HomeGoods <tag> out.BusinessField = "HomeGoods"; </tag> </item>
+                    <item> J C Penney <tag> out.BusinessField = "J C Penney"; </tag> </item>
+                    <item> Jacobsons <tag> out.BusinessField = "Jacobsons"; </tag> </item>
+                    <item> Jeremys <tag> out.BusinessField = "Jeremys"; </tag> </item>
+                    <item> Jos Kuhn <tag> out.BusinessField = "Jos Kuhn"; </tag> </item>
+                    <item> K Mart <tag> out.BusinessField = "K Mart"; </tag> </item>
+                    <item> Kings Variety <tag> out.BusinessField = "Kings Variety"; </tag> </item>
+                    <item> Kitson <tag> out.BusinessField = "Kitson"; </tag> </item>
+                    <item> Kohls <tag> out.BusinessField = "Kohls"; </tag> </item>
+                    <item> La Epoca <tag> out.BusinessField = "La Epoca"; </tag> </item>
+                    <item> LaVogue <tag> out.BusinessField = "LaVogue"; </tag> </item>
+                    <item> Leader <tag> out.BusinessField = "Leader"; </tag> </item>
+                    <item> Lochners <tag> out.BusinessField = "Lochners"; </tag> </item>
+                    <item> Lord and Taylor <tag> out.BusinessField = "Lord and Taylor"; </tag> </item>
+                    <item> Mack and Daves <tag> out.BusinessField = "Mack and Daves"; </tag> </item>
+                    <item> Macys <tag> out.BusinessField = "Macys"; </tag> </item>
+                    <item> Magic Mart <tag> out.BusinessField = "Magic Mart"; </tag> </item>
+                    <item> Marshalls <tag> out.BusinessField = "Marshalls"; </tag> </item>
+                    <item> McCaulous <tag> out.BusinessField = "McCaulous"; </tag> </item>
+                    <item> Meijer <tag> out.BusinessField = "Meijer"; </tag> </item>
+                    <item> Murphys <tag> out.BusinessField = "Murphys"; </tag> </item>
+                    <item> National <item repeat="0-1"> Wholesale </item> <tag> out.BusinessField = "National Wholesale"; </tag> </item>
+                    <item> Neilsons <tag> out.BusinessField = "Neilsons"; </tag> </item>
+                    <item> Neiman Marcus <tag> out.BusinessField = "Neiman Marcus"; </tag> </item>
+                    <item> Norbys <tag> out.BusinessField = "Norbys"; </tag> </item>
+                    <item> Nordstrom <tag> out.BusinessField = "Nordstrom"; </tag> </item>
+                    <item> Ollies Bargain Outlet <tag> out.BusinessField = "Ollies Bargain Outlet"; </tag> </item>
+                    <item> Ossells <tag> out.BusinessField = "Ossells"; </tag> </item>
+                    <item> Palais Royal <tag> out.BusinessField = "Palais Royal"; </tag> </item>
+                    <item> Peebles <tag> out.BusinessField = "Peebles"; </tag> </item>
+                    <item> Penneys <tag> out.BusinessField = "Penneys"; </tag> </item>
+                    <item> Renys <tag> out.BusinessField = "Renys"; </tag> </item>
+                    <item> Roses <tag> out.BusinessField = "Roses"; </tag> </item>
+                    <item> Ross <item repeat="0-1"> Dress for Less </item> <tag> out.BusinessField = "Ross Dress for Less"; </tag> </item>
+                    <item> Rubens <tag> out.BusinessField = "Rubens"; </tag> </item>
+                    <item> Rubensteins <tag> out.BusinessField = "Rubensteins"; </tag> </item>
+                    <item> Safeway <tag> out.BusinessField = "Safeway"; </tag> </item>
+                    <item> Sams <item repeat="0-1"> Club </item> <tag> out.BusinessField = "Sams Club"; </tag> </item>
+                    <item> Saks <item repeat="0-1"> Fifth Avenue </item> <tag> out.BusinessField = "Saks Fifth Avenue"; </tag> </item>
+                    <item> Sears <tag> out.BusinessField = "Sears"; </tag> </item>
+                    <item> Shirokiya <tag> out.BusinessField = "Shirokiya"; </tag> </item>
+                    <item> Shopko <tag> out.BusinessField = "Shopko"; </tag> </item>
+                    <item> Stage <tag> out.BusinessField = "Stage"; </tag> </item>
+                    <item> Stahlkes <tag> out.BusinessField = "Stahlkes"; </tag> </item>
+                    <item> Stein Mart <tag> out.BusinessField = "Stein Mart"; </tag> </item>
+                    <item> T J Maxx <tag> out.BusinessField = "T J Maxx"; </tag> </item>
+                    <item> Target <tag> out.BusinessField = "Target"; </tag> </item>
+                    <item> Tomah Cash <item repeat="0-1"> Mercantile </item> <tag> out.BusinessField = "Tomah Cash Mercantile"; </tag> </item>
+                    <item> Tuesday Morning <tag> out.BusinessField = "Tuesday Morning"; </tag> </item>
+                    <item> V Butlers <tag> out.BusinessField = "V Butlers"; </tag> </item>
+                    <item> Von Maur <tag> out.BusinessField = "Von Maur"; </tag> </item>
+                    <item> Walmart <tag> out.BusinessField = "Walmart"; </tag> </item>
+                    <item> Waynes Hub <tag> out.BusinessField = "Waynes Hub"; </tag> </item>
+                    <item> Weavers <tag> out.BusinessField = "Weavers"; </tag> </item>
+                    <item> Wilsons <tag> out.BusinessField = "Wilsons"; </tag> </item>
+                    <item> Yellowstone Mercantile <tag> out.BusinessField = "Yellowstone Mercantile"; </tag> </item>
+                    <item> Youngs <tag> out.BusinessField = "Youngs"; </tag> </item>
+                    <item> Younkers <tag> out.BusinessField = "Younkers"; </tag> </item>
+                    <item> 99 Cents Only <tag> out.BusinessField = "99 Cents Only"; </tag> </item>
+
+                    <!-- Restaurants -->
+                    <item> A and W <tag> out.BusinessField = "A and W"; </tag> </item>
+                    <item> Americas Incredible Pizza <tag> out.BusinessField = "Americas Incredible Pizza Company"; </tag> </item>
+                    <item> Applebees <tag> out.BusinessField = "Applebees"; </tag> </item>
+                    <item> Arbys <tag> out.BusinessField = "Arbys"; </tag> </item>
+                    <item> Arctic Circle <tag> out.BusinessField = "Arctic Circle"; </tag> </item>
+                    <item> Arthur Treachers <item repeat="0-1"> Fish and Chips </item> <tag> out.BusinessField = "Arthur Treachers Fish and Chips"; </tag> </item>
+                    <item> Atlanta Bread <tag> out.BusinessField = "Atlanta Bread Company"; </tag> </item>
+                    <item> Auntie Annes <tag> out.BusinessField = "Auntie Annes"; </tag> </item>
+                    <item> Bahama Breeze <tag> out.BusinessField = "Bahama Breeze"; </tag> </item>
+                    <item> Baja Fresh <tag> out.BusinessField = "Baja Fresh"; </tag> </item>
+                    <item> Bakers Square <tag> out.BusinessField = "Bakers Square"; </tag> </item>
+                    <item> Baskin Robbins <tag> out.BusinessField = "Baskin Robbins"; </tag> </item>
+                    <item> Beef O Bradys <tag> out.BusinessField = "Beef O Bradys"; </tag> </item>
+                    <item> Ben and Jerrys <tag> out.BusinessField = "Ben and Jerrys"; </tag> </item>
+                    <item> Benihana <tag> out.BusinessField = "Benihana"; </tag> </item>
+                    <item> Bennigans <tag> out.BusinessField = "Bennigans"; </tag> </item>
+                    <item> Bertuccis <tag> out.BusinessField = "Bertuccis"; </tag> </item>
+                    <item> Big Boy <tag> out.BusinessField = "Big Boy"; </tag> </item>
+                    <item> Bikini Sports <tag> out.BusinessField = "Bikini Sports"; </tag> </item>
+                    <item> BJs <tag> out.BusinessField = "BJs"; </tag> </item>
+                    <item> Black Angus <tag> out.BusinessField = "Black Angus"; </tag> </item>
+                    <item> Black Eyes Pea <tag> out.BusinessField = "Black Eyes Pea"; </tag> </item>
+                    <item> Blimpie <tag> out.BusinessField = "Blimpie"; </tag> </item>
+                    <item> Bob Evans <tag> out.BusinessField = "Bob Evans"; </tag> </item>
+                    <item> Bojangles <item repeat="0-1"> Famous </item> <item repeat="0-1"> Chicken and Biscuits </item> <tag> out.BusinessField = "Bojangles Famous Chicken and Biscuits"; </tag> </item>
+                    <item> Bonefish <tag> out.BusinessField = "Bonefish Grill"; </tag> </item>
+                    <item> Boston Market <tag> out.BusinessField = "Boston Market"; </tag> </item>
+                    <item> Braums <tag> out.BusinessField = "Braums"; </tag> </item>
+                    <item> Brio <tag> out.BusinessField = "Brio"; </tag> </item>
+                    <item> Bubba Gump Shrimp <tag> out.BusinessField = "Bubba Gump Shrimp"; </tag> </item>
+                    <item> Buca di Beppo <tag> out.BusinessField = "Buca di Beppo"; </tag> </item>
+                    <item> Buffalo Wild Wings <tag> out.BusinessField = "Buffalo Wild Wings"; </tag> </item>
+                    <item> Burger King <tag> out.BusinessField = "Burger King"; </tag> </item>
+                    <item> Burger Street <tag> out.BusinessField = "Burger Street"; </tag> </item>
+                    <item> Burgerville <tag> out.BusinessField = "Burgerville"; </tag> </item>
+                    <item> Cafe Rio <tag> out.BusinessField = "Cafe Rio"; </tag> </item>
+                    <item> California Pizza Kitchen <tag> out.BusinessField = "California Pizza Kitchen"; </tag> </item>
+                    <item> California Tortilla <tag> out.BusinessField = "California Tortilla"; </tag> </item>
+                    <item> Camilles <item repeat="0-1"> Sidewalk </item> <tag> out.BusinessField = "Camilles Sidewalk Cafe"; </tag> </item>
+                    <item> Captain Ds <tag> out.BusinessField = "Captain Ds"; </tag> </item>
+                    <item> Capital Grill <tag> out.BusinessField = "Capital Grill"; </tag> </item>
+                    <item> Carinos <item repeat="0-1"> Italian </item> <tag> out.BusinessField = "Carinos Italian Grill"; </tag> </item>
+                    <item> Carls Jr <tag> out.BusinessField = "Carls Jr"; </tag> </item>
+                    <item> Carrabbas <item repeat="0-1"> Italian </item> <tag> out.BusinessField = "Carrabbas Italian Grill"; </tag> </item>
+                    <item> Carrows <tag> out.BusinessField = "Carrows"; </tag> </item>
+                    <item> Carvel <item repeat="0-1"> Ice Cream </item> <tag> out.BusinessField = "Carvel Ice Cream"; </tag> </item>
+                    <item> Champps Americana <tag> out.BusinessField = "Champps Americana"; </tag> </item>
+                    <item> Charleys <item repeat="0-1"> Grilled Subs </item> <tag> out.BusinessField = "Charleys Grilled Subs"; </tag> </item>
+                    <item> Checkers <tag> out.BusinessField = "Checkers"; </tag> </item>
+                    <item> Cheeburger <tag> out.BusinessField = "Cheeburger"; </tag> </item>
+                    <item> Cheeseburger in Paradise <tag> out.BusinessField = "Cheeseburger in Paradise"; </tag> </item>
+                    <item> Cheesecake Factory <tag> out.BusinessField = "Cheesecake Factory"; </tag> </item>
+                    <item> Cheddars <tag> out.BusinessField = "Cheddars"; </tag> </item>
+                    <item> Chester <item repeat="0-1"> Fried Chicken </item> <tag> out.BusinessField = "Chester Fried Chicken"; </tag> </item>
+                    <item> Chevys Fresh Mex <tag> out.BusinessField = "Chevys Fresh Mex"; </tag> </item>
+                    <item> Chicken Express <tag> out.BusinessField = "Chicken Express"; </tag> </item>
+                    <item> Chick Fil A <tag> out.BusinessField = "Chick Fil A"; </tag> </item>
+                    <item> Chicken in the Rough <tag> out.BusinessField = "Chicken in the Rough"; </tag> </item>
+                    <item> Chilis <tag> out.BusinessField = "Chilis"; </tag> </item>
+                    <item> Chipotle <item repeat="0-1"> Mexican Grill </item> <tag> out.BusinessField = "Chipotle Mexican Grill"; </tag> </item>
+                    <item> Chronic Tacos <tag> out.BusinessField = "Chronic Tacos"; </tag> </item>
+                    <item> Chuck a rama <tag> out.BusinessField = "Chuck a rama"; </tag> </item>
+                    <item> Chuck E Cheese <tag> out.BusinessField = "Chuck E Cheese"; </tag> </item>
+                    <item> Churchs <tag> out.BusinessField = "Churchs"; </tag> </item>
+                    <item> Cicis <item repeat="0-1"> Pizza </item> <tag> out.BusinessField = "Cicis Pizza"; </tag> </item>
+                    <item> Cinnabon <tag> out.BusinessField = "Cinnabon"; </tag> </item>
+                    <item> Claim Jumper <tag> out.BusinessField = "Claim Jumper"; </tag> </item>
+                    <item> Cocos <tag> out.BusinessField = "Cocos Bakery"; </tag> </item>
+                    <item> Cold Stone <item repeat="0-1"> Creamery </item> <tag> out.BusinessField = "Cold Stone Creamery"; </tag> </item>
+                    <item> Coney Island <tag> out.BusinessField = "National Coney Island"; </tag> </item>
+                    <item> Copelands <tag> out.BusinessField = "Copelands"; </tag> </item>
+                    <item> Country Buffet <tag> out.BusinessField = "Country Buffet"; </tag> </item>
+                    <item> Cracker Barrel <tag> out.BusinessField = "Cracker Barrel"; </tag> </item>
+                    <item> Culvers <tag> out.BusinessField = "Culvers"; </tag> </item>
+                    <item> Dairy Queen <tag> out.BusinessField = "Dairy Queen"; </tag> </item>
+                    <item> Damons <tag> out.BusinessField = "Damons"; </tag> </item>
+                    <item> Dave and Busters <tag> out.BusinessField = "Dave and Busters"; </tag> </item>
+                    <item> Dennys <tag> out.BusinessField = "Dennys"; </tag> </item>
+                    <item> Del Taco <tag> out.BusinessField = "Del Taco"; </tag> </item>
+                    <item> Dixie Chili and Deli <tag> out.BusinessField = "Dixie Chili and Deli"; </tag> </item>
+                    <item> Dominos <tag> out.BusinessField = "Dominos"; </tag> </item>
+                    <item> Don Pablos <tag> out.BusinessField = "Don Pablos"; </tag> </item>
+                    <item> Donatos <tag> out.BusinessField = "Donatos Pizza"; </tag> </item>
+                    <item> Dunkin Donuts <tag> out.BusinessField = "Dunkin Donuts"; </tag> </item>
+                    <item> East of Chicago <tag> out.BusinessField = "East of Chicago Pizza"; </tag> </item>
+                    <item> EatZis <tag> out.BusinessField = "EatZis"; </tag> </item>
+                    <item> Eat n Park <tag> out.BusinessField = "Eat n Park"; </tag> </item>
+                    <item> Eegees <tag> out.BusinessField = "Eegees"; </tag> </item>
+                    <item> El Chico <tag> out.BusinessField = "El Chico"; </tag> </item>
+                    <item> El Pollo Loco <tag> out.BusinessField = "El Pollo Loco"; </tag> </item>
+                    <item> Elephant <tag> out.BusinessField = "Elephant Bar"; </tag> </item>
+                    <item> El Taco Tote <tag> out.BusinessField = "El Taco Tote"; </tag> </item>
+                    <item> Famous Daves <tag> out.BusinessField = "Famous Daves"; </tag> </item>
+                    <item> Farmer Boys <tag> out.BusinessField = "Farmer Boys"; </tag> </item>
+                    <item> Fatburger <tag> out.BusinessField = "Fatburger"; </tag> </item>
+                    <item> Fatz <tag> out.BusinessField = "Fatz"; </tag> </item>
+                    <item> Fazolis <tag> out.BusinessField = "Fazolis"; </tag> </item>
+                    <item> Five Guys <tag> out.BusinessField = "Five Guys"; </tag> </item>
+                    <item> Flemings <tag> out.BusinessField = "Flemings"; </tag> </item>
+                    <item> Freddy's <item repeat="0-1"> Frozen Custard and Steakburgers </item> <tag> out.BusinessField = "Freddy's Frozen Custard and Steakburgers"; </tag> </item>
+                    <item> Freebirds <item repeat="0-1"> World Burrito </item> <tag> out.BusinessField = "Freebirds World Burrito"; </tag> </item>
+                    <item> Fresh Choice <tag> out.BusinessField = "Fresh Choice"; </tag> </item>
+                    <item> Friendlys <tag> out.BusinessField = "Friendlys"; </tag> </item>
+                    <item> Fuddruckers <tag> out.BusinessField = "Fuddruckers"; </tag> </item>
+                    <item> Gattis <tag> out.BusinessField = "Gattis Pizza"; </tag> </item>
+                    <item> Gameworks <tag> out.BusinessField = "Gameworks"; </tag> </item>
+                    <item> Ginos <item repeat="0-1"> Pizza and Spaghetti </item> <tag> out.BusinessField = "Ginos Pizza and Spaghetti"; </tag> </item>
+                    <item> Godfathers <tag> out.BusinessField = "Godfathers Pizza"; </tag> </item>
+                    <item> Gold Star Chili <tag> out.BusinessField = "Gold Star Chili"; </tag> </item>
+                    <item> Golden Chick <tag> out.BusinessField = "Golden Chick"; </tag> </item>
+                    <item> Golden Corral <tag> out.BusinessField = "Golden Corral"; </tag> </item>
+                    <item> Green Burrito <tag> out.BusinessField = "Green Burrito"; </tag> </item>
+                    <item> Green Mill <tag> out.BusinessField = "Green Mill"; </tag> </item>
+                    <item> Ground Round <tag> out.BusinessField = "Ground Round"; </tag> </item>
+                    <item> Hard Rock <tag> out.BusinessField = "Hard Rock Cafe"; </tag> </item>
+                    <item> Hardees <tag> out.BusinessField = "Hardees"; </tag> </item>
+                    <item> Hobees <tag> out.BusinessField = "Hobees"; </tag> </item>
+                    <item> Hooters <tag> out.BusinessField = "Hooters"; </tag> </item>
+                    <item> Houlihans <tag> out.BusinessField = "Houlihans"; </tag> </item>
+                    <item> Houstons <tag> out.BusinessField = "Houstons"; </tag> </item>
+                    <item> Howard Johnsons <tag> out.BusinessField = "Howard Johnsons"; </tag> </item>
+                    <item> Huddle House <tag> out.BusinessField = "Huddle House"; </tag> </item>
+                    <item> HuHot <item repeat="0-1"> Mongolian </item> <tag> out.BusinessField = "HuHot Mongolian Grill"; </tag> </item>
+                    <item> Hungry Howies <tag> out.BusinessField = "Hungry Howies"; </tag> </item>
+                    <item> IHOP <tag> out.BusinessField = "IHOP"; </tag> </item>
+                    <item> In n Out <tag> out.BusinessField = "In n Out"; </tag> </item>
+                    <item> Jack in the Box <tag> out.BusinessField = "Jack in the Box"; </tag> </item>
+                    <item> Jacks <tag> out.BusinessField = "Jacks"; </tag> </item>
+                    <item> Jamba Juice <tag> out.BusinessField = "Jamba Juice"; </tag> </item>
+                    <item> Jasons Deli <tag> out.BusinessField = "Jasons Deli"; </tag> </item>
+                    <item> Jerrys <item repeat="0-1"> Subs and Pizza </item> <tag> out.BusinessField = "Jerrys Subs and Pizza"; </tag> </item>
+                    <item> Jersey Mikes Subs <tag> out.BusinessField = "Jersey Mikes Subs"; </tag> </item>
+                    <item> Jets <tag> out.BusinessField = "Jets Pizza"; </tag> </item>
+                    <item> Jimmy Johns <tag> out.BusinessField = "Jimmy Johns"; </tag> </item>
+                    <item> Jims <tag> out.BusinessField = "Jims Restaurants"; </tag> </item>
+                    <item> Joes Crab Shack <tag> out.BusinessField = "Joes Crab Shack"; </tag> </item>
+                    <item> Johns Incredible <tag> out.BusinessField = "Johns Incredible Pizza"; </tag> </item>
+                    <item> Johnny Rockets <tag> out.BusinessField = "Johnny Rockets"; </tag> </item>
+                    <item> Kers Winghouse <tag> out.BusinessField = "Kers Winghouse"; </tag> </item>
+                    <item> KFC <tag> out.BusinessField = "KFC"; </tag> </item>
+                    <item> Krispy Kreme <tag> out.BusinessField = "Krispy Kreme"; </tag> </item>
+                    <item> Krystal <tag> out.BusinessField = "Krystal"; </tag> </item>
+                    <item> L and L Hawaiian Barbeque <tag> out.BusinessField = "L and L Hawaiian Barbeque"; </tag> </item>
+                    <item> Landrys <tag> out.BusinessField = "Landrys Restaurant"; </tag> </item>
+                    <item> Ledo <tag> out.BusinessField = "Ledo Pizza"; </tag> </item>
+                    <item> Lee Roy Selmons <tag> out.BusinessField = "Lee Roy Selmons"; </tag> </item>
+                    <item> Lees <item repeat="0-1"> Famous Recipe </item> Chicken <tag> out.BusinessField = "Lees Famous Recipe Chicken"; </tag> </item>
+                    <item> Little Ceasars <tag> out.BusinessField = "Little Ceasars"; </tag> </item>
+                    <item> Logans <item repeat="0-1"> Roadhouse </item> <tag> out.BusinessField = "Logans Roadhouse"; </tag> </item>
+                    <item> Lone Star <item repeat="0-1"> Steakhouse and Saloon </item> <tag> out.BusinessField = "Lone Star Steakhouse and Saloon"; </tag> </item>
+                    <item> Longhorn <tag> out.BusinessField = "Longhorn Steakhouse"; </tag> </item>
+                    <item> Long John Silvers <tag> out.BusinessField = "Long John Silvers"; </tag> </item>
+                    <item> Lubys <tag> out.BusinessField = "Lubys"; </tag> </item>
+                    <item> Lyons <tag> out.BusinessField = "Lyons"; </tag> </item>
+                    <item> Maggianos <item repeat="0-1"> Little Italy </item> <tag> out.BusinessField = "Maggianos Little Italy"; </tag> </item>
+                    <item> Marie Callenders <tag> out.BusinessField = "Marie Callenders"; </tag> </item>
+                    <item> Max and Ermas <tag> out.BusinessField = "Max and Ermas"; </tag> </item>
+                    <item> McAlisters <tag> out.BusinessField = "McAlisters Deli"; </tag> </item>
+                    <item> McDonalds <tag> out.BusinessField = "McDonalds"; </tag> </item>
+                    <item> Melting Pot <tag> out.BusinessField = "Melting Pot"; </tag> </item>
+                    <item> Mazzios <item repeat="0-1"> Italian Eatery </item> <tag> out.BusinessField = "Mazzios Italian Eatery"; </tag> </item>
+                    <item> Millers Ale House <tag> out.BusinessField = "Millers Ale House"; </tag> </item>
+                    <item> Milos <item repeat="0-1"> Hamburgers </item> <tag> out.BusinessField = "Milos Hamburgers"; </tag> </item>
+                    <item> Mitchells <item repeat="0-1"> Fish Market </item> <tag> out.BusinessField = "Mitchells Fish Market"; </tag> </item>
+                    <item> Moes Southwest <tag> out.BusinessField = "Moes Southwest Grill"; </tag> </item>
+                    <item> Montana Mikes <tag> out.BusinessField = "Montana Mikes"; </tag> </item>
+                    <item> Mr Hero <tag> out.BusinessField = "Mr Hero"; </tag> </item>
+                    <item> Mrs Fields <tag> out.BusinessField = "Mrs Fields"; </tag> </item>
+                    <item> Naugles <tag> out.BusinessField = "Naugles"; </tag> </item>
+                    <item> Noodles <item repeat="0-1"> and Company </item> <tag> out.BusinessField = "Noodles and Company"; </tag> </item>
+                    <item> O Charleys <tag> out.BusinessField = "O Charleys"; </tag> </item>
+                    <item> Old Country Buffet <tag> out.BusinessField = "Old Country Buffet"; </tag> </item>
+                    <item> Olive Garden <tag> out.BusinessField = "Olive Garden"; </tag> </item>
+                    <item> On the Border <tag> out.BusinessField = "On the Border"; </tag> </item>
+                    <item> Outback <tag> out.BusinessField = "Outback Steakhouse"; </tag> </item>
+                    <item> Old Spaghetti Factory <tag> out.BusinessField = "Old Spaghetti Factory"; </tag> </item>
+                    <item> Original Italian Pie <tag> out.BusinessField = "Original Italian Pie"; </tag> </item>
+                    <item> Original Pancake House <tag> out.BusinessField = "Original Pancake House"; </tag> </item>
+                    <item> Panera <item repeat="0-1"> Bread </item> <tag> out.BusinessField = "Panera Bread"; </tag> </item>
+                    <item> Panda Express <tag> out.BusinessField = "Panda Express"; </tag> </item>
+                    <item> Papa Ginos <tag> out.BusinessField = "Papa Ginos"; </tag> </item>
+                    <item> Papa Johns <tag> out.BusinessField = "Papa Johns"; </tag> </item>
+                    <item> Papa Murphys <tag> out.BusinessField = "Papa Murphys"; </tag> </item>
+                    <item> Pei Wei <item repeat="0-1"> Asian Diner </item> <tag> out.BusinessField = "Pei Wei Asian Diner"; </tag> </item>
+                    <item> Penn Station <item repeat="0-1"> East Coast Subs </item> <tag> out.BusinessField = "Penn Station East Coast Subs"; </tag> </item>
+                    <item> Perkins <tag> out.BusinessField = "Perkins"; </tag> </item>
+                    <item> P F Changs <tag> out.BusinessField = "P F Changs"; </tag> </item>
+                    <item> Pita Pit <tag> out.BusinessField = "Pita Pit"; </tag> </item>
+                    <item> Pizza Hut <tag> out.BusinessField = "Pizza Hut"; </tag> </item>
+                    <item> Pizza Inn <tag> out.BusinessField = "Pizza Inn"; </tag> </item>
+                    <item> Pizza Ranch <tag> out.BusinessField = "Pizza Ranch"; </tag> </item>
+                    <item> Planet Hollywood <tag> out.BusinessField = "Planet Hollywood"; </tag> </item>
+                    <item> Ponderosa <tag> out.BusinessField = "Ponderosa"; </tag> </item>
+                    <item> Popeyes <tag> out.BusinessField = "Popeyes"; </tag> </item>
+                    <item> Portillos <tag> out.BusinessField = "Portillos"; </tag> </item>
+                    <item> Port of Subs <tag> out.BusinessField = "Port of Subs"; </tag> </item>
+                    <item> Potbelly <tag> out.BusinessField = "Potbelly"; </tag> </item>
+                    <item> Q Doba <tag> out.BusinessField = "Q Doba"; </tag> </item>
+                    <item> Quaker Steak <tag> out.BusinessField = "Quaker Steak"; </tag> </item>
+                    <item> Quiznos <tag> out.BusinessField = "Quiznos"; </tag> </item>
+                    <item> R A Sushi <tag> out.BusinessField = "R A Sushi"; </tag> </item>
+                    <item> Rainforest <tag> out.BusinessField = "Rainforest Cafe"; </tag> </item>
+                    <item> Rallys <tag> out.BusinessField = "Rallys"; </tag> </item>
+                    <item> Raising Canes <item repeat="0-1"> Chicken Fingers </item> <tag> out.BusinessField = "Raising Canes Chicken Fingers"; </tag> </item>
+                    <item> Rax <tag> out.BusinessField = "Rax"; </tag> </item>
+                    <item> Red Hot and Blue <tag> out.BusinessField = "Red Hot and Blue"; </tag> </item>
+                    <item> Red Lobster <tag> out.BusinessField = "Red Lobster"; </tag> </item>
+                    <item> Red Robin <tag> out.BusinessField = "Red Robin"; </tag> </item>
+                    <item> Redstone <item repeat="0-1"> American </item> <tag> out.BusinessField = "Redstone American Grill"; </tag> </item>
+                    <item> Robeks <tag> out.BusinessField = "Robeks"; </tag> </item>
+                    <item> Rock Bottom <tag> out.BusinessField = "Rock Bottom"; </tag> </item>
+                    <item> Romanos <item repeat="0-1"> Macaroni </item> <tag> out.BusinessField = "Romanos Macaroni Grill"; </tag> </item>
+                    <item> Round Table <tag> out.BusinessField = "Round Table Pizza"; </tag> </item>
+                    <item> Roy Rogers <tag> out.BusinessField = "Roy Rogers"; </tag> </item>
+                    <item> Roys <tag> out.BusinessField = "Roys"; </tag> </item>
+                    <item> Ruby Tuesday <tag> out.BusinessField = "Ruby Tuesday"; </tag> </item>
+                    <item> Rubios <tag> out.BusinessField = "Rubios"; </tag> </item>
+                    <item> Ruths Chris <tag> out.BusinessField = "Ruths Chris Steakhouse"; </tag> </item>
+                    <item> Runza <tag> out.BusinessField = "Runza"; </tag> </item>
+                    <item> Saladworks <tag> out.BusinessField = "Saladworks"; </tag> </item>
+                    <item> Sbarro <tag> out.BusinessField = "Sbarro"; </tag> </item>
+                    <item> Schlotzskys <tag> out.BusinessField = "Schlotzskys"; </tag> </item>
+                    <item> Seasons 52 <tag> out.BusinessField = "Seasons 52"; </tag> </item>
+                    <item> Seattle's Best <tag> out.BusinessField = "Seattle's Best Coffee"; </tag> </item>
+                    <item> Shake Shack <tag> out.BusinessField = "Shake Shack"; </tag> </item>
+                    <item> Shanes Rib Shack <tag> out.BusinessField = "Shanes Rib Shack"; </tag> </item>
+                    <item> Showmars <tag> out.BusinessField = "Showmars"; </tag> </item>
+                    <item> Shoneys <tag> out.BusinessField = "Shoneys"; </tag> </item>
+                    <item> Sizzler <tag> out.BusinessField = "Sizzler"; </tag> </item>
+                    <item> Skyline Chili <tag> out.BusinessField = "Skyline Chili"; </tag> </item>
+                    <item> Smashburger <tag> out.BusinessField = "Smashburger"; </tag> </item>
+                    <item> Smokey Bones <tag> out.BusinessField = "Smokey Bones"; </tag> </item>
+                    <item> Sneaky Petes <tag> out.BusinessField = "Sneaky Petes"; </tag> </item>
+                    <item> Sonic <tag> out.BusinessField = "Sonic"; </tag> </item>
+                    <item> Souplantation <item repeat="0-1"> and Sweet Tomatoes </item> <tag> out.BusinessField = "Souplantation and Sweet Tomatoes"; </tag> </item>
+                    <item> Spaghetti Warehouse <tag> out.BusinessField = "Spaghetti Warehouse"; </tag> </item>
+                    <item> Spangles <tag> out.BusinessField = "Spangles"; </tag> </item>
+                    <item> St Louis Bread Company <tag> out.BusinessField = "St Louis Bread Company"; </tag> </item>
+                    <item> Starbucks <tag> out.BusinessField = "Starbucks"; </tag> </item>
+                    <item> Steak n Shake <tag> out.BusinessField = "Steak n Shake"; </tag> </item>
+                    <item> Sticky Fingers <tag> out.BusinessField = "Sticky Fingers"; </tag> </item>
+                    <item> Stir Crazy <tag> out.BusinessField = "Stir Crazy"; </tag> </item>
+                    <item> Sub Station Two <tag> out.BusinessField = "Sub Station Two"; </tag> </item>
+                    <item> Subway <tag> out.BusinessField = "Subway"; </tag> </item>
+                    <item> Sweet Tomatoes <tag> out.BusinessField = "Sweet Tomatoes"; </tag> </item>
+                    <item> Swensens <tag> out.BusinessField = "Swensens"; </tag> </item>
+                    <item> T G I Fridays <tag> out.BusinessField = "T G I Fridays"; </tag> </item>
+                    <item> Taco Bell <tag> out.BusinessField = "Taco Bell"; </tag> </item>
+                    <item> Taco Bueno <tag> out.BusinessField = "Taco Bueno"; </tag> </item>
+                    <item> Taco Cabana <tag> out.BusinessField = "Taco Cabana"; </tag> </item>
+                    <item> Taco Johns <tag> out.BusinessField = "Taco Johns"; </tag> </item>
+                    <item> Taco Mayo <tag> out.BusinessField = "Taco Mayo"; </tag> </item>
+                    <item> Taco Tico <tag> out.BusinessField = "Taco Tico"; </tag> </item>
+                    <item> Taco Time <tag> out.BusinessField = "Taco Time"; </tag> </item>
+                    <item> Texas Roadhouse <tag> out.BusinessField = "Texas Roadhouse"; </tag> </item>
+                    <item> Tijuana Flats <tag> out.BusinessField = "Tijuana Flats"; </tag> </item>
+                    <item> Tilted Kilt <tag> out.BusinessField = "Tilted Kilt"; </tag> </item>
+                    <item> Tony Romas <tag> out.BusinessField = "Tony Romas"; </tag> </item>
+                    <item> Trader Vics <tag> out.BusinessField = "Trader Vics"; </tag> </item>
+                    <item> Twin Peaks <tag> out.BusinessField = "Twin Peaks"; </tag> </item>
+                    <item> Umami Burger <tag> out.BusinessField = "Umami Burger"; </tag> </item>
+                    <item> Uncle Maddios <item repeat="0-1"> Pizza Joint </item> <tag> out.BusinessField = "Uncle Maddios Pizza Joint"; </tag> </item>
+                    <item> Uno Chicago <tag> out.BusinessField = "Uno Chicago Grill"; </tag> </item>
+                    <item> Valentinos <tag> out.BusinessField = "Valentinos"; </tag> </item>
+                    <item> Village Inn <tag> out.BusinessField = "Village Inn"; </tag> </item>
+                    <item> Waffle House <tag> out.BusinessField = "Waffle House"; </tag> </item>
+                    <item> Wendys <tag> out.BusinessField = "Wendys"; </tag> </item>
+                    <item> Wetzels Pretzels <tag> out.BusinessField = "Wetzels Pretzels"; </tag> </item>
+                    <item> Whataburger <tag> out.BusinessField = "Whataburger"; </tag> </item>
+                    <item> Which Wich <tag> out.BusinessField = "Which Wich"; </tag> </item>
+                    <item> White Castle <tag> out.BusinessField = "White Castle"; </tag> </item>
+                    <item> Wienerschnitzel <tag> out.BusinessField = "Wienerschnitzel"; </tag> </item>
+                    <item> Wild Wing <tag> out.BusinessField = "Wild Wing Cafe"; </tag> </item>
+                    <item> York <tag> out.BusinessField = "York Steakhouse"; </tag> </item>
+                    <item> Zaxbys <tag> out.BusinessField = "Zaxbys"; </tag> </item>
+                </one-of>
+
+                <item repeat="0-1"> Bar </item>
+                <item repeat="0-1"> Bakery </item>
+                <item repeat="0-1"> Brewery </item>
+                <item repeat="0-1"> Cafe </item>
+                <item repeat="0-1"> Company </item>
+                <item repeat="0-1"> Coffee </item>
+                <item repeat="0-1"> Deli </item>
+                <item repeat="0-1"> Department Store </item>
+                <item repeat="0-1"> Grill </item>
+                <item repeat="0-1"> Pizza </item>
+                <item repeat="0-1"> Restaurant </item>
+                <item repeat="0-1"> Steakhouse </item>
+                <item repeat="0-1"> Store </item>
+                <item repeat="0-1"> Stores </item>
+            </item>
         </one-of>
     </rule>
 </grammar>
