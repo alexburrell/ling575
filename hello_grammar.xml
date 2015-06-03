@@ -2,41 +2,93 @@
 
 <grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US">
     <rule id="Greeting" scope="public">
-    	<item repeat="0-1">
-            <one-of>
-        		<item> Give me the </item>
-        		<item> Please give me the </item>
-        		<item> What is the </item>
+        <item repeat="0-1">
+        	<one-of>
+        		<item> Hello </item>
+                <item> Hi </item>
+                <item> Hi there </item>
         	</one-of>
-    	</item>
-
-        <item>
-            <ruleref uri="#RequestType" />
-            <tag> out.RequestTypeField = rules.RequestType.RequestTypeField; </tag>
         </item>
 
         <item repeat="0-1">
         	<one-of>
-        		<item> for </item>
-        		<item> of </item>
+                <item> Give me </item>
+                <item> Please give me </item>
+                <item> What is </item>
+                <item> What are </item>
+                <item> I'd like </item>
+                <item> I'd like to know </item>
+                <item> I'm looking for </item>
+                <item> I'm wondering </item>
         	</one-of>
+            <item repeat="0-1"> the </item>
         </item>
 
-        <item>
-        	<ruleref uri="#Business" />
-            <tag> out.BusinessField = rules.Business.BusinessField; </tag>
-        </item>
+        <one-of>
+            <!-- Type, then business, then location -->
+            <item>
+                <item>
+                    <one-of>
+                        <item>
+                            <one-of>
+                                <item> opening hours </item>
+                                <item> hours </item>
+                            </one-of>
+                            <tag> out.RequestTypeField = "hours"; </tag>
+                        </item>
+                        <item>
+                            <one-of>
+                                <item> address </item>
+                                <item> where the </item>
+                                <item> Where is </item>
+                                <item> Where is the </item>
+                            </one-of>
+                            <tag> out.RequestTypeField = "address"; </tag>
+                        </item>
+                        <item>
+                            <one-of>
+                                <item> phone </item>
+                                <item> phone number </item>
+                                <item> number </item>
+                            </one-of>
+                            <tag> out.RequestTypeField = "phone"; </tag>
+                        </item>
+                    </one-of>
+                </item>
 
-        <item repeat="0-1">
-        	<one-of>
-        		<item> in </item>
-        	</one-of>
-        </item>
+                <item repeat="0-1">
+                	<one-of>
+                		<item> for </item>
+                		<item> of </item>
+                	</one-of>
+                </item>
 
-        <item repeat="0-1">
-            <ruleref uri="#Location" />
-            <tag> out.LocationField = rules.Location.LocationField; </tag>
-        </item>
+                <item>
+                	<ruleref uri="#Business" />
+                    <tag> out.BusinessField = rules.Business.BusinessField; </tag>
+                </item>
+
+                <item repeat="0-1">
+                	<one-of>
+                		<item> in </item>
+                        <item> is in </item>
+                	</one-of>
+                </item>
+
+                <item repeat="0-1">
+                    <ruleref uri="#Location" />
+                    <tag> out.LocationField = rules.Location.LocationField; </tag>
+                </item>
+            </item>
+
+            <!-- Business, then location, then type -->
+            <!-- <item>
+            </item> -->
+
+            <!-- Business, then type, then location -->
+            <!-- <item>
+            </item> -->
+        </one-of>
 
         <item repeat="0-1">
         	<one-of>
@@ -44,14 +96,6 @@
         	</one-of>
         </item>
 	</rule>
-
-    <rule id="RequestType" scope="public">
-        <one-of>
-            <item> Hours <tag> out.RequestTypeField = "hours"; </tag> </item>
-            <item> Address <tag> out.RequestTypeField = "address"; </tag> </item>
-            <item> Phone number <tag> out.RequestTypeField = "phone"; </tag> </item>
-        </one-of>
-    </rule>
 
     <rule id="Alphabet" scope="public">
         <one-of>
