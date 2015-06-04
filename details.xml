@@ -64,6 +64,8 @@
             address = address.replace(', United States', '');
             address = address.replace('E.','East').replace('W.','West').replace('N.','North').replace('S.','South');
 
+			hours = hours.replace('–','-');
+
             return results = {
                 'address': address,
                 'phone': phone,
