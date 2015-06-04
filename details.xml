@@ -60,7 +60,8 @@
                 phone = establishment.getElementsByTagName("formatted_phone_number").item(0).firstChild.data,
                 hours = establishment.getElementsByTagName("weekday_text").item(today).firstChild.data;
 
-            address = address.replace(', United States', '')
+            address = address.replace(', United States', '');
+            address = address.replace('E.','East').replace('W.','West').replace('N.','North').replace('S.','South');
 
             return results = {
                 'address': address,
@@ -114,8 +115,12 @@
 					<one-of>
 						<item> hours <tag> out.Request = "hours" </tag> </item>
 						<item> address <tag> out.Request = "address" </tag> </item>
-						<item> phone number <tag> out.Request = "number" </tag> </item>
-						<item> no </item>
+						<item> phone number <tag> out.Request = "phone" </tag> </item>
+						<item>
+            				<item> no </item>
+            				<item repeat="0-1"> thank you </item>
+            				<tag> out.Request = "no" </tag>
+            			</item>
 					</one-of>
 				</rule>
 			</grammar>
@@ -124,11 +129,7 @@
 		<filled namelist="Request">
 			<if cond="Request != 'no'">
 				<assign name="application.request_type" expr="Request" />
-				<assign name="application.requestedData" expr="get(application.result, application.request_type)" />
-				<prompt>
-					<value expr="application.request_type" /> for <value expr="application.business" /> <break />
-					<value expr="application.requestedData" /> <break />
-				</prompt>
+				<goto next="#ProvideResults" />
 			<elseif cond="Request == 'no'" />
 				<goto next="#TextResults" />
 			<else />
@@ -150,8 +151,16 @@
             <grammar xml:lang="en-us" root="yesno">
             	<rule id="yesno">
             		<one-of>
-            			<item> yes </item>
-            			<item> no </item>
+            			<item>
+            				<item> yes </item>
+            				<item repeat="0-1"> please </item>
+            				<tag> out.Text = "yes" </tag>
+            			</item>
+            			<item>
+            				<item> no </item>
+            				<item repeat="0-1"> thank you </item>
+            				<tag> out.Text = "no" </tag>
+            			</item>
             		</one-of>
             	</rule>
             </grammar>
