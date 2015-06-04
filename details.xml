@@ -114,7 +114,7 @@
 					<one-of>
 						<item> hours <tag> out.Request = "hours" </tag> </item>
 						<item> address <tag> out.Request = "address" </tag> </item>
-						<item> phone number <tag> out.Request = "phone" </tag> </item>
+						<item> phone number <tag> out.Request = "number" </tag> </item>
 						<item> no </item>
 					</one-of>
 				</rule>
@@ -122,8 +122,8 @@
 		</field>
 		
 		<filled namelist="Request">
-			<assign name="application.request_type" expr="Request" />
 			<if cond="Request != 'no'">
+				<assign name="application.request_type" expr="Request" />
 				<assign name="application.requestedData" expr="get(application.result, application.request_type)" />
 				<prompt>
 					<value expr="application.request_type" /> for <value expr="application.business" /> <break />
@@ -141,20 +141,36 @@
 
 
     <form id="TextResults">
-        <block>
+        <field name="Text">
             <prompt>
-                Will text result
+            	Would you like a text message with the <value expr="application.request_type" />
+            	for <value expr="application.business" /> ?
                 <break />
             </prompt>
-            <data srcexpr="assembleTextUrl(application.requestedData)" namelist="application.requestedData session.callerid" />
-            <goto next="#TextedResults" />
-        </block>
+            <grammar xml:lang="en-us" root="yesno">
+            	<rule id="yesno">
+            		<one-of>
+            			<item> yes </item>
+            			<item> no </item>
+            		</one-of>
+            	</rule>
+            </grammar>
+        </field>
+        
+        <filled namelist="Text">
+        	<if cond="Text=='yes'">
+        		<goto next="#TextedResults" />
+        	<elseif cond="Text='no'" />
+        		<goto next="hello.xml#Exit" />
+        	</if>
+        </filled>
     </form>
 
     <form id="TextedResults">
         <block>
+        	<data srcexpr="assembleTextUrl(application.requestedData)" namelist="application.requestedData session.callerid" />
             <prompt>
-                Did text result
+                Text message sent. Have a great day!
                 <break />
             </prompt>
         </block>
