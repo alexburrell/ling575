@@ -2,7 +2,7 @@
 <!DOCTYPE vxml PUBLIC "-//W3C//DTD VOICEXML 2.1//EN" "http://www.w3.org/TR/2007/REC-voicexml21-20070619/vxml.dtd">
 
 <vxml version="2.1" xmlns="http://www.w3.org/2001/vxml" xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="root.xml">
-    <meta name="maintainer" content="la.farfelue@gmail.com" />
+    <meta name="maintainer" content="burrelal@gmail.com" />
 
     <script><![CDATA[
         var searchUrl = "https://maps.googleapis.com/maps/api/place/textsearch/xml?query={query}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
@@ -41,6 +41,7 @@
         }
 
         function getLocalDay(offset) {
+            offset = parseInt(offset);
             var today = new Date(),
                 utc = today.getTime() + (today.getTimezoneOffset() * 60000),
                 local_date = new Date(utc + (3600000 * offset)),
@@ -85,6 +86,9 @@
             <!-- Get the place details -->
             <data name="PlaceDetails" srcexpr="assemblePlaceUrl(application.placeid)" />
             <assign name="PlaceDetails" expr="PlaceDetails.documentElement" />
+            <prompt>
+                <value expr="application.timezone" />
+            </prompt>
             <assign name="application.result" expr="parseResults(PlaceDetails, application.timezone)" />
 
 			<goto next="#ProvideResults" />
@@ -107,37 +111,27 @@
 
 	<!-- Provide further information about current business -->
 	<form id="Further">
-		<field name="Request">
+		<field name="Request" type="boolean">
 			<prompt> Would you like other information about <value expr="application.business" />? </prompt>
 
-			<grammar xml:lang="en-us" root = "request">
-				<rule id="request">
-					<one-of>
-						<item> hours <tag> out.Request = "hours" </tag> </item>
-						<item> address <tag> out.Request = "address" </tag> </item>
-						<item> phone number <tag> out.Request = "phone" </tag> </item>
-						<item>
-            				<item> no </item>
-            				<item repeat="0-1"> thank you </item>
-            				<tag> out.Request = "no" </tag>
-            			</item>
-					</one-of>
-				</rule>
-			</grammar>
+            <filled>
+                <if cond="!Request">
+                    <goto next="#TextResults" />
+    			</if>
+            </filled>
 		</field>
-		
-		<filled namelist="Request">
-			<if cond="Request != 'no'">
-				<assign name="application.request_type" expr="Request" />
-				<goto next="#ProvideResults" />
-			<elseif cond="Request == 'no'" />
-				<goto next="#TextResults" />
-			<else />
-				<prompt> I say whaaaat? </prompt>
-			</if>
-			
-			<goto next="#Further" />
-		</filled>
+
+        <field name="RequestTypeField">
+            <grammar src="hello_grammar.xml#RequestType" type="application/grammar-xml" maxage="1" />
+            <prompt>
+                Do you want hours, an address, or a phone number?
+            </prompt>
+
+            <filled>
+                <assign name="application.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
+                <goto next="#ProvideResults" />
+            </filled>
+        </field>
 	</form>
 
 
@@ -165,7 +159,7 @@
             	</rule>
             </grammar>
         </field>
-        
+
         <filled namelist="Text">
         	<if cond="Text=='yes'">
         		<goto next="#TextedResults" />
