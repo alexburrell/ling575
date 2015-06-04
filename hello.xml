@@ -63,10 +63,20 @@
         </field>
 
         <filled mode="all">
+			<!-- <prompt>
+				<value expr="RequestTypeField$.interpretation.RequestTypeField" />
+				<break />
+				<value expr="BusinessField$.interpretation.BusinessField" />
+				<break />
+				<value expr="LocationField$.interpretation.LocationField" />
+				<break />
+				<value expr="LocationField$.interpretation.LocationFieldTimezone" />
+			</prompt> -->
+
         	<assign name="application.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
             <assign name="application.business" expr="BusinessField$.interpretation.BusinessField" />
             <assign name="application.location" expr="LocationField$.interpretation.LocationField" />
-			<assign name="application.timezone" expr="LocationField$.interpretation.LocationFieldTimezone" />
+			<assign name="application.timezone" expr="LocationField$.interpretation.LocationFieldTimezone | 0" />
             <goto next="details.xml#GetDetails" />
         </filled>
     </form>
