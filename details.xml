@@ -86,9 +86,9 @@
             <!-- Get the place details -->
             <data name="PlaceDetails" srcexpr="assemblePlaceUrl(application.placeid)" />
             <assign name="PlaceDetails" expr="PlaceDetails.documentElement" />
-            <prompt>
+            <!-- <prompt>
                 <value expr="application.timezone" />
-            </prompt>
+            </prompt> -->
             <assign name="application.result" expr="parseResults(PlaceDetails, application.timezone)" />
 
 			<goto next="#ProvideResults" />
