@@ -23,6 +23,13 @@
             return textUrl;
         }
 
+        function textingIsNotAvailable() {
+            var today = new Date(),
+                expirationDay = new Date("June 5, 2015");
+
+            return today > expirationDay;
+        }
+
         function getPlaceId(results) {
             var establishment = results.getElementsByTagName("result").item(0),
                 id = establishment.getElementsByTagName("place_id").item(0).firstChild.data;
@@ -150,6 +157,17 @@
     </form>
 
     <form id="TextedResults">
+        <block>
+            <if cond="textingIsNotAvailable()">
+                <prompt>
+                    Sorry, after June 10 my permission to text is expired. Here is that <value expr="application.request_type" /> again.
+                    <break />
+                    <value expr="application.requestedData" />
+                </prompt>
+                <goto next="hello.xml#Exit" />
+            </if>
+        </block>
+
         <block>
         	<data srcexpr="assembleTextUrl()" namelist="application.business application.location application.requestedData session.callerid" />
             <prompt>
