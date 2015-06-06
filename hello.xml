@@ -17,9 +17,9 @@
 
 		<!-- This is useful for going straight to details.xml, for development -->
         <!-- <block>
-            <assign name="application.request_type" expr="'phone'" />
-            <assign name="application.business" expr="'safeway'" />
-            <assign name="application.location" expr="'santa cruz'" />
+            <assign name="application.request_type" expr="'address'" />
+            <assign name="application.business" expr="'Safeway'" />
+            <assign name="application.location" expr="'Santa Cruz'" />
 			<assign name="application.timezone" expr="-8" />
             <goto next="details.xml#GetDetails" />
         </block> -->
@@ -60,16 +60,6 @@
         </field>
 
         <filled mode="all">
-			<!-- <prompt>
-				<value expr="RequestTypeField$.interpretation.RequestTypeField" />
-				<break />
-				<value expr="BusinessField$.interpretation.BusinessField" />
-				<break />
-				<value expr="LocationField$.interpretation.LocationField" />
-				<break />
-				<value expr="LocationField$.interpretation.LocationFieldTimezone" />
-			</prompt> -->
-
         	<assign name="application.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
             <assign name="application.business" expr="BusinessField$.interpretation.BusinessField" />
             <assign name="application.location" expr="LocationField$.interpretation.LocationField" />
