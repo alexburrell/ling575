@@ -1,5 +1,7 @@
 # Term project for LING 575 Spoken Dialog Systems
 
+## Directions for use
+
 ## To do
 - Requires much better error handling
     - No results from Google Places
@@ -15,5 +17,4 @@
 - Try reducing confidence level to improve mixed initiative
 
 ## Notes for project writeup
-- Spelling is particularly hard
 - Texting will only work until June 10
