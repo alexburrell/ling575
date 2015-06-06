@@ -31,24 +31,18 @@
 
         function textingIsNotAvailable() {
             var today = new Date(),
-                expirationDay = new Date("June 5, 2015");
+                expirationDay = new Date("June 10, 2015");
 
             return today > expirationDay;
         }
 
-        function getPlaceId(results) {
-            var establishment = results.getElementsByTagName("result").item(0),
-                id = establishment.getElementsByTagName("place_id").item(0).firstChild.data;
-
-            return id;
-        }
-
-        function assembleIdUrl (place_id) {
-        	return idUrl.replace("{query}", place_id);
-        }
-
-        function getPlaceId (document) {
-        	return document.getElementsByTagName("place_id").item(0).textContent;
+        function getPlaceId(document) {
+            var establishment = document.getElementsByTagName("place_id").item(0);
+            if (establishment) {
+                return establishment.textContent;
+            } else {
+                return false;
+            }
         }
 
         function getLocalDay(offset) {
@@ -117,6 +111,13 @@
             <data name="SearchResults" srcexpr="assembleSearchUrl(application.location, application.business)" />
             <assign name="SearchResults" expr="SearchResults.documentElement" />
             <assign name="application.placeid" expr="getPlaceId(SearchResults)" />
+
+            <if cond="!application.placeid">
+                <prompt>
+                    Sorry, I couldn't find any results. Try again.
+                </prompt>
+                <goto next="hello.xml#AskInfo" />
+            </if>
 
             <!-- Get the place details -->
             <data name="PlaceDetails" srcexpr="assemblePlaceUrl(application.placeid)" />

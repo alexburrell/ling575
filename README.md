@@ -3,13 +3,11 @@
 ## Directions for use
 
 ## To do
-- Improve error handling
-    - No results from Google Places
-    - Text doesn't go through
 - Search location by zip code
 - Go through the search results
-- Improve pronunciation with a sounded-out result, as well as the real spelling
 - Try reducing confidence level to improve mixed initiative
+- Move script to external file
+- Comment all vxml and js
 
 ## Notes for project writeup
 - Texting will only work until June 10

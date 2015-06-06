@@ -6,15 +6,6 @@
     <meta name="maintainer" content="burrelal@gmail.com" />
 
 	<form id="Welcome">
-		<block>
-			Hi there!
-			<goto next="#AskInfo" />
-		 </block>
-	</form>
-
-    <form id="AskInfo">
-		<grammar src="hello_grammar.xml#Greeting" type="application/grammar-xml" maxage="1" />
-
 		<!-- This is useful for going straight to details.xml, for development -->
         <!-- <block>
             <assign name="application.request_type" expr="'address'" />
@@ -23,6 +14,15 @@
 			<assign name="application.timezone" expr="-8" />
             <goto next="details.xml#GetDetails" />
         </block> -->
+
+		<block>
+			Hi there!
+			<goto next="#AskInfo" />
+		 </block>
+	</form>
+
+    <form id="AskInfo">
+		<grammar src="hello_grammar.xml#Greeting" type="application/grammar-xml" maxage="1" />
 
         <initial name="Greeting">
            How can I help you?
