@@ -131,39 +131,22 @@
         </field>
 	</form>
 
-
     <form id="TextResults">
-        <field name="Text">
+        <field name="Text" type="boolean">
             <prompt>
             	Would you like a text message with the <value expr="application.request_type" />
             	for <value expr="application.business" /> ?
                 <break />
             </prompt>
-            <grammar xml:lang="en-us" root="yesno">
-            	<rule id="yesno">
-            		<one-of>
-            			<item>
-            				<item> yes </item>
-            				<item repeat="0-1"> please </item>
-            				<tag> out.Text = "yes" </tag>
-            			</item>
-            			<item>
-            				<item> no </item>
-            				<item repeat="0-1"> thank you </item>
-            				<tag> out.Text = "no" </tag>
-            			</item>
-            		</one-of>
-            	</rule>
-            </grammar>
-        </field>
 
-        <filled namelist="Text">
-        	<if cond="Text=='yes'">
-        		<goto next="#TextedResults" />
-        	<elseif cond="Text='no'" />
-        		<goto next="hello.xml#Exit" />
-        	</if>
-        </filled>
+            <filled>
+                <if cond="Text">
+                    <goto next="#TextedResults" />
+                <else />
+                    <goto next="hello.xml#Exit" />
+                </if>
+            </filled>
+        </field>
     </form>
 
     <form id="TextedResults">
