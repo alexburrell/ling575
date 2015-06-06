@@ -13,9 +13,6 @@
 	</form>
 
     <form id="AskInfo">
-		<!-- Uncomment these to avoid caching -->
-        <!-- <grammar src="business_grammar.xml#Business" type="application/grammar-xml" maxage="1" />
-        <grammar src="location_grammar.xml#Location" type="application/grammar-xml" maxage="1" /> -->
 		<grammar src="hello_grammar.xml#Greeting" type="application/grammar-xml" maxage="1" />
 
 		<!-- This is useful for going straight to details.xml, for development -->
