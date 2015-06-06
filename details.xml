@@ -81,6 +81,15 @@
         function get(obj, key) {
             return obj[key];
         }
+
+        var requestTypes = {
+            'phone': 'phone number',
+            'address': 'address',
+            'hours': 'hours'
+        }
+        function getRequestType(requestType) {
+            return requestTypes[requestType];
+        }
     ]]></script>
 
     <form id="GetDetails">
@@ -103,11 +112,11 @@
     	<block>
             <assign name="application.requestedData" expr="get(application.result, application.request_type)" />
     		<prompt>
-                Here's the <value expr="application.request_type"/> for <value expr="application.business"/>
+                Here's the <value expr="getRequestType(application.request_type)"/> for <value expr="application.business"/>
     	    	in <value expr="application.location" />
-                <break />
+                <break time="100" />
         		<value expr="application.requestedData" />
-                <break />
+                <break time="100" />
         	</prompt>
             <goto next="#Further" />
     	</block>
@@ -141,9 +150,9 @@
     <form id="TextResults">
         <field name="Text" type="boolean">
             <prompt>
-            	Would you like a text message with the <value expr="application.request_type" />
+            	Would you like a text message with the <value expr="getRequestType(application.request_type)" />
             	for <value expr="application.business" /> ?
-                <break />
+                <break time="100" />
             </prompt>
 
             <filled>
@@ -160,8 +169,8 @@
         <block>
             <if cond="textingIsNotAvailable()">
                 <prompt>
-                    Sorry, after June 10 my permission to text is expired. Here is that <value expr="application.request_type" /> again.
-                    <break />
+                    Sorry, after June 10 my permission to text is expired. Here is that <value expr="getRequestType(application.request_type)" /> again.
+                    <break time="100" />
                     <value expr="application.requestedData" />
                 </prompt>
                 <goto next="hello.xml#Exit" />
@@ -172,7 +181,7 @@
         	<data srcexpr="assembleTextUrl()" namelist="application.business application.location application.requestedData session.callerid" />
             <prompt>
                 Text message sent. Have a great day!
-                <break />
+                <break time="100" />
             </prompt>
         </block>
     </form>
