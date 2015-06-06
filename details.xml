@@ -9,7 +9,13 @@
         	placeUrl = "https://maps.googleapis.com/maps/api/place/details/xml?placeid={id}&key=AIzaSyCVqHbaIe-Dtnt7WUHGOHUAUuV1_OWFoag",
             textUrl = "http://alexburrell.com/uw/dialog/project/text.php";
 
+        var globalLocation = '',
+            globalBusiness = '';
+
         function assembleSearchUrl(location, business) {
+            globalLocation = location;
+            globalBusiness = business;
+
             location = location.replace(/ /g, "+");
             business = business.replace(/ /g, "+");
             return searchUrl.replace("{query}", location+"+"+business);
@@ -61,15 +67,22 @@
             var today = getLocalDay(timezone);
 
             var establishment = results.getElementsByTagName("result").item(0),
+                address = establishment.getElementsByTagName("formatted_address").item(0),
+                phone = establishment.getElementsByTagName("formatted_phone_number").item(0),
+                hours = establishment.getElementsByTagName("weekday_text").item(today);
 
-            	address = establishment.getElementsByTagName("formatted_address").item(0).firstChild.data,
-                phone = establishment.getElementsByTagName("formatted_phone_number").item(0).firstChild.data,
-                hours = establishment.getElementsByTagName("weekday_text").item(today).firstChild.data;
-
-            address = address.replace(', United States', '');
-            address = address.replace('E.','East').replace('W.','West').replace('N.','North').replace('S.','South');
-
-			hours = hours.replace('–','-');
+            if (address) {
+                address = address.firstChild.data;
+                address = address.replace(', United States', '');
+                address = address.replace('E.','East').replace('W.','West').replace('N.','North').replace('S.','South');
+            }
+            if (phone) {
+                phone = phone.firstChild.data;
+            }
+            if (hours) {
+                hours = hours.firstChild.data;
+                hours = hours.replace('–','-');
+            }
 
             return results = {
                 'address': address,
@@ -79,6 +92,12 @@
         }
 
         function get(obj, key) {
+            if (key === 'address') {
+                var splitAddress = obj[key].split(',');
+                if (splitAddress[splitAddress.length-2].indexOf(globalLocation) > -1) {
+                    return splitAddress[0];
+                }
+            }
             return obj[key];
         }
 
