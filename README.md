@@ -4,9 +4,9 @@
 
 ## To do
 - Go through the search results
-- Try reducing confidence level to improve mixed initiative
 - Move script to external file
 - Comment all vxml and js
+- Add state to Google Places API call
 
 ## Notes for project writeup
 - Texting will only work until June 10

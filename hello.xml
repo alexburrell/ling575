@@ -5,6 +5,95 @@
 	xmlns:voxeo="http://community.voxeo.com/xmlns/vxml" application="root.xml">
     <meta name="maintainer" content="burrelal@gmail.com" />
 
+	<script><![CDATA[
+		var zipCodeUrl = 'http://production.shippingapis.com/ShippingAPI.dll?API=CityStateLookup&XML={xml}',
+			zipCodeXml = '<CityStateLookupRequest USERID="547NA0000082"><ZipCode ID="0"><Zip5>{zipcode}</Zip5></ZipCode></CityStateLookupRequest>';
+
+		function assembleZipCodeUrl(location) {
+			return zipCodeUrl.replace('{xml}', encodeURIComponent(zipCodeXml.replace('{zipcode}', location)));
+		}
+
+		function isZipCode(location) {
+			if (parseInt(location)) {
+				return true;
+			}
+			return false;
+		}
+
+		function getCity(results) {
+			var city = results.getElementsByTagName("City").item(0);
+
+			if (city) {
+				return city.textContent;
+			}
+			return false;
+		}
+
+		function getState(results) {
+			return results.getElementsByTagName("State").item(0).textContent;
+		}
+
+		timezones = {
+			'AL': '-5',
+			'AK': '-9',
+			'AZ': '-7',
+			'AR': '-6',
+			'CA': '-8',
+			'CO': '-7',
+			'CT': '-5',
+			'DE': '-5',
+			'FL': '-5',
+			'DE': '-5',
+			'GA': '-5',
+			'HI': '-10',
+			'ID': '-7',
+			'IL': '-6',
+			'IN': '-5',
+			'IA': '-6',
+			'KS': '-6',
+			'KY': '-5',
+			'LA': '-6',
+			'ME': '-5',
+			'MD': '-5',
+			'MA': '-5',
+			'MI': '-5',
+			'MN': '-6',
+			'MS': '-6',
+			'MO': '-6',
+			'MT': '-7',
+			'NE': '-6',
+			'NV': '-7',
+			'NH': '-5',
+			'NJ': '-5',
+			'NM': '-7',
+			'NY': '-5',
+			'NC': '-5',
+			'ND': '-6',
+			'OH': '-5',
+			'OK': '-6',
+			'OR': '-8',
+			'PA': '-5',
+			'RI': '-5',
+			'SC': '-5',
+			'SD': '-6',
+			'TN': '-6',
+			'TX': '-6',
+			'UT': '-7',
+			'VT': '-5',
+			'VA': '-5',
+			'WA': '-8',
+			'WV': '-5',
+			'WI': '-6',
+			'WY': '-6',
+		}
+		function getTimezone(state) {
+			if (timezones[state]) {
+				return timezones[state];
+			}
+			return 0;
+		}
+	]]></script>
+
 	<form id="Welcome">
 		<!-- This is useful for going straight to details.xml, for development -->
         <!-- <block>
@@ -65,19 +154,25 @@
         </field>
 
         <filled mode="all">
-			<prompt>
-				<value expr="RequestTypeField$.interpretation.RequestTypeField" />
-				<break time="100" />
-				<value expr="LocationField$.confidence" /> <value expr="LocationField$.interpretation.LocationField" />
-				<break time="100" />
-				<value expr="BusinessField$.confidence" /> <value expr="BusinessField$.interpretation.BusinessField" />
-			</prompt>
-
-        	<!-- <assign name="application.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
+			<assign name="application.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
             <assign name="application.business" expr="BusinessField$.interpretation.BusinessField" />
             <assign name="application.location" expr="LocationField$.interpretation.LocationField" />
-			<assign name="application.timezone" expr="LocationField$.interpretation.LocationFieldTimezone | 0" />
-            <goto next="details.xml#GetDetails" /> -->
+			<assign name="application.timezone" expr="getTimezone(LocationField$.interpretation.LocationFieldStateCode)" />
+
+			<if cond="isZipCode(application.location)">
+				<data name="CityStateResults" srcexpr="assembleZipCodeUrl(application.location)" />
+	            <assign name="CityStateResults" expr="CityStateResults.documentElement" />
+	            <assign name="application.location" expr="getCity(CityStateResults)" />
+				<if cond="!application.location">
+					<prompt>
+						That doesn't look like a valid zip code.
+					</prompt>
+					<goto nextitem="LocationField" />
+				</if>
+				<assign name="application.timezone" expr="getTimezone(getState(CityStateResults))" />
+			</if>
+
+        	<goto next="details.xml#GetDetails" />
         </filled>
     </form>
 
