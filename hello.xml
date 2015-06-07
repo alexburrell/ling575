@@ -22,12 +22,13 @@
 	</form>
 
     <form id="AskInfo">
+		<property name="confidencelevel" value="0.01" />
+
 		<grammar src="hello_grammar.xml#Greeting" type="application/grammar-xml" maxage="1" />
-
         <initial name="Greeting">
-           How can I help you?
+			How can I help you?
 
-            <nomatch count="1">
+            <nomatch>
                 I'm sorry, I'm having trouble understanding.
                 <assign name="Greeting" expr="true" />
                 <reprompt />
@@ -57,21 +58,33 @@
             <prompt>
                 Where are you?
             </prompt>
+
+			<nomatch>
+				Sorry, I don't know that city. You can try to say it again, spell the name, or say the zip code.
+			</nomatch>
         </field>
 
         <filled mode="all">
-        	<assign name="application.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
+			<prompt>
+				<value expr="RequestTypeField$.interpretation.RequestTypeField" />
+				<break time="100" />
+				<value expr="LocationField$.confidence" /> <value expr="LocationField$.interpretation.LocationField" />
+				<break time="100" />
+				<value expr="BusinessField$.confidence" /> <value expr="BusinessField$.interpretation.BusinessField" />
+			</prompt>
+
+        	<!-- <assign name="application.request_type" expr="RequestTypeField$.interpretation.RequestTypeField" />
             <assign name="application.business" expr="BusinessField$.interpretation.BusinessField" />
             <assign name="application.location" expr="LocationField$.interpretation.LocationField" />
 			<assign name="application.timezone" expr="LocationField$.interpretation.LocationFieldTimezone | 0" />
-            <goto next="details.xml#GetDetails" />
+            <goto next="details.xml#GetDetails" /> -->
         </filled>
     </form>
 
     <!-- Form to end conversation -->
 	<form id="Exit">
 		<block>
-			<prompt> Goodbye! </prompt>
+			<prompt> Have a great day! Goodbye! </prompt>
 		</block>
 		<exit/>
 	</form>
