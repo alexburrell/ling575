@@ -4,7 +4,6 @@
 
 ## To do
 - Go through the search results
-- Move script to external file
 - Comment all vxml and js
 - Add state to Google Places API call
 
